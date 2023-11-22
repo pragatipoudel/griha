@@ -1,10 +1,11 @@
-var modal = document.getElementById("myModal");
+const modal = document.getElementById("myModal");
 
-var btn = document.getElementById("add-review");
+const btn = document.getElementById("add-review");
 
-var span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("close")[0];
+
 btn.onclick = function() {
-    modal.style.display = "block";
+    modal.style.display = "flex";
 }
 
 span.onclick = function() {
@@ -16,11 +17,3 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     var form = document.getElementById('review-form');
-//     form.addEventListener('submit', function () {
-//         form.reset();
-//     })
-// }
-// )

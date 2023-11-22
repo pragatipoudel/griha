@@ -9,37 +9,40 @@
 {% endblock %}
 
 {% block content%}
+    {% include 'nav.html' %}
     <header>
+        <img src="{% static 'img/header-img.png' %}">
         <h2>Reviews</h2>
     </header>
 
     <main>
-        <div id="review-list">
-            {% for review in reviews%}
-                <div class="review-detail">
-                    <div class="comment">{{ review.comment}}"</div>
-                    <div class="name">{{ review.name }} <div>
-                </div>
-            {% endfor%}
-        </div>
 
         <div id="add-reviews">
             <button id="add-review">Add Review</button>
             <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2> Review Form</h2>
-                <form method="post" id="review-form">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        <div class="form-field">
-                            {{field.label}} = {{field}}
-                        </div>
-                    {% endfor %}
-                    <button type="submit">Save</button>
-                </form>
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2> Add your review </h2>
+                    <form method="post" id="review-form">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class="form-field">
+                                <label>{{field.label}}:</label> {{field}}
+                            </div>
+                        {% endfor %}
+                        <button type="submit">Save</button>
+                    </form>
                 </div>
             </div>
+        </div>
+
+        <div id="review-list">
+            {% for review in reviews%}
+                <div class="review-detail">
+                    <div class="comment">{{ review.comment}}</div>
+                    <div class="name">{{ review.name }} </div>
+                </div>
+            {% endfor%}
         </div>
     </main>
 
