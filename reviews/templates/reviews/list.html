@@ -2,27 +2,48 @@
 {% load static %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'reviews/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/reviews/list.css'%}">
+    <script defer src="{% static 'js/reviews/list.js' %}"></script>
+
 
 {% endblock %}
 
 {% block content%}
-    <h2>Reviews</h2>
-    {% for review in reviews%}
-        {{ review.comment}}<br>
-        {{ review.name }} <br>
-    {% endfor%}
+    <header>
+        <h2>Reviews</h2>
+    </header>
 
-    <h2> Review Form</h2>
-    <form method="post">
-        {% csrf_token %}
-        {% for field in form %}
-            <div class="form-field">
-                {{field.label}} = {{field}}
+    <main>
+        <div id="review-list">
+            {% for review in reviews%}
+                <div class="review-detail">
+                    <div class="comment">{{ review.comment}}"</div>
+                    <div class="name">{{ review.name }} <div>
+                </div>
+            {% endfor%}
+        </div>
+
+        <div id="add-reviews">
+            <button id="add-review">Add Review</button>
+            <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2> Review Form</h2>
+                <form method="post" id="review-form">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-field">
+                            {{field.label}} = {{field}}
+                        </div>
+                    {% endfor %}
+                    <button type="submit">Save</button>
+                </form>
+                </div>
             </div>
-        {% endfor %}
-        <button type="submit">Save</button>
-    </form>
+        </div>
+    </main>
+
+    
 
 {% endblock content %}
 
