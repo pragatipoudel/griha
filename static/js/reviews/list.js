@@ -13,7 +13,7 @@ span.onclick = function() {
 }
 
 window.onclick = function(event) {
-    if (event.taget == modal) {
+    if (event.target == modal) {
         modal.style.display = "none";
     }
 }

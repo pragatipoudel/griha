@@ -128,7 +128,7 @@ main {
 }
 
 .modal {
-  display: flex;
+  display: none;
   position: fixed;
   align-items: center;
   z-index: 1;
