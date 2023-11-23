@@ -152,6 +152,11 @@ main {
   text-align: center;
   color: var(--color-primary-dark);
 }
+.modal .modal-content .errors {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--color-tertiary-dark);
+}
 .modal .modal-content form {
   display: flex;
   flex-direction: column;

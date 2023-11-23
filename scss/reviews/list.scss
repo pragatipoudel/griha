@@ -126,6 +126,12 @@ main {
             color: var(--color-primary-dark);
         }
 
+        .errors {
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--color-tertiary-dark);
+        }
+
         form {
             display: flex;
             flex-direction: column;
