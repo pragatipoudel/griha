@@ -19,9 +19,19 @@
   --font-family-normal: "Montserrat", sans-serif;
   --font-family-icon: "Font Awesome 5 Free";
   --color-background: #fafafa;
-  --height-nav-bar: 72px;
+  --height-nav-bar: 104px;
   --width-page: 1100px;
   --width-content: 60%;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-normal);
 }
 
 nav {
@@ -109,6 +119,7 @@ main {
 #add-reviews {
   display: flex;
   justify-content: flex-end;
+  padding: 0 22px;
 }
 #add-reviews button {
   outline: none;
@@ -119,12 +130,12 @@ main {
   border: 2px solid var(--color-primary-dark);
 }
 #add-reviews #add-review {
-  background-color: transparent;
-  color: var(--color-primary-dark);
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 0;
 }
 #add-reviews #add-review:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  background-color: var(--color-primary-dark);
 }
 
 .modal {

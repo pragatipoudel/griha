@@ -10,7 +10,6 @@ body {
 }
 
 header {
-    // width: var(--width-page);
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -79,6 +78,7 @@ main {
 #add-reviews {
     display: flex;
     justify-content: flex-end;
+    padding: 0 22px;
 
     button {
         outline: none;
@@ -90,12 +90,12 @@ main {
     }
 
     #add-review {
-        background-color: transparent;
-        color: var(--color-primary-dark);
+        background-color: var(--color-primary);
+        color: #fff;
+        border: 0;
 
         &:hover {
-            border-color: var(--color-primary);
-            color: var(--color-primary);
+            background-color: var(--color-primary-dark);
         }
     }
 }
