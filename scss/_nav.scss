@@ -23,6 +23,10 @@ nav {
         li {
             margin-left: 16px;
             font-size: 16px;
+
+            a.active {
+                color: var(--color-tertiary-dark);
+            }
         }
     }
 }

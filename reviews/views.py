@@ -14,6 +14,10 @@ def reviewsListPage(request):
         form = ReviewForm()
 
     reviews = Review.objects.all()
-    context = {'reviews': reviews, 'form': form}
+    context = {
+        'reviews': reviews,
+        'form': form,
+        'current_page': 'reviews',
+    }
     return render(request, "reviews/reviews-list.html", context)
 

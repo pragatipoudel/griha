@@ -72,6 +72,9 @@ nav ul li {
   margin-left: 16px;
   font-size: 16px;
 }
+nav ul li a.active {
+  color: var(--color-tertiary-dark);
+}
 
 main {
   position: relative;
