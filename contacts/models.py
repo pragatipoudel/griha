@@ -7,4 +7,5 @@ class ContactInfo(models.Model):
     instagram_link = models.URLField(max_length=200, blank=True)
     facebook_link = models.URLField(max_length=200, blank=True)
 
-
+    def __str__(self):
+        return "Contact Info"

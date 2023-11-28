@@ -1,9 +1,15 @@
 {% load static %}
 
 <nav>
-    <div class="nav-container">
-        <a href="/">
-            <img src="{% static 'img/logo.png' %}" alt="Griha Designs">
-        </a>
-    </div>
+    <h1>
+        <a href="/"><img src="{% static 'img/logo.png' %}" alt="Griha Designs"></a>
+    </h1>
+
+    <ul class="links">
+        <li><a href="#">services</a></li>
+        <li><a href="#">projects</a></li>
+        <li><a href="{% url 'reviews' %}">client testinomials</a></li>
+    </ul>
 </nav>
+
+

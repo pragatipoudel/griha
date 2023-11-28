@@ -8,10 +8,20 @@
 
 {% block content %}
     {% include 'nav.html' %}
-    <header>
-        <img src="{% static 'img/header-img.png' %}">
+    <main>
+        {% if homePageContents.header_video %}
+        <video autoplay loop muted>
+            <source src="{{ homePageContents.header_video.url }}" type="video/mp4">
+            <img src="{{ homePageContents.header_image.url }}">
+        </video>
+        {% else %}
+        <img src="{{ homePageContents.header_image.url }}">
+        {% endif %}
 
-        <a href="{% url 'reviews' %}">Client Testinomials →</a>
-    </header>
+        <button>
+            Request a quote
+        </button>
+    </main>
 
 {% endblock %}
+

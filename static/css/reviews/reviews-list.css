@@ -18,8 +18,8 @@
   --font-family-heading-2: "Oswald", cursive;
   --font-family-normal: "Montserrat", sans-serif;
   --font-family-icon: "Font Awesome 5 Free";
-  --color-background: #fafafa;
-  --height-nav-bar: 104px;
+  --color-background: #faf0e688;
+  --height-nav-bar: 72px;
   --width-page: 1100px;
   --width-content: 60%;
 }
@@ -32,28 +32,51 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-family-normal);
+  background-color: var(--color-background);
+}
+
+h1, h2 {
+  font-family: var(--font-family-heading);
+}
+
+a {
+  font-family: var(--font-family-link);
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  color: var(--color-tertiary);
 }
 
 nav {
-  height: var(--height-nav-bar);
-  width: 100vw;
   display: flex;
-  justify-content: center;
-  padding: 16px 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: var(--height-nav-bar);
+  padding: 8px 16px;
 }
-nav .nav-container {
-  width: var(--width-page);
-  height: 100%;
+nav h1 {
+  height: calc(100% - 16px);
 }
-nav .nav-container a img {
-  height: 100%;
+nav h1 img {
+  height: 125%;
+  width: auto;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li {
+  margin-left: 16px;
+  font-size: 16px;
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(250, 240, 230, 0.5333333333);
 }
 
 header {
@@ -201,4 +224,4 @@ main {
   cursor: pointer;
 }
 
-/*# sourceMappingURL=list.css.map */
+/*# sourceMappingURL=reviews-list.css.map */

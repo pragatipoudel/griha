@@ -23,9 +23,9 @@
 
     --font-family-icon: 'Font Awesome 5 Free';
 
-    --color-background: #fafafa;
+    --color-background: #faf0e688;
 
-    --height-nav-bar: 104px;
+    --height-nav-bar: 72px;
 
 
     --width-page: 1100px;
@@ -40,4 +40,20 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--font-family-normal);
+    background-color: var(--color-background);
+}
+
+h1, h2 {
+    font-family: var(--font-family-heading);
+}
+
+a {
+    font-family: var(--font-family-link);
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    
+    &:hover {
+        color: var(--color-tertiary);
+    }
 }

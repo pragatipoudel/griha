@@ -1,0 +1,28 @@
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: var(--height-nav-bar);
+    padding: 8px 16px;
+
+    h1 {
+        height: calc(100% - 16px);
+
+        img {
+            height: 125%;
+            width: auto;
+        }
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+
+        li {
+            margin-left: 16px;
+            font-size: 16px;
+        }
+    }
+}
