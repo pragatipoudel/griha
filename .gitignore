@@ -92,3 +92,8 @@ local_settings.py
 db.sqlite3
 
 venv
+
+postgres_data_prod
+postgres_data
+staticfiles
+media
