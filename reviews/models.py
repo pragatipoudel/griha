@@ -8,3 +8,9 @@ class Review(models.Model):
 
     def __str__(self):
         return self.comment
+
+class ReviewPageContent(models.Model):
+    header_image = models.ImageField(upload_to="reviews/header/")
+
+    def __str__(self):
+        return "Review Page Content"

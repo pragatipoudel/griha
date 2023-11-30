@@ -17,6 +17,7 @@
   --font-family-heading: "Bebas Neue", cursive;
   --font-family-heading-2: "Oswald", cursive;
   --font-family-normal: "Montserrat", sans-serif;
+  --font-family-reviews: "Cormorant", serif;
   --font-family-icon: "Font Awesome 5 Free";
   --color-background: #faf0e688;
   --height-nav-bar: 72px;
@@ -26,6 +27,8 @@
 
 *, *:before, *:after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -74,6 +77,35 @@ nav ul li {
 }
 nav ul li a.active {
   color: var(--color-tertiary-dark);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 72px;
+  width: 100%;
+}
+footer .group {
+  display: flex;
+  flex-direction: column;
+}
+footer .group ul {
+  list-style: none;
+  padding: 0;
+}
+footer .group ul li {
+  margin: 6px 0;
+  font-size: 14px;
+}
+footer .group ul li.icons {
+  font-size: 20px;
+}
+footer .group ul li.icons a {
+  margin-right: 8px;
+}
+footer .group.group-3 {
+  align-items: center;
 }
 
 body {

@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from .models import HomePageContent
+from contacts.models import ContactInfo
+from griha.common import get_common_content
 
 from django.http import HttpResponse
 
-def homePage(request):
-    homePageContents = HomePageContent.objects.first()
-    context = {'homePageContents': homePageContents}
+def home_page(request):
+    home_page_contents = HomePageContent.objects.first()
+    context = {'home_page_contents': home_page_contents, **get_common_content()}
     return render(request, 'homepage/home-page.html', context)

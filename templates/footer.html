@@ -1,0 +1,28 @@
+{% load static %}
+
+<footer>
+    <div class="group group-1">
+        <h3>Griha Designs</h3>
+        <p>California, United States</p>
+    </div>
+
+    <div class="group group-3">
+        <p>Find us on social media</p>
+        <ul>
+            <li class="icons">
+                <a href="{{ contact_info.instagram_link }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube" target="_blank"></i></a>
+                <a href="{{ contact_info.facebook_link }}" target="_blank"><i class="fab fa-facebook"></i></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="group group-2">
+        <ul>
+            <li><a href="tel:{{ contact_info.phone_number }}">{{ contact_info.phone_number }}</a></li>
+            <li><a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></li>
+            <li><a href="#">faqs</a></li>
+            <li><a href="#">employee login</a></li>
+        </ul>
+    </div>
+</footer>

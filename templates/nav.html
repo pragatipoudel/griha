@@ -6,8 +6,8 @@
     </h1>
 
     <ul class="links">
-        <li><a {% if current_page == 'services' %}class="active"{% endif %} href="#">services</a></li>
-        <li><a {% if current_page == 'projects' %}class="active"{% endif %} href="#">projects</a></li>
+        <li><a {% if current_page == 'services' %}class="active"{% endif %} href="{% url 'service-list-page' %}">services</a></li>
+        <li><a {% if current_page == 'projects' %}class="active"{% endif %} href="{% url 'project-list-page' %}">projects</a></li>
         <li><a {% if current_page == 'reviews' %}class="active"{% endif %} href="{% url 'reviews' %}">client testinomials</a></li>
     </ul>
 </nav>

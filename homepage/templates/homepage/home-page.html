@@ -9,19 +9,21 @@
 {% block content %}
     {% include 'nav.html' %}
     <main>
-        {% if homePageContents.header_video %}
+        {% if home_page_contents.header_video %}
         <video autoplay loop muted>
-            <source src="{{ homePageContents.header_video.url }}" type="video/mp4">
-            <img src="{{ homePageContents.header_image.url }}">
+            <source src="{{ home_page_contents.header_video.url }}" type="video/mp4">
+            <img src="{{ home_page_contents.header_image.url }}">
         </video>
         {% else %}
-        <img src="{{ homePageContents.header_image.url }}">
+        <img src="{{ home_page_contents.header_image.url }}">
         {% endif %}
 
         <button>
             Request a quote
         </button>
     </main>
+
+    {% include 'footer.html' %}
 
 {% endblock %}
 
