@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'reviews.apps.ReviewsConfig',
     'homepage.apps.HomepageConfig',
     'contacts.apps.ContactsConfig',
+    'projects.apps.ProjectsConfig',
+    'services.apps.ServicesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

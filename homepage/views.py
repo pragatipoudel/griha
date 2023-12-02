@@ -7,5 +7,9 @@ from django.http import HttpResponse
 
 def home_page(request):
     home_page_contents = HomePageContent.objects.first()
-    context = {'home_page_contents': home_page_contents, **get_common_content()}
+    context = {
+        'home_page_contents': home_page_contents,
+        'current_page': 'home',
+        **get_common_content(),
+    }
     return render(request, 'homepage/home-page.html', context)

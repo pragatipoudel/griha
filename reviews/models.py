@@ -7,7 +7,7 @@ class Review(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.comment
+        return self.name
 
 class ReviewPageContent(models.Model):
     header_image = models.ImageField(upload_to="reviews/header/")

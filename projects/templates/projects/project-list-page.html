@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/projects/project-list-page.css'%}">
+{% endblock %}
+
+{% block content %}
+    {% include 'nav.html' %}
+
+    
+        <header class="title">Projects</header>
+        <main>
+            <div class="projects-list">
+                {% for project in projects %}
+                <a href="#" class="project-tile">
+                    <img src="{{ project.header_image.url }}">
+                    <div class="name">{{ project.name }}</div>
+                </a>
+                {% endfor%}
+            </div>
+        </main>
+
+{% include 'footer.html' %}
+    
+
+    
+
+{% endblock %}

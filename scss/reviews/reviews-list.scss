@@ -11,6 +11,7 @@ body {
 }
 
 header {
+    position: relative;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -47,7 +48,7 @@ main {
     padding: 10px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
 
     .review-detail {
         background-color: #0000000f;
@@ -63,7 +64,8 @@ main {
 
         .comment {
             color: #000a;
-            font-size: 15px;
+            font-family: var(--font-family-reviews);
+            font-size: 18px;
             line-height: 1.7;
         }
 

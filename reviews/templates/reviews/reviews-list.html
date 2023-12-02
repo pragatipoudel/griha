@@ -50,7 +50,7 @@
         <div id="review-list">
             {% for review in reviews %}
                 <div class="review-detail">
-                    <div class="comment">{{ review.comment}}</div>
+                    <div class="comment">{{ review.comment|linebreaks }}</div>
                     <div class="name">{{ review.name }} </div>
                 </div>
             {% endfor%}
