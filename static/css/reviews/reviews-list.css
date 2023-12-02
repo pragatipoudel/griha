@@ -21,6 +21,7 @@
   --font-family-icon: "Font Awesome 5 Free";
   --color-background: #faf0e688;
   --height-nav-bar: 72px;
+  --height-footer: 182px;
   --width-page: 1100px;
   --width-content: 60%;
 }
@@ -113,18 +114,18 @@ nav ul li a.active {
   nav .nav-toggle span:after {
     content: "";
     background: var(--color-tertiary-light);
-    height: 5px;
-    width: 35px;
+    height: 3px;
+    width: 30px;
     display: block;
-    border-radius: 10px;
+    border-radius: 6px;
     position: absolute;
     transition: all 0.3s ease-in-out;
   }
   nav .nav-toggle span:before {
-    bottom: 10px;
+    bottom: 7px;
   }
   nav .nav-toggle span:after {
-    bottom: -10px;
+    bottom: -7px;
   }
   nav ul {
     flex-direction: column;
@@ -217,8 +218,6 @@ header h2 {
   text-align: center;
   display: inline;
   padding: 16px 48px;
-  margin-top: -32px;
-  background-color: var(--color-tertiary-lighter);
   color: rgba(0, 0, 0, 0.6);
   font-family: var(--font-family-heading-2);
   font-weight: 500;
@@ -229,8 +228,9 @@ header h2 {
 main {
   position: relative;
   display: flex;
-  width: var(--width-page);
+  max-width: var(--width-page);
   flex-direction: column;
+  min-height: calc(100vh - 463px - var(--height-footer));
 }
 
 #review-list {
@@ -346,6 +346,15 @@ main {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  header h2 {
+    font-size: 28px;
+  }
+  main {
+    min-height: calc(100vh - 433px - var(--height-footer));
+  }
 }
 
 /*# sourceMappingURL=reviews-list.css.map */

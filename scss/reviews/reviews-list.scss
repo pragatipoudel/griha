@@ -7,7 +7,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // background-color: #faf0e688;
 }
 
 header {
@@ -27,8 +26,6 @@ header {
         text-align: center;
         display: inline;
         padding: 16px 48px;
-        margin-top: -32px;
-        background-color: var(--color-tertiary-lighter);
         color: #0009;
         font-family: var(--font-family-heading-2);
         font-weight: 500;
@@ -40,8 +37,9 @@ header {
 main {
     position: relative;
     display: flex;
-    width: var(--width-page);
+    max-width: var(--width-page);
     flex-direction: column;
+    min-height: calc(100vh - 463px - var(--height-footer));
 }
 
 #review-list {
@@ -174,5 +172,18 @@ main {
                 cursor: pointer;
             }
         }
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    header {
+        h2 {
+            font-size: 28px;
+        }
+    }
+
+    main {
+        min-height: calc(100vh - 433px - var(--height-footer));
     }
 }
