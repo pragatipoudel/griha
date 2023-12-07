@@ -254,7 +254,11 @@ main {
   color: rgba(0, 0, 0, 0.6666666667);
   font-family: var(--font-family-reviews);
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.3;
+}
+#review-list .review-detail .comment p {
+  margin-bottom: 12px;
+  text-align: justify;
 }
 #review-list .review-detail .name {
   margin-top: 16px;
