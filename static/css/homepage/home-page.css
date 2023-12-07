@@ -204,23 +204,27 @@ nav h1 {
   width: 100%;
   top: 0;
   left: 0;
-  animation: 2s ease-out 1s 1 forwards navTitleSlide;
+  animation: 3s ease-in-out 0.3s 1 forwards navTitleSlide;
 }
 nav h1 img {
   position: absolute;
   top: 50%;
   left: 50%;
   height: 256px;
+  opacity: 0;
   transform: translate(-50%, -128px);
-  animation: 2s ease-out 1s 1 forwards navLogoSlide;
+  animation: 3s ease-in-out 0.3s 1 forwards navLogoSlide;
 }
 
 @keyframes navTitleSlide {
-  90% {
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-  99% {
+  30% {
+    height: 100vh;
+    background-color: #fff;
     width: 100%;
+  }
+  95% {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
   }
   100% {
     height: var(--height-nav-bar);
@@ -229,9 +233,16 @@ nav h1 img {
   }
 }
 @keyframes navLogoSlide {
+  30% {
+    left: 50%;
+    height: 256px;
+    opacity: 1;
+    transform: translate(-50%, -128px);
+  }
   100% {
     height: calc(var(--height-nav-bar) - 16px);
     left: 16px;
+    opacity: 1;
     transform: translate(0, calc((var(--height-nav-bar) - 16px) * -1 / 2));
   }
 }
