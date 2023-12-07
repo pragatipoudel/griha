@@ -71,6 +71,7 @@ nav h1 {
 nav h1 img {
   height: 100%;
   width: auto;
+  transform: translate(0, 6px);
 }
 nav h1 .nav-toggle {
   display: none;

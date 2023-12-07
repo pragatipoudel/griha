@@ -71,6 +71,7 @@ nav h1 {
 nav h1 img {
   height: 100%;
   width: auto;
+  transform: translate(0, 6px);
 }
 nav h1 .nav-toggle {
   display: none;
@@ -243,12 +244,27 @@ nav h1 img {
     height: calc(var(--height-nav-bar) - 16px);
     left: 16px;
     opacity: 1;
-    transform: translate(0, calc((var(--height-nav-bar) - 16px) * -1 / 2));
+    transform: translate(0, calc((var(--height-nav-bar) - 28px) * -1 / 2));
+  }
+}
+@keyframes navLogoSlideMobile {
+  30% {
+    left: 50%;
+    height: 96px;
+    opacity: 1;
+    transform: translate(-50%, -128px);
+  }
+  100% {
+    height: calc(var(--height-nav-bar) - 16px);
+    left: 16px;
+    opacity: 1;
+    transform: translate(0, calc((var(--height-nav-bar) - 28px) * -1 / 2));
   }
 }
 @media screen and (max-width: 650px) {
   nav h1 img {
     height: 96px;
+    animation: 3s ease-in-out 0.3s 1 forwards navLogoSlideMobile;
   }
 }
 main {
