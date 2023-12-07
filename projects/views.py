@@ -14,3 +14,6 @@ def projects_list_page(request):
     }
 
     return render(request, "projects/project-list-page.html", context)
+
+# def project_detail_page(request):
+

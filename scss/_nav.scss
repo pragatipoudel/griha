@@ -12,6 +12,7 @@ nav {
 
     h1 {
         height: calc(var(--height-nav-bar) - 16px);
+        z-index: 100;
 
         img {
             height: 100%;
@@ -43,10 +44,9 @@ nav {
 
 @media screen and (max-width: 650px) {
     nav {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        align-items: flex-start;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: flex-start;
 
         h1 {
             display: flex;
@@ -87,12 +87,16 @@ nav {
         }
 
         ul {
+            position: absolute;
+            left: 0;
+            top: var(--height-nav-bar);
             flex-direction: column;
             align-items: center;
             transition: all 0.3s ease-in-out;
             max-height: 0;
             overflow: hidden;
             width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
 
             li {
                 padding: 8px;
@@ -118,6 +122,7 @@ nav {
 
             ul {
                 max-height: 256px;
+                padding-bottom: 10px;
             }
         }
     }
