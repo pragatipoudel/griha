@@ -61,7 +61,7 @@ nav {
   width: 100%;
   height: var(--height-nav-bar);
   padding: 8px 16px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 10;
 }
 nav h1 {
@@ -253,7 +253,8 @@ main img, main video {
   object-fit: cover;
   object-position: center center;
 }
-main button {
+main .request-button {
+  text-decoration: none;
   position: absolute;
   right: 32px;
   bottom: 32px;
@@ -266,7 +267,7 @@ main button {
   font-weight: 600;
   border-radius: 8px;
 }
-main button:hover {
+main .request-button:hover {
   background-color: var(--color-tertiary-light);
 }
 

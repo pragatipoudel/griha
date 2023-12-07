@@ -18,9 +18,9 @@
         <img src="{{ home_page_contents.header_image.url }}">
         {% endif %}
 
-        <button>
+        <a class="request-button" href="mailto:{{ contact_info.email }}?subject=Request quote">
             Request a quote
-        </button>
+        </a>
     </main>
 
     {% include 'footer.html' %}

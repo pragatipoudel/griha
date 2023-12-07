@@ -18,7 +18,8 @@ main {
         object-position: center center;
     }
 
-    button {
+    .request-button {
+        text-decoration: none;
         position: absolute;
         right: 32px;
         bottom: 32px;
