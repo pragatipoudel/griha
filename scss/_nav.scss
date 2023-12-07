@@ -31,8 +31,9 @@ nav {
         margin-right: 12px;
 
         li {
-            margin-left: 16px;
-            font-size: 18px;
+            margin-left: 18px;
+            font-size: 16px;
+            text-transform: uppercase;
 
             a.active {
                 color: var(--color-tertiary-dark);
