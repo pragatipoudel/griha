@@ -13,12 +13,14 @@ services:
       - ./.env.prod
     depends_on:
       - db_prod
+
   db_prod:
     image: postgres:16
     volumes:
       - ./postgres_data_prod:/var/lib/postgresql/data/
     env_file:
       - ./.env.prod.db
+
   nginx:
     build: ./nginx
     ports:
@@ -26,5 +28,15 @@ services:
     volumes:
       - ./staticfiles:/staticfiles
       - ./media:/media
+      - ./certbot/www/:/var/www/certbot/:ro
+      - ./certbot/conf:/etc/letsencrypt/:ro
     depends_on:
       - web_prod
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt/:rw
+      - ./certbot/www/:/var/www/certbot/:rw
+    depends_on:
+      - nginx
