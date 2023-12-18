@@ -161,6 +161,7 @@ footer {
   align-items: center;
   padding: 40px 72px;
   width: 100%;
+  background-color: #faf0e6;
 }
 footer .group {
   display: flex;

@@ -7,8 +7,8 @@ class AdditionalImageAdmin(admin.StackedInline):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ["name"]}
     inlines = [AdditionalImageAdmin]
 
     class Meta:
         model = Project
-

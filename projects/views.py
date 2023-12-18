@@ -15,5 +15,13 @@ def projects_list_page(request):
 
     return render(request, "projects/project-list-page.html", context)
 
-# def project_detail_page(request):
+def project_detail_page(request, slug):
+    project = Project.objects.get(slug=slug)
+
+    context = {
+        'project': project,
+        **get_common_content(),
+    }
+
+    return render(request, "projects/project-detail-page.html", context)
 

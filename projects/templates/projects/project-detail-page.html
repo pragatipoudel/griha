@@ -8,5 +8,42 @@
 {% endblock %}
 
 {% block content %}
+    {% include 'nav.html' %}
+    <main>
+        <header>
+            <img src="{{ project.header_image.url }}">
+            <div class="project-title">
+                <h2>{{ project.name }}</h2>
+            </div>
+            
+        </header>
 
+        <div class="project-details">
+            <div class="brief-title">Design Brief</div>
+            <div class="project-brief">
+                <div class="project-facts">
+                    <div class="item">
+                        <div class="label">Location</div>
+                        <div class="info">{{project.location}}</div>
+                    </div>
+                    <div class="item">
+                        <div class="label">Status</div>
+                        <div class="info">{{project.status}}</div>
+                    </div>
+                </div>
+                <div class="project-description">
+                    {{project.description}}
+                </div>
+            </div>
+            <div class="additional-photos">
+                {% for image in additional_images %}
+                    <img src="{{ project.image }}">
+                {% endfor %}
+
+
+            </div>
+
+        </div>
+     </main>
+    {% include 'footer.html' %}
 {% endblock %}

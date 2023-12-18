@@ -6,6 +6,7 @@ class Project(models.Model):
     status = models.CharField(max_length=254)
     description = models.TextField()
     header_image = models.ImageField(upload_to="projects/header/")
+    slug = models.SlugField(default = "", null = False)
 
     def __str__(self):
         return self.name
@@ -15,6 +16,6 @@ class AdditionalImage(models.Model):
     additional_images = models.ImageField(upload_to="projects/additional/")
 
     def __str__(self):
-        return self.project.title
+        return self.project.name
 
 
