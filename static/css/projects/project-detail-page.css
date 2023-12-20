@@ -241,6 +241,7 @@ main header .project-title h2 {
   font-size: 82px;
   font-family: var(--font-family-title);
   color: rgba(255, 255, 255, 0.85);
+  text-align: center;
 }
 main section {
   width: calc(100% - 512px);
@@ -348,6 +349,39 @@ main #reviews .review-list .review-detail .name {
   color: var(--color-primary-dark);
   text-transform: uppercase;
   font-family: var(--font-family-title);
+}
+
+@media screen and (max-width: 1530px) {
+  main #photos .gallery img {
+    height: 256px;
+  }
+}
+@media screen and (max-width: 1090px) {
+  main section {
+    width: calc(100% - 64px);
+  }
+}
+@media screen and (max-width: 900px) {
+  main header .project-title h2 {
+    font-size: 56px;
+  }
+  main #photos .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 650px) {
+  main header .project-title h2 {
+    font-size: 48px;
+  }
+  main #photos .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  main header .project-title h2 {
+    font-size: 32px;
+    padding: 8px 10px;
+  }
 }
 
 /*# sourceMappingURL=project-detail-page.css.map */
