@@ -78,6 +78,17 @@ main {
             text-transform: uppercase;
             font-family: var(--font-family-title);
         }
+
+        .project {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+            text-transform: capitalize;
+
+            &:hover {
+                color: #000;
+            }
+        }
     }
 }
 

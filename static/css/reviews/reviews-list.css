@@ -269,6 +269,15 @@ main {
   text-transform: uppercase;
   font-family: var(--font-family-title);
 }
+#review-list .review-detail .project {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+  text-transform: capitalize;
+}
+#review-list .review-detail .project:hover {
+  color: #000;
+}
 
 #add-reviews {
   display: flex;

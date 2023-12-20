@@ -52,6 +52,9 @@
                 <div class="review-detail">
                     <div class="comment">{{ review.comment|linebreaks }}</div>
                     <div class="name">{{ review.name }} </div>
+                    {% if review.project %}
+                        <a class="project" href="{% url 'project-detail-page' review.project.slug %}">View project details</a>
+                    {% endif %}
                 </div>
             {% endfor%}
         </div>
