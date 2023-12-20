@@ -18,32 +18,63 @@
             
         </header>
 
-        <div class="project-details">
-            <div class="brief-title">Design Brief</div>
-            <div class="project-brief">
-                <div class="project-facts">
-                    <div class="item">
-                        <div class="label">Location</div>
-                        <div class="info">{{project.location}}</div>
-                    </div>
-                    <div class="item">
-                        <div class="label">Status</div>
-                        <div class="info">{{project.status}}</div>
-                    </div>
+        <section id="project-details">
+            <h3>Design Brief</h3>
+            <div class="project-facts">
+                <div class="item">
+                    <div class="label">Location</div>
+                    <div class="info">{{project.location}}</div>
                 </div>
-                <div class="project-description">
-                    {{project.description}}
+                <div class="item">
+                    <div class="label">Status</div>
+                    <div class="info">{{project.status}}</div>
                 </div>
             </div>
-            <div class="additional-photos">
-                {% for image in additional_images %}
-                    <img src="{{ project.image }}">
-                {% endfor %}
-
-
+            <div class="project-description">
+                {{project.description}}
             </div>
+        </section>
 
-        </div>
+        {% if project.additionalimage_set.exists %}
+            <section id="photos">
+                <h3>
+                    Photo Gallery
+                </h3>
+                <div class="gallery">
+                    {% for image in project.additionalimage_set.all %}
+                        <img src="{{ image.image.url }}">
+                    {% endfor %}
+                </div>
+
+            </section>
+
+        {% endif %}
+
+        {% if project.review_set.exists %}
+            <section id="reviews">
+                <h3>
+                    Client Testimonials
+                </h3>
+                <div class="review-list">
+                    {% for review in project.review_set.all %}
+                        <div class="review-detail">
+                            <div class="comment-wrapper">
+                                <span class="before quote">“</span>
+                                <div class="comment">
+                                    {{ review.comment|linebreaks }}
+                                </div>
+                                <span class="after quote">”</span>
+                            </div>
+                            <div class="name">
+                                {{ review.name }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </section>
+            
+        {% endif %}
      </main>
     {% include 'footer.html' %}
 {% endblock %}

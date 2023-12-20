@@ -242,23 +242,25 @@ main header .project-title h2 {
   font-family: var(--font-family-title);
   color: rgba(255, 255, 255, 0.85);
 }
-main .project-details {
+main section {
   width: calc(100% - 512px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   margin: 16px 0;
 }
-main .project-details .brief-title {
+main section h3 {
   margin-top: 16px;
   font-size: 24px;
 }
-main .project-details .project-brief .project-facts {
+main #project-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+main #project-details .project-facts {
   display: flex;
   flex-direction: column;
   margin-top: 16px;
 }
-main .project-details .project-brief .project-facts .item {
+main #project-details .project-facts .item {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -267,19 +269,85 @@ main .project-details .project-brief .project-facts .item {
   margin-top: 8px;
   font-size: 16px;
 }
-main .project-details .project-brief .project-facts .item .label {
+main #project-details .project-facts .item .label {
   margin-right: 6px;
-  font-weight: 800;
+  font-family: var(--font-family-title);
+  font-size: 20px;
 }
-main .project-details .project-brief .project-facts .item .info {
+main #project-details .project-facts .item .info {
   margin-left: 6px;
 }
-main .project-details .project-description {
+main #project-details .project-description {
   margin-top: 24px;
   flex: 1;
   text-align: justify;
-  line-height: 1.5;
+  line-height: 1.75;
   text-indent: 52px;
+}
+main #photos .gallery {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+main #photos .gallery img {
+  width: 100%;
+  height: 512px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: 0.3s transform ease-in-out;
+}
+main #photos .gallery img:hover {
+  transform: scale(1.02);
+}
+main #reviews .review-list {
+  margin-top: 16px;
+}
+main #reviews .review-list .review-detail {
+  background-color: rgba(0, 0, 0, 0.0588235294);
+  padding: 18px 20px;
+  font-family: var(--font-family-normal);
+  text-align: center;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main #reviews .review-list .review-detail .comment-wrapper {
+  display: flex;
+}
+main #reviews .review-list .review-detail .comment-wrapper .quote {
+  font-size: 64px;
+  line-height: 0.9;
+  font-family: var(--font-family-heading-2);
+  opacity: 0.4;
+}
+main #reviews .review-list .review-detail .comment-wrapper .quote.before {
+  align-self: flex-start;
+  margin-right: 10px;
+}
+main #reviews .review-list .review-detail .comment-wrapper .quote.after {
+  align-self: flex-end;
+  margin-left: 10px;
+  margin-bottom: -20px;
+}
+main #reviews .review-list .review-detail .comment-wrapper .comment {
+  color: rgba(0, 0, 0, 0.6666666667);
+  font-family: var(--font-family-reviews);
+  font-size: 18px;
+  line-height: 1.3;
+  margin-top: 10px;
+}
+main #reviews .review-list .review-detail .comment-wrapper .comment p {
+  margin-bottom: 12px;
+  text-align: justify;
+}
+main #reviews .review-list .review-detail .name {
+  margin-top: 16px;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  font-family: var(--font-family-title);
 }
 
 /*# sourceMappingURL=project-detail-page.css.map */

@@ -1,6 +1,7 @@
 from django import forms
 from .models import Review
 from django_recaptcha.fields import ReCaptchaField
+from projects.models import Project
 
 class ReviewForm(forms.ModelForm):
     captcha =  ReCaptchaField(
@@ -13,4 +14,8 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = '__all__'
+        exclude = ['project']
+        # widgets = {
+        #     'project': forms.ModelChoiceField(queryset=Project.objects.all())
+        # }
         
