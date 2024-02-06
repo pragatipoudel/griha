@@ -95,11 +95,11 @@ a {
     a {
         padding: 8px 10px;
         font-size: 18px;
-        background-color: var(--color-primary-light);
+        background-color: var(--color-tertiary-dark);
         color: #fff;
 
         &:hover {
-            background-color: var(--color-primary);
+            background-color: var(--color-tertiary);
         }
     }
 }
