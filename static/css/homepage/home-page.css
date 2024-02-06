@@ -233,6 +233,12 @@ main #hero {
   justify-content: center;
   padding: 128px;
 }
+main #hero #wip {
+  height: 48px;
+}
+main #hero #wip img {
+  height: 100%;
+}
 main #hero h1 img {
   height: 150px;
   margin-left: -60px;
@@ -292,11 +298,11 @@ main img.hero-image {
     align-items: center;
     width: 100%;
     padding: 32px;
+    margin-top: -64px;
   }
   main #hero h1 img {
     height: 100px;
     margin-left: 0;
-    margin-top: -64px;
   }
   main #hero .slogan {
     display: flex;

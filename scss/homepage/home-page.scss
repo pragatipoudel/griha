@@ -16,6 +16,15 @@ main {
         justify-content: center;
         padding: 128px;
 
+
+        #wip {
+            height: 48px;
+        
+            img {
+                height: 100%;
+            }
+        }
+
         h1 {
             img {
                 height: 150px;
@@ -94,11 +103,11 @@ main {
             align-items: center;
             width: 100%;
             padding: 32px;
+            margin-top: -64px;
 
             h1 img {
                 height: 100px;
                 margin-left: 0;
-                margin-top: -64px;
             }
 
             .slogan {
