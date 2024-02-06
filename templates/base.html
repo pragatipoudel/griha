@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Griha Designs{% endblock %}</title>
-
+    <title>{% block title %}Griha Designs | A Complete Architecture Solution{% endblock %}</title>
+    <meta name="description" content="Discover the essence of Nepali architecture with Griha Designs, where tradition meets innovation. Our premier firm crafts timeless residential and commercial spaces, seamlessly blending cultural richness with modern vision. Elevate your surroundings and experience architectural excellence with Griha Designs.">
 
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Comfortaa|Oswald|Open+Sans|Acme|Bebas+Neue|Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arvo|Oswald|Acme|Bebas+Neue|Montserrat&display=swap" rel="stylesheet">
@@ -25,5 +25,19 @@
     {% block content %}
 
     {% endblock %}
+
+    <!-- <div id="wip">
+        <i class="fas fa-drafting-compass"></i>
+        Under Construction
+    </div> -->
+
+    <div id="contact-bar">
+        <a target="_blank" href="https://wa.me/{{ contact_info.whatsapp_number }}">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:{{ contact_info.email }}">
+            <i class="far fa-envelope"></i>
+        </a>
+    </div>
 </body>
 </html>

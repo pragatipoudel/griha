@@ -26,7 +26,8 @@
 
     --font-family-icon: 'Font Awesome 5 Free';
 
-    --color-background: #faf0e688;
+    // --color-background: #faf0e688;
+    --color-background: #fff;
 
     --height-nav-bar: 72px;
     --height-footer: 182px;
@@ -60,5 +61,45 @@ a {
     
     &:hover {
         color: var(--color-tertiary);
+    }
+}
+
+
+// #wip {
+//     position: absolute;
+//     font-weight: 800;
+//     top: 0;
+//     background-color: var(--color-tertiary-lighter);
+//     color: #fff;
+//     font-size: 12px;
+//     padding: 10px 16px;
+//     border-bottom-left-radius: 8px;
+//     border-bottom-right-radius: 8px;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     z-index: 500;
+// }
+
+
+
+#contact-bar {
+    position: fixed;
+    left: 0;
+    bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+    
+    a {
+        padding: 8px 10px;
+        font-size: 18px;
+        background-color: var(--color-primary-light);
+        color: #fff;
+
+        &:hover {
+            background-color: var(--color-primary);
+        }
     }
 }

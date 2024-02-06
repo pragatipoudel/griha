@@ -1,9 +1,11 @@
 {% load static %}
 
 <nav>
+    {% if not nologo %}
     <h1>
         <a href="/"><img src="{% static 'img/logo.png' %}" alt="Griha Designs"></a>
     </h1>
+    {% endif %}
     <a class="nav-toggle" href="#"><span></span></a>
 
     <ul class="links">

@@ -7,20 +7,28 @@
 {% endblock %}
 
 {% block content %}
-    {% include 'nav.html' %}
+    <!-- {% include 'nav.html' with nologo=True %} -->
     <main>
-        {% if home_page_contents.header_video %}
-        <video autoplay loop muted>
-            <source src="{{ home_page_contents.header_video.url }}" type="video/mp4">
-            <img src="{{ home_page_contents.header_image.url }}">
-        </video>
-        {% else %}
-        <img src="{{ home_page_contents.header_image.url }}">
-        {% endif %}
+        <section id="hero">
+            <h1>
+                <a href="/"><img src="{% static 'img/logo.png' %}" alt="Griha Designs"></a>
+            </h1>
+            <div class="slogan">
+                <h2>
+                    Transforming Spaces with Innovative Design
+                </h2>
+                <p>
+                    Blending innovation and precision to craft extraordinary spaces. From concept to completion, let's redefine what's possible together.
+                </p>
+            </div>
+            
+            <div class="buttons">
+                <a href="{% url 'project-list-page' %}">See Projects</a>
+                <a href="#">See Services</a>
+            </div>
+        </section>
 
-        <a class="request-button" href="mailto:{{ contact_info.email }}?subject=Request quote">
-            Request a quote
-        </a>
+        <img class="hero-image" src="{{ home_page_contents.header_image.url }}">
     </main>
 
     {% include 'footer.html' %}

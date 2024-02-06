@@ -1,40 +1,119 @@
 @import '../base';
 @import '../nav';
 @import '../footer';
-@import './nav-animation';
+
 
 main {
     display: flex;
-    flex-direction: column;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    height: calc(100vh - 185px);
 
-    img, video {
-        width: 100%;
+    #hero {
+        width: 40%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 128px;
 
-        object-fit: cover;
-        object-position: center center;
+        h1 {
+            img {
+                height: 150px;
+                margin-left: -60px;
+            }
+        }
+
+        .slogan {
+            font-size: 16px;
+
+            h2 {
+                margin-bottom: 16px;
+                font-weight: 400;
+            }
+        }
+
+        .buttons {
+            margin-top: 64px;
+
+            a {
+                background-color: #505050;
+                color: white;
+                font-size: 14px;
+                font-weight: 800;
+                padding: 10px 16px;
+                border-radius: 4px;
+                margin-right: 8px;
+
+                &:hover {
+                    background-color: #808080;
+                }
+            }
+        }
     }
 
-    .request-button {
-        text-decoration: none;
-        position: absolute;
-        right: 32px;
-        bottom: 32px;
-        border: 0px;
-        outline: none;
-        background-color: var(--color-tertiary);
-        color: #fff;
-        cursor: pointer;
-        padding: 8px 10px;
-        font-weight: 600;
-        border-radius: 8px;
+    img.hero-image {
+        width: 60%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-        &:hover {
-            background-color: var(--color-tertiary-light);
+}
+
+@media screen and (max-width: 1300px) {
+    main {
+        #hero {
+            padding: 64px;
+
+            h1 img {
+                height: 100px;
+                margin-left: -39px;
+            }
         }
     }
 }
 
+@media screen and (max-width: 990px) {
+    main {
+        #hero {
+            padding: 32px;
+
+            h1 img {
+                height: 100px;
+                margin-left: -39px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        flex-direction: column;
+        height: 100vh;
+
+        #hero {
+            align-items: center;
+            width: 100%;
+            padding: 32px;
+
+            h1 img {
+                height: 100px;
+                margin-left: 0;
+            }
+
+            .slogan {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        img.hero-image {
+            position: absolute;
+            z-index: -100;
+            opacity: 0.2;
+            width: 100%;
+            height: 100vh;
+        }
+    }
+}

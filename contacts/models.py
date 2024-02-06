@@ -7,6 +7,7 @@ class ContactInfo(models.Model):
     instagram_link = models.URLField(max_length=200, blank=True)
     facebook_link = models.URLField(max_length=200, blank=True)
     youtube_link = models.URLField(max_length=200, blank=True)
+    whatsapp_number = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return "Contact Info"
