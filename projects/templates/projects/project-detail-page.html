@@ -9,7 +9,7 @@
 
 {% block content %}
     {% include 'nav.html' %}
-    <main>
+    <!-- <main>
         <header>
             <img src="{{ project.header_image.url }}">
             <div class="project-title">
@@ -75,6 +75,50 @@
             </section>
             
         {% endif %}
+     </main> -->
+
+     <main>
+        <section id="project-description">
+            <div class="photos">
+                <img src="{{ project.header_image.url }}">
+            </div>
+            <div class="details">
+                <h2>{{ project.name }}</h2>
+                <div class="description">
+                    {{ project.description }}
+                </div>
+                <div class="services">
+                    <h3>
+                        Project services:
+                    </h3>
+                </div>
+
+
+                {% if project.review_set.exists %}
+                <div class="reviews">
+                    <h3>
+                        Client Testimonials
+                    </h3>
+                    <div class="review-list">
+                        {% for review in project.review_set.all %}
+                            <div class="review-detail">
+                                <div class="comment-wrapper">
+                                    <span class="before quote">“</span>
+                                    <div class="comment">
+                                        {{ review.comment|linebreaks }}
+                                    </div>
+                                    <span class="after quote">”</span>
+                                </div>
+                                <div class="name">
+                                    {{ review.name }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+        
+        </section>
      </main>
     {% include 'footer.html' %}
 {% endblock %}

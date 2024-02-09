@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/services/service-list-page.css'%}">
+    <script src="{% static 'js/services/service-gallery.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+    {% include 'nav.html' %}
+
+    <main>
+        <h2>
+            Services
+        </h2>
+        <div class="services">
+        {% for service in services %}
+            <div class="service {% if forloop.first %}active{% endif %}">
+                <a class="name" href="#">
+                    {{service.name }}
+                </a>
+                <div class="view">
+                    <img src="{{ service.header_image.url }}">
+                    <div class="service-info">
+                        <p>
+                            {{ service.description }}
+                        </p>
+                        <a class="projects-button">
+                            See Projects
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+            
+    </main>
+
+    {% include 'footer.html' %}
+
+{% endblock %}

@@ -1,4 +1,5 @@
 from django.db import models
+from services.models import Service
 
 class Project(models.Model):
     name = models.CharField(
@@ -9,6 +10,7 @@ class Project(models.Model):
     status = models.CharField(max_length=254)
     description = models.TextField()
     header_image = models.ImageField(upload_to="projects/header/")
+    services = models.ManyToManyField(Service)
     slug = models.SlugField(default = "", null = False)
 
     def __str__(self):

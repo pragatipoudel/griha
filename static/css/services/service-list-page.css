@@ -221,96 +221,85 @@ footer .group.group-3 {
   }
 }
 nav {
-  background-color: rgba(255, 255, 255, 0.7);
-  position: relative;
+  background-color: #fff;
 }
 
-main {
+body {
   display: flex;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.0588235294);
-}
-main #project-description {
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
-main #project-description .photos img {
-  width: 60vw;
-  height: 100vh;
+body main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: calc(var(--height-nav-bar) + 16px);
+  height: calc(100vh - var(--height-nav-bar) - var(--height-footer) - 16px);
 }
-main #project-description .details {
+body main h2 {
+  display: inline;
+  padding: 8px 12px;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: var(--font-family-heading-2);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 48px;
+  display: none;
+}
+body main .services {
+  position: relative;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: calc(100vh - var(--height-nav-bar));
-  padding: 0 12px;
+}
+body main .services .service {
+  display: flex;
+}
+body main .services .service .name {
+  width: 30%;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 28px;
+}
+body main .services .service.active .name {
+  background-color: beige;
+}
+body main .services .service .view {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 70%;
   height: 100%;
 }
-main #project-description .details h2 {
+body main .services .service .view img {
   width: 100%;
-  text-align: center;
-  padding: 12px 0;
-  font-size: 32px;
+  height: 100%;
+  object-fit: cover;
 }
-main #project-description .details .description {
-  text-align: justify;
-  padding-bottom: 24px;
-  font-family: var(--font-family-normal);
-  font-size: 16px;
-  line-height: 1.5;
-}
-main #project-description .details .services {
-  padding-bottom: 24px;
-}
-main #project-description .reviews .review-list {
-  margin-top: 16px;
-}
-main #project-description .reviews .review-detail {
-  background-color: rgba(0, 0, 0, 0.0588235294);
-  padding: 18px 20px;
-  font-family: var(--font-family-normal);
-  text-align: center;
-  margin: 16px 0;
+body main .services .service .view .service-info {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-main #project-description .reviews .review-detail .comment-wrapper {
-  display: flex;
-}
-main #project-description .reviews .review-detail .comment-wrapper .quote {
-  font-size: 64px;
-  line-height: 0.9;
-  font-family: var(--font-family-heading-2);
-  opacity: 0.4;
-}
-main #project-description .reviews .review-detail .comment-wrapper .quote.before {
-  align-self: flex-start;
-  margin-right: 10px;
-}
-main #project-description .reviews .review-detail .comment-wrapper .quote.after {
-  align-self: flex-end;
-  margin-left: 10px;
-  margin-bottom: -20px;
-}
-main #project-description .reviews .review-detail .comment-wrapper .comment {
-  color: rgba(0, 0, 0, 0.6666666667);
-  font-family: var(--font-family-reviews);
-  font-size: 18px;
-  line-height: 1.3;
-  margin-top: 10px;
-}
-main #project-description .reviews .review-detail .comment-wrapper .comment p {
-  margin-bottom: 12px;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  line-height: 1.5;
+  background-color: rgba(176, 176, 176, 0.8);
+  color: #fff;
+  padding: 0 16px;
   text-align: justify;
 }
-main #project-description .reviews .review-detail .name {
-  margin-top: 16px;
-  color: var(--color-primary-dark);
-  text-transform: uppercase;
-  font-family: var(--font-family-title);
+body main .services .service .view .service-info .projects-button {
+  padding: 8px;
+  text-align: center;
+  color: #fff;
+  background-color: var(--color-tertiary-light);
+}
+body main .services .service:not(.active) .view {
+  display: none;
 }
 
-/*# sourceMappingURL=project-detail-page.css.map */
+/*# sourceMappingURL=service-list-page.css.map */
