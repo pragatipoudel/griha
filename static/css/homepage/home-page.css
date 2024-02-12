@@ -21,7 +21,7 @@
   --font-family-icon: "Font Awesome 5 Free";
   --color-background: #fff;
   --height-nav-bar: 72px;
-  --height-footer: 182px;
+  --height-footer: 120px;
   --width-page: 1100px;
   --width-content: 60%;
 }
@@ -56,7 +56,7 @@ a:hover {
 #contact-bar {
   position: fixed;
   left: 0;
-  bottom: 32px;
+  bottom: calc(var(--height-footer));
   display: flex;
   flex-direction: column;
   border-top-right-radius: 8px;
@@ -66,7 +66,7 @@ a:hover {
 #contact-bar a {
   padding: 8px 10px;
   font-size: 18px;
-  background-color: var(--color-tertiary-dark);
+  background-color: var(--color-tertiary);
   color: #fff;
 }
 #contact-bar a:hover {
@@ -180,7 +180,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 72px;
+  padding: 8px 70px;
   width: 100%;
   border-top: 1px solid #f0f0f0;
 }
@@ -223,7 +223,7 @@ footer .group.group-3 {
 main {
   display: flex;
   width: 100%;
-  height: calc(100vh - 185px);
+  height: calc(100vh - var(--height-footer));
 }
 main #hero {
   width: 40%;

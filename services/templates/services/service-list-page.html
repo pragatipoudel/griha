@@ -22,12 +22,12 @@
                 <div class="view">
                     <img src="{{ service.header_image.url }}">
                     <div class="service-info">
+                        <a class="projects-button" href="{% url 'project-list-page' %}">
+                            See Projects
+                        </a>
                         <p>
                             {{ service.description }}
                         </p>
-                        <a class="projects-button">
-                            See Projects
-                        </a>
                     </div>
                 </div>
             </div>

@@ -21,7 +21,7 @@
   --font-family-icon: "Font Awesome 5 Free";
   --color-background: #fff;
   --height-nav-bar: 72px;
-  --height-footer: 182px;
+  --height-footer: 120px;
   --width-page: 1100px;
   --width-content: 60%;
 }
@@ -56,7 +56,7 @@ a:hover {
 #contact-bar {
   position: fixed;
   left: 0;
-  bottom: 32px;
+  bottom: calc(var(--height-footer));
   display: flex;
   flex-direction: column;
   border-top-right-radius: 8px;
@@ -66,7 +66,7 @@ a:hover {
 #contact-bar a {
   padding: 8px 10px;
   font-size: 18px;
-  background-color: var(--color-tertiary-dark);
+  background-color: var(--color-tertiary);
   color: #fff;
 }
 #contact-bar a:hover {
@@ -180,7 +180,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 72px;
+  padding: 8px 70px;
   width: 100%;
   border-top: 1px solid #f0f0f0;
 }
@@ -232,23 +232,26 @@ body {
 body main {
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100%;
   margin-top: calc(var(--height-nav-bar) + 16px);
   height: calc(100vh - var(--height-nav-bar) - var(--height-footer) - 16px);
 }
 body main h2 {
   display: inline;
-  padding: 8px 12px;
+  padding: 8px 24px;
   color: rgba(0, 0, 0, 0.6);
   font-family: var(--font-family-heading-2);
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 48px;
+  font-size: 32px;
+  text-align: left;
   display: none;
 }
 body main .services {
   position: relative;
   height: 100%;
+  width: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -260,10 +263,15 @@ body main .services .service .name {
   width: 30%;
   text-align: center;
   padding: 24px 0;
-  font-size: 28px;
+  font-size: 22px;
+  transition: transform 0.2s ease-in-out;
+}
+body main .services .service:hover .name {
+  color: black;
+  transform: scale(1.1);
 }
 body main .services .service.active .name {
-  background-color: beige;
+  background-color: rgb(240, 240, 240);
 }
 body main .services .service .view {
   position: absolute;
@@ -282,21 +290,35 @@ body main .services .service .view .service-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  top: 0;
-  right: 0;
-  width: 30%;
-  height: 100%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   line-height: 1.5;
-  background-color: rgba(176, 176, 176, 0.8);
-  color: #fff;
-  padding: 0 16px;
+  color: black;
   text-align: justify;
+  overflow: auto;
+  font-size: 15px;
+}
+body main .services .service .view .service-info p {
+  padding: 12px 16px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
 }
 body main .services .service .view .service-info .projects-button {
-  padding: 8px;
+  padding: 8px 12px;
   text-align: center;
-  color: #fff;
-  background-color: var(--color-tertiary-light);
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+  background-color: var(--color-tertiary);
+  border-radius: 8px;
+  width: 50;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  align-self: flex-end;
+}
+body main .services .service .view .service-info .projects-button:hover {
+  background-color: var(--color-tertiary-dark);
 }
 body main .services .service:not(.active) .view {
   display: none;
