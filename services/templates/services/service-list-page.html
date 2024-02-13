@@ -10,11 +10,11 @@
     {% include 'nav.html' %}
 
     <main>
-        <h2>
-            Services
-        </h2>
         <div class="services">
-        {% for service in services %}
+            <h2>
+                Services
+            </h2>
+            {% for service in services %}
             <div class="service {% if forloop.first %}active{% endif %}">
                 <a class="name" href="#">
                     {{service.name }}
@@ -23,7 +23,7 @@
                     <img src="{{ service.header_image.url }}">
                     <div class="service-info">
                         <a class="projects-button" href="{% url 'project-list-page' %}">
-                            See Projects
+                            Explore Projects
                         </a>
                         <p>
                             {{ service.description }}
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
     </div>
             
     </main>

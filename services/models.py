@@ -1,4 +1,5 @@
 from django.db import models
+from homepage.models import HomePageContent
 
 class Service(models.Model):
     name = models.CharField(

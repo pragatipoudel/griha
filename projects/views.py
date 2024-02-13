@@ -17,6 +17,7 @@ def projects_list_page(request):
 
 def project_detail_page(request, slug):
     project = Project.objects.get(slug=slug)
+    
 
     context = {
         'project': project,

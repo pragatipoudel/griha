@@ -3,7 +3,7 @@
 <nav>
     {% if not nologo %}
     <h1>
-        <a href="/"><img src="{% static 'img/logo.png' %}" alt="Griha Designs"></a>
+        <a href="/"><img src="{{ home_page_contents.logo.url }}" alt="Griha Designs"></a>
     </h1>
     {% endif %}
     <a class="nav-toggle" href="#"><span></span></a>

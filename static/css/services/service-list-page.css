@@ -193,7 +193,7 @@ footer .group ul {
   padding: 0;
 }
 footer .group ul li {
-  margin: 6px 0;
+  margin: 4px 0;
   font-size: 14px;
 }
 footer .group ul li.icons {
@@ -229,7 +229,8 @@ body {
   flex-direction: column;
   align-items: center;
 }
-body main {
+
+main {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -237,55 +238,56 @@ body main {
   margin-top: calc(var(--height-nav-bar) + 16px);
   height: calc(100vh - var(--height-nav-bar) - var(--height-footer) - 16px);
 }
-body main h2 {
+main .services {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .services h2 {
   display: inline;
   padding: 8px 24px;
   color: rgba(0, 0, 0, 0.6);
   font-family: var(--font-family-heading-2);
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 32px;
+  font-size: 40px;
+  margin-bottom: 32px;
+  margin-top: -32px;
+}
+main .services .service {
+  display: flex;
+}
+main .services .service .name {
+  width: 25%;
   text-align: left;
-  display: none;
-}
-body main .services {
-  position: relative;
-  height: 100%;
-  width: 100;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-body main .services .service {
-  display: flex;
-}
-body main .services .service .name {
-  width: 30%;
-  text-align: center;
-  padding: 24px 0;
-  font-size: 22px;
+  padding: 24px;
+  font-size: 18px;
   transition: transform 0.2s ease-in-out;
+  transform-origin: 0% 50%;
 }
-body main .services .service:hover .name {
+main .services .service:hover .name {
   color: black;
   transform: scale(1.1);
 }
-body main .services .service.active .name {
+main .services .service.active .name {
   background-color: rgb(240, 240, 240);
 }
-body main .services .service .view {
+main .services .service .view {
   position: absolute;
   top: 0;
-  left: 30%;
-  width: 70%;
+  left: 25%;
+  width: 75%;
   height: 100%;
 }
-body main .services .service .view img {
+main .services .service .view img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-body main .services .service .view .service-info {
+main .services .service .view .service-info {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -299,12 +301,11 @@ body main .services .service .view .service-info {
   overflow: auto;
   font-size: 15px;
 }
-body main .services .service .view .service-info p {
+main .services .service .view .service-info p {
   padding: 12px 16px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
+  background-color: rgb(240, 240, 240);
 }
-body main .services .service .view .service-info .projects-button {
+main .services .service .view .service-info .projects-button {
   padding: 8px 12px;
   text-align: center;
   font-size: 14px;
@@ -317,11 +318,89 @@ body main .services .service .view .service-info .projects-button {
   margin-right: 12px;
   align-self: flex-end;
 }
-body main .services .service .view .service-info .projects-button:hover {
+main .services .service .view .service-info .projects-button:hover {
   background-color: var(--color-tertiary-dark);
 }
-body main .services .service:not(.active) .view {
+main .services .service:not(.active) .view {
   display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  main .services h2 {
+    font-size: 32px;
+  }
+  main .services .service .name {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 800px) {
+  main {
+    height: auto;
+  }
+  main .services {
+    height: auto;
+  }
+  main .services h2 {
+    margin: 16px 0;
+    width: 100%;
+    text-align: center;
+  }
+  main .services .service {
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 32px;
+  }
+  main .services .service:nth-child(even) {
+    background-color: rgb(240, 240, 240);
+  }
+  main .services .service .name {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    padding: 16px 10px;
+  }
+  main .services .service:hover .name {
+    transform: none;
+  }
+  main .services .service .view {
+    position: static;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  main .services .service .view img {
+    margin: 0 16px;
+    height: 200px;
+    border-radius: 8px;
+    width: calc(100% - 32px);
+  }
+  main .services .service .view .service-info {
+    position: static;
+  }
+  main .services .service .view .service-info p {
+    background-color: transparent;
+  }
+  main .services .service .view .service-info .projects-button {
+    background-color: transparent;
+    color: var(--color-tertiary-dark);
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    margin-right: 16px;
+    padding: 0;
+  }
+  main .services .service .view .service-info .projects-button:hover {
+    background-color: transparent;
+    color: var(--color-tertiary);
+  }
+  main .services .service.active .name {
+    background-color: transparent;
+  }
+  main .services .service:not(.active) .view {
+    display: flex;
+  }
 }
 
 /*# sourceMappingURL=service-list-page.css.map */

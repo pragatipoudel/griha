@@ -1,5 +1,7 @@
 from django.db import models
 from services.models import Service
+from django.utils.text import slugify
+
 
 class Project(models.Model):
     name = models.CharField(
@@ -12,6 +14,11 @@ class Project(models.Model):
     header_image = models.ImageField(upload_to="projects/header/")
     services = models.ManyToManyField(Service)
     slug = models.SlugField(default = "", null = False)
+
+    def save(self, *args, **kwargs):
+        if self.name != self.slug or not self.pk:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name

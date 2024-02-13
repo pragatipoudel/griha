@@ -1,13 +1,10 @@
 from django.shortcuts import render
-
 from .models import Service, AdditionalImage
-
 from griha.common import get_common_content
-
 from django.shortcuts import HttpResponse
 
-def services_list_page(request):
 
+def services_list_page(request):
     services = Service.objects.all()
 
     context = {
