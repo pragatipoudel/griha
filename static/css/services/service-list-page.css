@@ -81,7 +81,7 @@ nav {
   width: 100%;
   height: var(--height-nav-bar);
   padding: 8px 16px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(255, 255, 255);
   z-index: 10;
 }
 nav h1 {
@@ -155,7 +155,7 @@ nav ul li a.active {
     max-height: 0;
     overflow: hidden;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(255, 255, 255);
   }
   nav ul li {
     padding: 8px;
@@ -327,7 +327,7 @@ main .services .service:not(.active) .view {
 
 @media screen and (max-width: 1300px) {
   main .services h2 {
-    font-size: 32px;
+    font-size: 48px;
   }
   main .services .service .name {
     font-size: 15px;

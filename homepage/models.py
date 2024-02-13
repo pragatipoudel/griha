@@ -5,6 +5,7 @@ class HomePageContent(models.Model):
     header_image = models.ImageField(upload_to="homepage/header/")
     header_video = models.FileField(upload_to="homepage/header/", blank=True)
     logo = models.ImageField(upload_to="homepage/header", blank=True)
+    nav_bar_logo = models.ImageField(upload_to="homepage/header", blank=True)
     fav_icon = models.ImageField(upload_to="homepage/header", blank=True)
 
     def __str__(self):
