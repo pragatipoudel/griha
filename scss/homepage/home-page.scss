@@ -15,6 +15,7 @@ main {
         flex-direction: column;
         justify-content: center;
         padding: 128px;
+        background-color: rgb(240, 240, 240);
 
 
         #wip {
@@ -39,10 +40,16 @@ main {
                 margin-bottom: 16px;
                 font-weight: 400;
             }
+
+            p {
+                text-align: justify;
+            }
         }
 
         .buttons {
-            margin-top: 64px;
+            margin-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
 
             a {
                 background-color: #505050;
@@ -52,6 +59,7 @@ main {
                 padding: 10px 16px;
                 border-radius: 4px;
                 margin-right: 8px;
+                margin-top: 10px;
 
                 &:hover {
                     background-color: #808080;
@@ -103,7 +111,8 @@ main {
             align-items: center;
             width: 100%;
             padding: 32px;
-            margin-top: -64px;
+            margin-top: -24px;
+            background-color: transparent;
 
             h1 img {
                 height: 100px;
@@ -115,6 +124,10 @@ main {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
             }
         }
 

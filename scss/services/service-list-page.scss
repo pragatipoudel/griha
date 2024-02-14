@@ -27,7 +27,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        background-color: rgb(240,240,240);
 
         h2 {
             display: inline;
@@ -63,7 +63,7 @@ main {
 
             &.active {
                 .name {
-                    background-color: rgb(240,240,240);
+                    background-color: rgb(220,220,220);
                 }
             }
 
@@ -96,7 +96,7 @@ main {
 
                     p {
                         padding: 12px 16px;
-                        background-color: rgb(240,240,240);
+                        background-color: rgb(220,220,220);
                     }
 
                     .projects-button {
@@ -151,6 +151,7 @@ main {
 
         .services {
             height: auto;
+            background-color: transparent;
 
             h2 {
                 margin: 16px 0;

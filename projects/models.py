@@ -12,7 +12,7 @@ class Project(models.Model):
     status = models.CharField(max_length=254)
     description = models.TextField()
     header_image = models.ImageField(upload_to="projects/header/")
-    services = models.ManyToManyField(Service)
+    services = models.ManyToManyField(Service, blank=True)
     slug = models.SlugField(default = "", null = False)
 
     def save(self, *args, **kwargs):

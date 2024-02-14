@@ -20,6 +20,7 @@
                 <div class="description">
                     {{ project.description }}
                 </div>
+                {% if project.services.exists %}
                 <div class="services">
                     <h3>
                         Project services:
@@ -30,6 +31,7 @@
                         {% endfor %}
                     </div>
                 </div>
+                {% endif %}
       
             </div>
         </div>

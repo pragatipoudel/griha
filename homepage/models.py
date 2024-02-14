@@ -2,6 +2,7 @@ from django.db import models
 
 class HomePageContent(models.Model):
     tag_line = models.CharField(max_length=254, blank=True)
+    welcome_message = models.TextField(blank=True)
     header_image = models.ImageField(upload_to="homepage/header/")
     header_video = models.FileField(upload_to="homepage/header/", blank=True)
     logo = models.ImageField(upload_to="homepage/header", blank=True)

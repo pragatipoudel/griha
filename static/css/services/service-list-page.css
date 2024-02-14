@@ -250,6 +250,7 @@ main .services {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: rgb(240, 240, 240);
 }
 main .services h2 {
   display: inline;
@@ -278,7 +279,7 @@ main .services .service:hover .name {
   transform: scale(1.1);
 }
 main .services .service.active .name {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(220, 220, 220);
 }
 main .services .service .view {
   position: absolute;
@@ -308,7 +309,7 @@ main .services .service .view .service-info {
 }
 main .services .service .view .service-info p {
   padding: 12px 16px;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(220, 220, 220);
 }
 main .services .service .view .service-info .projects-button {
   padding: 8px 12px;
@@ -343,6 +344,7 @@ main .services .service:not(.active) .view {
   }
   main .services {
     height: auto;
+    background-color: transparent;
   }
   main .services h2 {
     margin: 16px 0;

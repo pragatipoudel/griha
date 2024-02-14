@@ -19,16 +19,17 @@
             </h1>
             <div class="slogan">
                 <h2>
-                    Transforming Spaces with Innovative Design
+                    {{ home_page_contents.tag_line }}
                 </h2>
                 <p>
-                    Blending innovation and precision to craft extraordinary spaces. From concept to completion, let's redefine what's possible together.
+                    {{ home_page_contents.welcome_message }}
                 </p>
             </div>
             
             <div class="buttons">
-                <a href="{% url 'project-list-page' %}">See Projects</a>
-                <a href="{% url 'service-list-page' %}">See Services</a>
+                <a href="{% url 'project-list-page' %}">Projects</a>
+                <a href="{% url 'service-list-page' %}">Services</a>
+                <a href="{% url 'reviews' %}">Client Testimonials</a>
             </div>
         </section>
 
