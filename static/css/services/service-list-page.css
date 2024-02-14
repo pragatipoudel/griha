@@ -73,6 +73,11 @@ a:hover {
   background-color: var(--color-tertiary);
 }
 
+@media screen and (max-width: 1100px) {
+  #contact-bar {
+    bottom: 8px;
+  }
+}
 nav {
   position: fixed;
   display: flex;
@@ -313,7 +318,6 @@ main .services .service .view .service-info .projects-button {
   color: white;
   background-color: var(--color-tertiary);
   border-radius: 8px;
-  width: 50;
   margin-bottom: 12px;
   margin-right: 12px;
   align-self: flex-end;

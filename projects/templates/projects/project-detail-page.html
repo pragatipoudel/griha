@@ -2,81 +2,15 @@
 {% load static %}
 
 {% block head %}
-
+    <script defer src="{% static 'lib/fslightbox.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/projects/project-detail-page.css' %}">
+    <script defer src="{% static 'js/projects/project-detail-page.js' %}"></script>
 {% endblock %}
 
 {% block content %}
     {% include 'nav.html' %}
-    <!-- <main>
-        <header>
-            <img src="{{ project.header_image.url }}">
-            <div class="project-title">
-                <h2>{{ project.name }}</h2>
-            </div>
-            
-        </header>
 
-        <section id="project-details">
-            <h3>Design Brief</h3>
-            <div class="project-facts">
-                <div class="item">
-                    <div class="label">Location</div>
-                    <div class="info">{{project.location}}</div>
-                </div>
-                <div class="item">
-                    <div class="label">Status</div>
-                    <div class="info">{{project.status}}</div>
-                </div>
-            </div>
-            <div class="project-description">
-                {{project.description}}
-            </div>
-        </section>
-
-        {% if project.additionalimage_set.exists %}
-            <section id="photos">
-                <h3>
-                    Photo Gallery
-                </h3>
-                <div class="gallery">
-                    {% for image in project.additionalimage_set.all %}
-                        <img src="{{ image.image.url }}">
-                    {% endfor %}
-                </div>
-
-            </section>
-
-        {% endif %}
-
-        {% if project.review_set.exists %}
-            <section id="reviews">
-                <h3>
-                    Client Testimonials
-                </h3>
-                <div class="review-list">
-                    {% for review in project.review_set.all %}
-                        <div class="review-detail">
-                            <div class="comment-wrapper">
-                                <span class="before quote">“</span>
-                                <div class="comment">
-                                    {{ review.comment|linebreaks }}
-                                </div>
-                                <span class="after quote">”</span>
-                            </div>
-                            <div class="name">
-                                {{ review.name }}
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-
-            </section>
-            
-        {% endif %}
-     </main> -->
-
-     <main>
+    <main>
         <div class="project-description">
             <div class="photos">
                 <img src="{{ project.header_image.url }}">
@@ -99,6 +33,7 @@
       
             </div>
         </div>
+
         <div class="additional-info">
             {% if project.additionalimage_set.exists %}
             <div class="photos">
@@ -107,7 +42,9 @@
                 </h3>
                 <div class="gallery">
                     {% for image in project.additionalimage_set.all %}
-                        <img src="{{ image.image.url }}">
+                        <a data-fslightbox href="{{ image.image.url }}">
+                            <img src="{{ image.image.url }}">
+                        </a>
                     {% endfor %}
                 </div>
 
@@ -138,6 +75,6 @@
             </div>
             {% endif %}
         </div> 
-     </main>
+    </main>
     {% include 'footer.html' %}
 {% endblock %}

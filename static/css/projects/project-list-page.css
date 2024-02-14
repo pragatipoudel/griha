@@ -73,6 +73,11 @@ a:hover {
   background-color: var(--color-tertiary);
 }
 
+@media screen and (max-width: 1100px) {
+  #contact-bar {
+    bottom: 8px;
+  }
+}
 nav {
   position: fixed;
   display: flex;
