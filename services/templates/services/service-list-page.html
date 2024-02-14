@@ -16,17 +16,25 @@
             </h2>
             {% for service in services %}
             <div class="service {% if forloop.first %}active{% endif %}">
-                <a class="name" href="#">
+                <a class="name" href="{% url 'service-detail-page' service.slug %}">
                     {{service.name }}
                 </a>
                 <div class="view">
-                    <img src="{{ service.header_image.url }}">
+                    <a href="{% url 'service-detail-page' service.slug %}">
+                        <img src="{{ service.header_image.url }}">
+                    </a>
                     <div class="service-info">
-                        <a class="projects-button" href="{% url 'project-list-page' %}">
+                        {% if service.project_set.exists %}
+                        <a class="projects-button" href="{% url 'service-detail-page' service.slug %}">
                             Explore Projects
                         </a>
+                        {% else %}
+                        <a class="projects-button" href="{% url 'service-detail-page' service.slug %}">
+                            See Details
+                        </a>
+                        {% endif %}
                         <p>
-                            {{ service.description }}
+                            {{ service.summary }}
                         </p>
                     </div>
                 </div>

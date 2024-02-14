@@ -27,7 +27,7 @@
                     </h3>
                     <div class="services-list">
                         {% for service in project.services.all %}
-                            <a class="service" href="{% url 'service-list-page' %}">{{ service.name }} </a>
+                            <a class="service" href="{% url 'service-detail-page' service.slug %}">{{ service.name }} </a>
                         {% endfor %}
                     </div>
                 </div>

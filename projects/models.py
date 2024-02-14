@@ -16,8 +16,7 @@ class Project(models.Model):
     slug = models.SlugField(default = "", null = False)
 
     def save(self, *args, **kwargs):
-        if self.name != self.slug or not self.pk:
-            self.slug = slugify(self.name)
+        self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
     def __str__(self):

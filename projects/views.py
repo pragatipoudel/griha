@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Project, AdditionalImage
 from griha.common import get_common_content
 
@@ -16,8 +16,7 @@ def projects_list_page(request):
     return render(request, "projects/project-list-page.html", context)
 
 def project_detail_page(request, slug):
-    project = Project.objects.get(slug=slug)
-    
+    project = get_object_or_404(Project, slug=slug)
 
     context = {
         'project': project,

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/services/service-detail-page.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% include 'nav.html' %}
+
+    <main>
+        <h2>{{ service.name }}</h2>
+
+        <p>
+            {% firstof service.description service.summary %}
+        </p>
+
+        <div class="projects-list">
+            {% for project in service.project_set.all %}
+            <a class="project-tile" href="{% url 'project-detail-page' project.slug %}">
+                <img src="{{ project.header_image.url }}">
+                <div class="name">{{ project.name }}</div>
+            </a>
+            {% endfor%}
+        </div>
+
+    </main>
+
+    {% include 'footer.html' %}
+{% endblock %}
