@@ -7,33 +7,77 @@
 {% endblock %}
 
 {% block content %}
-    <!-- {% include 'nav.html' with nologo=True %} -->
-    <main>
-        <section id="hero">
+{% include 'nav.html' %}
 
-            <div id="wip">
-                <img src="{% static 'img/under_construction.png' %}" alt="Under construction">
+    <main>
+
+        <section id="intro">
+            <div class="hero">
+
+                <div id="wip">
+                    <img src="{% static 'img/under_construction.png' %}" alt="Under construction">
+                </div>
+                <h1>
+                    <a href="/"><img src="{{ home_page_contents.logo.url }}" alt="Griha Designs"></a>
+                </h1>
+                <div class="slogan">
+                    <h2>
+                        {{ home_page_contents.tag_line }}
+                    </h2>
+                    <p>
+                        {{ home_page_contents.welcome_message }}
+                    </p>
+                </div>             
+                <!-- <div class="buttons">
+                    <a href="{% url 'project-list-page' %}">Projects</a>
+                    <a href="{% url 'service-list-page' %}">Services</a>
+                    <a href="{% url 'reviews' %}">Client Testimonials</a>
+                </div> -->
             </div>
-            <h1>
-                <a href="/"><img src="{{ home_page_contents.logo.url }}" alt="Griha Designs"></a>
-            </h1>
-            <div class="slogan">
-                <h2>
-                    {{ home_page_contents.tag_line }}
-                </h2>
-                <p>
-                    {{ home_page_contents.welcome_message }}
-                </p>
+            <img class="hero-image" src="{{ home_page_contents.header_image.url }}">
+        </section>
+        <section class="reviews">
+            <div class="title">
+                <h2>What Our Clients Say:</h2>
+                <a href="{% url 'review'}">Explore all Client Testimonials</a>
             </div>
-            
-            <div class="buttons">
-                <a href="{% url 'project-list-page' %}">Projects</a>
-                <a href="{% url 'service-list-page' %}">Services</a>
-                <a href="{% url 'reviews' %}">Client Testimonials</a>
+            <div class="list">
+                {% for review in reviews %}
+                    <a class="tile">
+                        <div class="comment">{{ review.comment|linebreaks }}</div>
+                        <div class="name">{{ review.name }}</div>
+                    </a>
+                {% endfor %}
             </div>
         </section>
-
-        <img class="hero-image" src="{{ home_page_contents.header_image.url }}">
+        <section class="projects-services">
+            <div class="title">
+                <h2>Our highlighted projects</h2>
+                <a href="{% url 'project-list-page' %}">Explore all Projects</a>
+            </div>
+            <div class="list">
+                {% for project in projects %}
+                <a class="tile" href="{% url 'project-detail-page' project.slug %}">
+                    <img src="{{ project.header_image.url }}">
+                    <div class="name">{{ project.name }}</div>
+                </a>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="projects-services">
+            <div class="title">
+                <h2>Our Major Services</h2>
+                <a href="{% url 'service-list-page' %}">Explore all services</a>
+            </div>
+            <div class="list">
+                {% for service in services %}
+                <a class="tile" href="{% url 'service-detail-page' service.slug %}">
+                    <img src="{{ service.header_image.url }}">
+                    <div class="name">{{ service.name }}</div>
+                </a>
+            {% endfor %}
+            </div>
+        </section>
     </main>
 
     {% include 'footer.html' %}
