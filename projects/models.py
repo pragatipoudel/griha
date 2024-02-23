@@ -14,6 +14,7 @@ class Project(models.Model):
     header_image = models.ImageField(upload_to="projects/header/")
     services = models.ManyToManyField(Service, blank=True)
     slug = models.SlugField(default = "", null = False)
+    rank = models.IntegerField(default=1)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
@@ -21,6 +22,10 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['-rank']
+
 
 class AdditionalImage(models.Model):
     project = models.ForeignKey(Project, default=None, on_delete=models.CASCADE)

@@ -13,18 +13,18 @@
   --color-secondary-darker: #33691E;
   --color-secondary-light: #AED581;
   --color-secondary-lighter: #C5E1A5;
-  --color-background: #F0F0F0;
-  --color-trial-light: #F0F0F0;
-  --color-trial-dark: #333333;
-  --font-family-title: "Acme", sans-serif;
-  --font-family-heading: "Bebas Neue", cursive;
-  --font-family-heading-2: "Oswald", cursive;
-  --font-family-normal: "Montserrat", sans-serif;
-  --font-family-reviews: "Cormorant", serif;
-  --font-family-trial: "Kolam", cursive;
-  --font-family-trial-2: "Mate", serif;
+  --color-background: #FFF;
+  --color-background-alt: rgb(240, 240, 240);
+  --color-background-alt-2: #fff6eb;
+  --color-background-dark: #264a3c;
+  --color-foreground: #424242;
+  --color-foreground-dark: #F0F0F0;
+  --font-family-heading: "Poppins", sans-serif;
+  --font-family-heading-2: "Poppins", sans-serif;
+  --font-family-normal: "Lato", sans-serif;
+  --font-family-reviews: "Forum", serif;
+  --font-family-cursive: "Mali", cursive;
   --font-family-icon: "Font Awesome 5 Free";
-  --color-background: #fff;
   --height-nav-bar: 72px;
   --height-footer: 120px;
   --width-page: 1100px;
@@ -42,14 +42,18 @@ body {
   padding: 0;
   font-family: var(--font-family-normal);
   background-color: var(--color-background);
+  color: var(--color-foreground);
 }
 
-h1, h2 {
+h1 {
   font-family: var(--font-family-heading);
 }
 
+h2 {
+  font-family: var(--font-family-heading-2);
+}
+
 a {
-  font-family: var(--font-family-link);
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -71,7 +75,7 @@ a:hover {
 #contact-bar a {
   padding: 8px 10px;
   font-size: 18px;
-  background-color: var(--color-tertiary);
+  background-color: var(--color-tertiary-dark);
   color: #fff;
 }
 #contact-bar a:hover {
@@ -89,51 +93,60 @@ nav {
   align-items: center;
   width: 100%;
   height: var(--height-nav-bar);
-  padding: 8px 16px;
+  padding: 8px 0;
   background-color: rgb(255, 255, 255);
   z-index: 10;
+  padding-left: 82px;
+  padding-right: 92px;
 }
 nav h1 {
   height: calc(var(--height-nav-bar) - 16px);
   z-index: 100;
+  display: flex;
+  align-items: center;
 }
-nav h1 img {
+nav h1 a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-weight: 500;
+  font-size: 20px;
+}
+nav h1 a img {
   height: 100%;
   width: auto;
-  transition: opacity 1s ease-in-out;
+  margin-right: 10px;
 }
-nav h1 .initial-img {
-  display: block;
+nav h1 .wip {
+  height: 60%;
+  margin-left: 16px;
 }
-nav h1 .hover-img {
-  display: none;
+nav h1 .wip img {
+  height: 100%;
 }
-nav h1 .intial-img:hover {
-  display: none;
-}
-nav h1 .intial-img:hover + .hover-img {
-  display: block;
-}
-nav h1 .nav-toggle {
+nav .nav-toggle {
   display: none;
   z-index: 50;
 }
 nav ul {
   display: flex;
   list-style: none;
-  margin-right: 12px;
 }
 nav ul li {
   margin-left: 18px;
   font-size: 14px;
   text-transform: uppercase;
-  font-weight: 800;
 }
 nav ul li a.active {
   color: var(--color-tertiary);
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1000px) {
+  nav {
+    padding: 8px 16px;
+  }
+}
+@media screen and (max-width: 750px) {
   nav h1 {
     display: flex;
     width: calc(100% - 40px - 50px);
@@ -152,13 +165,13 @@ nav ul li a.active {
   nav .nav-toggle span:before,
   nav .nav-toggle span:after {
     content: "";
-    background: var(--color-tertiary-light);
     height: 3px;
-    width: 30px;
+    width: 25px;
     display: block;
     border-radius: 6px;
     position: absolute;
     transition: all 0.3s ease-in-out;
+    background-color: var(--color-foreground);
   }
   nav .nav-toggle span:before {
     bottom: 7px;
@@ -280,8 +293,8 @@ main .project-description .details h2 {
   padding: 12px 0;
   text-align: left;
   font-size: 64px;
-  font-weight: 100;
-  font-family: var(--font-family-title);
+  font-weight: 200;
+  font-family: var(--font-family-heading-2);
 }
 main .project-description .details .description {
   text-align: justify;
@@ -391,7 +404,6 @@ main .additional-info .reviews .review-detail .name {
   margin-top: 16px;
   color: var(--color-primary-dark);
   text-transform: uppercase;
-  font-family: var(--font-family-title);
 }
 
 @media screen and (max-width: 1210px) {

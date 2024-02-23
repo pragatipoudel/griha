@@ -76,7 +76,6 @@ main {
             margin-top: 16px;
             color: var(--color-primary-dark);
             text-transform: uppercase;
-            font-family: var(--font-family-title);
         }
 
         .project {
@@ -193,12 +192,6 @@ main {
 
 
 @media screen and (max-width: 750px) {
-    header {
-        h2 {
-            font-size: 28px;
-        }
-    }
-
     main {
         min-height: calc(100vh - 433px - var(--height-footer));
     }

@@ -11,6 +11,7 @@ class Service(models.Model):
     description = models.TextField(blank=True)
     header_image = models.ImageField(upload_to="services/header/")
     slug = models.SlugField(default="", null=False)
+    rank = models.IntegerField(default=1)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
@@ -18,6 +19,9 @@ class Service(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['-rank']
 
 class AdditionalImage(models.Model):
     service = models.ForeignKey(Service, default=None, on_delete=models.CASCADE)

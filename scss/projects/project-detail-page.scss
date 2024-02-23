@@ -43,8 +43,8 @@ main {
                 padding: 12px 0;
                 text-align: left;
                 font-size: 64px;
-                font-weight: 100;
-                font-family: var(--font-family-title);
+                font-weight: 200;
+                font-family: var(--font-family-heading-2);
             }
 
             .description {
@@ -177,7 +177,6 @@ main {
                     margin-top: 16px;
                     color: var(--color-primary-dark);
                     text-transform: uppercase;
-                    font-family: var(--font-family-title);
                 }
 
                 

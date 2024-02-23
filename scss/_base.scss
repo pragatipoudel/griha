@@ -16,25 +16,21 @@
     --color-secondary-light: #AED581;
     --color-secondary-lighter: #C5E1A5;
 
-    --color-background: #F0F0F0;
-    --color-trial-light: #F0F0F0;
-    --color-trial-dark: #333333;
-    --font-family-title: 'Acme', sans-serif;;
-    --font-family-heading: 'Bebas Neue', cursive;
-    // --font-family-heading: 'Abril Fatface', serif;
-    --font-family-heading-2: 'Oswald', cursive;
-    --font-family-normal: 'Montserrat', sans-serif;
-    // --font-family-normal: 'Lora', 'serif';
-    --font-family-reviews: 'Cormorant', serif;
-    --font-family-trial: 'Kolam', cursive;
-    --font-family-trial-2: 'Mate', serif;
+    --color-background: #FFF;
+    --color-background-alt: rgb(240, 240, 240);
+    --color-background-alt-2: #fff6eb;
+    --color-background-dark: #264a3c;
+    
+    --color-foreground: #424242;
+    --color-foreground-dark: #F0F0F0;
+
+    --font-family-heading: "Poppins", sans-serif;
+    --font-family-heading-2: "Poppins", sans-serif;
+    --font-family-normal: "Lato", sans-serif;
+    --font-family-reviews: "Forum", serif;
+    --font-family-cursive: "Mali", cursive;
 
     --font-family-icon: 'Font Awesome 5 Free';
-
-
-
-    // --color-background: #faf0e688;
-    --color-background: #fff;
 
     --height-nav-bar: 72px;
     --height-footer: 120px;
@@ -54,14 +50,18 @@ body {
     padding: 0;
     font-family: var(--font-family-normal);
     background-color: var(--color-background);
+    color: var(--color-foreground);
 }
 
-h1, h2 {
+h1 {
     font-family: var(--font-family-heading);
 }
 
+h2 {
+    font-family: var(--font-family-heading-2);
+}
+
 a {
-    font-family: var(--font-family-link);
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -84,7 +84,7 @@ a {
     a {
         padding: 8px 10px;
         font-size: 18px;
-        background-color: var(--color-tertiary);
+        background-color: var(--color-tertiary-dark);
         color: #fff;
 
         &:hover {

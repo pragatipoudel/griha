@@ -12,14 +12,10 @@
     <main>
 
         <section id="intro">
+            <div class="mobile-hero-image-container">
+                <img class="hero-image" src="{{ home_page_contents.header_image.url }}">
+            </div>
             <div class="hero">
-
-                <div id="wip">
-                    <img src="{% static 'img/under_construction.png' %}" alt="Under construction">
-                </div>
-                <h1>
-                    <a href="/"><img src="{{ home_page_contents.logo.url }}" alt="Griha Designs"></a>
-                </h1>
                 <div class="slogan">
                     <h2>
                         {{ home_page_contents.tag_line }}
@@ -34,27 +30,41 @@
                     <a href="{% url 'reviews' %}">Client Testimonials</a>
                 </div> -->
             </div>
-            <img class="hero-image" src="{{ home_page_contents.header_image.url }}">
-        </section>
-        <section class="reviews">
-            <div class="title">
-                <h2>What Our Clients Say:</h2>
-                <a href="{% url 'review'}">Explore all Client Testimonials</a>
+            <div class="hero-image-container">
+                <img class="hero-image" src="{{ home_page_contents.header_image.url }}">
             </div>
+        </section>
+
+        <section class="reviews">
+            <div class="half-bg"></div>
+            <h2>What our clients say..</h2>
             <div class="list">
                 {% for review in reviews %}
-                    <a class="tile">
+                    <div class="tile">
                         <div class="comment">{{ review.comment|linebreaks }}</div>
                         <div class="name">{{ review.name }}</div>
-                    </a>
+                    </div>
                 {% endfor %}
             </div>
+
+            <a class="readmore" href="{% url 'review'}">Read more client testimonials</a>
         </section>
-        <section class="projects-services">
-            <div class="title">
-                <h2>Our highlighted projects</h2>
-                <a href="{% url 'project-list-page' %}">Explore all Projects</a>
+
+        <section class="services">
+            <h2>What we offer..</h2>
+            <div class="list">
+                {% for service in services %}
+                <a class="tile" href="{% url 'service-detail-page' service.slug %}">
+                    <div class="name">{{ service.name }}</div>
+                    <div class="summary">{{ service.summary }}</div>
+                </a>
+                {% endfor %}
             </div>
+            <a class="readmore" href="{% url 'service-list-page' %}">Explore all services</a>
+        </section>
+
+        <section class="projects">
+            <h2>What we have done..</h2>
             <div class="list">
                 {% for project in projects %}
                 <a class="tile" href="{% url 'project-detail-page' project.slug %}">
@@ -63,8 +73,10 @@
                 </a>
                 {% endfor %}
             </div>
+            <a class="readmore" href="{% url 'project-list-page' %}">Explore all Projects</a>
         </section>
-        <section class="projects-services">
+
+        <!-- <section class="services">
             <div class="title">
                 <h2>Our Major Services</h2>
                 <a href="{% url 'service-list-page' %}">Explore all services</a>
@@ -77,7 +89,7 @@
                 </a>
             {% endfor %}
             </div>
-        </section>
+        </section> -->
     </main>
 
     {% include 'footer.html' %}

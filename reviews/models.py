@@ -7,9 +7,13 @@ class Review(models.Model):
     comment = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
     project = models.ForeignKey(Project, null=True, blank=True, default=None, on_delete=models.SET_NULL)
+    rank = models.IntegerField(default=1)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['-rank']
 
 class ReviewPageContent(models.Model):
     header_image = models.ImageField(upload_to="reviews/header/")

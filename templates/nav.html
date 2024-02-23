@@ -3,16 +3,21 @@
 <nav>
     {% if not nologo %}
     <h1>
-        <a href="/">
+        <a href="{% url 'home-page' %}">
             <img class="intial-img" src="{{ home_page_contents.nav_bar_logo.url }}" alt="Griha Designs">
-            <img class="hover-img" src="{{ home_page_contents.logo.url }}" alt="Griha Desgins">
+            Griha Designs
         </a>
+
+        <div class="wip">
+            <img src="{% static 'img/under_construction.png' %}" alt="Under construction">
+        </div>
     </h1>
     {% endif %}
+
     <a class="nav-toggle" href="#"><span></span></a>
 
     <ul class="links">
-        <li><a {% if current_page == 'home' %}class="active"{% endif %} href="{% url 'home-page' %}">home</a></li>
+        <!-- <li><a {% if current_page == 'home' %}class="active"{% endif %} href="{% url 'home-page' %}">home</a></li> -->
         <li><a {% if current_page == 'services' %}class="active"{% endif %} href="{% url 'service-list-page' %}">services</a></li>
         <li><a {% if current_page == 'projects' %}class="active"{% endif %} href="{% url 'project-list-page' %}">projects</a></li>
         <li><a {% if current_page == 'reviews' %}class="active"{% endif %} href="{% url 'reviews' %}">client testimonials</a></li>

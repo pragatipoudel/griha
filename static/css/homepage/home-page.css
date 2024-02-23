@@ -13,18 +13,18 @@
   --color-secondary-darker: #33691E;
   --color-secondary-light: #AED581;
   --color-secondary-lighter: #C5E1A5;
-  --color-background: #F0F0F0;
-  --color-trial-light: #F0F0F0;
-  --color-trial-dark: #333333;
-  --font-family-title: "Acme", sans-serif;
-  --font-family-heading: "Bebas Neue", cursive;
-  --font-family-heading-2: "Oswald", cursive;
-  --font-family-normal: "Montserrat", sans-serif;
-  --font-family-reviews: "Cormorant", serif;
-  --font-family-trial: "Kolam", cursive;
-  --font-family-trial-2: "Mate", serif;
+  --color-background: #FFF;
+  --color-background-alt: rgb(240, 240, 240);
+  --color-background-alt-2: #fff6eb;
+  --color-background-dark: #264a3c;
+  --color-foreground: #424242;
+  --color-foreground-dark: #F0F0F0;
+  --font-family-heading: "Poppins", sans-serif;
+  --font-family-heading-2: "Poppins", sans-serif;
+  --font-family-normal: "Lato", sans-serif;
+  --font-family-reviews: "Forum", serif;
+  --font-family-cursive: "Mali", cursive;
   --font-family-icon: "Font Awesome 5 Free";
-  --color-background: #fff;
   --height-nav-bar: 72px;
   --height-footer: 120px;
   --width-page: 1100px;
@@ -42,14 +42,18 @@ body {
   padding: 0;
   font-family: var(--font-family-normal);
   background-color: var(--color-background);
+  color: var(--color-foreground);
 }
 
-h1, h2 {
+h1 {
   font-family: var(--font-family-heading);
 }
 
+h2 {
+  font-family: var(--font-family-heading-2);
+}
+
 a {
-  font-family: var(--font-family-link);
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -71,7 +75,7 @@ a:hover {
 #contact-bar a {
   padding: 8px 10px;
   font-size: 18px;
-  background-color: var(--color-tertiary);
+  background-color: var(--color-tertiary-dark);
   color: #fff;
 }
 #contact-bar a:hover {
@@ -89,51 +93,60 @@ nav {
   align-items: center;
   width: 100%;
   height: var(--height-nav-bar);
-  padding: 8px 16px;
+  padding: 8px 0;
   background-color: rgb(255, 255, 255);
   z-index: 10;
+  padding-left: 82px;
+  padding-right: 92px;
 }
 nav h1 {
   height: calc(var(--height-nav-bar) - 16px);
   z-index: 100;
+  display: flex;
+  align-items: center;
 }
-nav h1 img {
+nav h1 a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-weight: 500;
+  font-size: 20px;
+}
+nav h1 a img {
   height: 100%;
   width: auto;
-  transition: opacity 1s ease-in-out;
+  margin-right: 10px;
 }
-nav h1 .initial-img {
-  display: block;
+nav h1 .wip {
+  height: 60%;
+  margin-left: 16px;
 }
-nav h1 .hover-img {
-  display: none;
+nav h1 .wip img {
+  height: 100%;
 }
-nav h1 .intial-img:hover {
-  display: none;
-}
-nav h1 .intial-img:hover + .hover-img {
-  display: block;
-}
-nav h1 .nav-toggle {
+nav .nav-toggle {
   display: none;
   z-index: 50;
 }
 nav ul {
   display: flex;
   list-style: none;
-  margin-right: 12px;
 }
 nav ul li {
   margin-left: 18px;
   font-size: 14px;
   text-transform: uppercase;
-  font-weight: 800;
 }
 nav ul li a.active {
   color: var(--color-tertiary);
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1000px) {
+  nav {
+    padding: 8px 16px;
+  }
+}
+@media screen and (max-width: 750px) {
   nav h1 {
     display: flex;
     width: calc(100% - 40px - 50px);
@@ -152,13 +165,13 @@ nav ul li a.active {
   nav .nav-toggle span:before,
   nav .nav-toggle span:after {
     content: "";
-    background: var(--color-tertiary-light);
     height: 3px;
-    width: 30px;
+    width: 25px;
     display: block;
     border-radius: 6px;
     position: absolute;
     transition: all 0.3s ease-in-out;
+    background-color: var(--color-foreground);
   }
   nav .nav-toggle span:before {
     bottom: 7px;
@@ -242,51 +255,57 @@ footer .group.group-3 {
   }
 }
 nav {
-  background-color: var(--color-trial-light);
+  background-color: var(--color-background-dark);
+  color: var(--color-foreground-dark);
 }
-nav ul li a {
-  color: var(--color-trial-dark);
+nav h1 a img {
+  filter: invert(100%) sepia(26%) saturate(277%) hue-rotate(201deg) brightness(114%) contrast(88%);
+}
+nav a {
+  color: var(--color-foreground-dark);
+}
+nav ul {
+  background-color: var(--color-background-dark);
+}
+nav .nav-toggle span,
+nav .nav-toggle span:before,
+nav .nav-toggle span:after {
+  background-color: var(--color-foreground-dark);
 }
 
 main {
-  background-color: var(--color-trial-light);
   width: 100%;
+  background-color: var(--color-background-alt);
 }
 main #intro {
   display: flex;
+  align-items: center;
   height: 100%;
   height: calc(100vh - var(--height-nav-bar));
+  background-color: var(--color-background-dark);
+  color: var(--color-foreground-dark);
 }
 main #intro .hero {
-  width: 40%;
+  width: calc(50% - 46px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 156px;
-}
-main #intro .hero #wip {
-  height: 48px;
-}
-main #intro .hero #wip img {
-  height: 100%;
-}
-main #intro .hero h1 img {
-  height: 150px;
-  margin-left: -60px;
+  padding: 92px;
 }
 main #intro .hero .slogan {
   font-size: 16px;
-  color: var(--color-trial-dark);
 }
 main #intro .hero .slogan h2 {
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   font-weight: 400;
-  font-family: var(--font-family-trial);
-  font-size: 48px;
+  font-size: 64px;
+  line-height: 1.1;
+  opacity: 0.92;
 }
 main #intro .hero .slogan p {
   text-align: justify;
-  font-family: var(--font-family-trial-2);
+  font-size: 18px;
+  opacity: 0.8;
 }
 main #intro .hero .buttons {
   margin-top: 32px;
@@ -306,163 +325,257 @@ main #intro .hero .buttons a {
 main #intro .hero .buttons a:hover {
   background-color: #808080;
 }
-main #intro img.hero-image {
-  width: 50%;
-  height: 95%;
-  object-fit: cover;
-  border-color: var(--color-tertiary-dark);
+main #intro .hero-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(50% - 46px);
+  height: 90%;
+  margin-top: -32px;
   clip-path: polygon(50% 0%, 70% 15%, 70% 2%, 90% 2%, 90% 30%, 100% 40%, 100% 100%, 0% 100%, 0% 40%);
+}
+main #intro .hero-image-container img {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  object-fit: cover;
+  clip-path: polygon(50% 0%, 70% 15%, 70% 2%, 90% 2%, 90% 30%, 100% 40%, 100% 100%, 0% 100%, 0% 40%);
+}
+main #intro .mobile-hero-image-container {
+  display: none;
 }
 main .reviews {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 0 256px 32px;
+  position: relative;
+  background-color: var(--color-background-alt-2);
 }
-main .reviews .title {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 140px 0 128px;
+main .reviews .half-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: var(--color-background-dark);
 }
-main .reviews .title h2 {
-  text-align: center;
-  display: inline;
-  padding: 16px 0px;
-  color: var(--color-trial-dark);
-  font-family: var(--font-familt-heading-2);
-  text-transform: uppercase;
-  font-size: 24px;
-}
-main .reviews .title a {
-  color: var(--color-tertiary-dark);
+main .reviews h2 {
+  z-index: 50;
+  color: var(--color-foreground-dark);
+  font-size: 40px;
+  padding-bottom: 20px;
 }
 main .reviews .list {
-  padding: 5px 128px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: space-between;
+  z-index: 50;
 }
 main .reviews .list .tile {
-  margin: 8px 16px;
-  background-color: rgb(210, 210, 210);
-  padding: 12px 16px;
-  border-radius: 8px;
-  height: 360px;
-  overflow: auto;
-  color: var(--color-trial-dark);
-  line-height: 1.5;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+  width: calc(33.3333333333% - 32px);
+  background-color: var(--color-background);
+  border-radius: 16px;
+  padding: 18px 24px;
+  text-align: justify;
 }
-main .projects-services {
+main .reviews .list .tile .comment {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+}
+main .reviews .list .tile .name {
+  margin-top: 10px;
+}
+main .reviews .readmore {
+  margin-top: 8px;
+  color: var(--color-tertiary-dark);
+  align-self: flex-end;
+}
+main .services {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 32px 256px;
+  background-color: var(--color-background-alt-2);
 }
-main .projects-services .title {
+main .services h2 {
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+main .services .list {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+main .services .list .tile {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 0 140px 0 128px;
+  width: calc(33.3333333333% - 40px);
 }
-main .projects-services .title h2 {
-  text-align: center;
-  display: inline;
-  padding: 16px 0px;
-  color: var(--color-trial-dark);
-  font-family: var(--font-familt-heading-2);
-  text-transform: uppercase;
-  font-size: 24px;
+main .services .list .tile .name {
+  font-size: 20px;
+  margin-bottom: 8px;
 }
-main .projects-services .title a {
+main .services .list .tile .summary {
+  font-size: 14px;
+  font-weight: 300;
+  text-align: justify;
+  line-height: 1.5;
+}
+main .services .list .tile:hover {
+  color: var(--color-foreground);
+}
+main .services .readmore {
+  margin-top: 8px;
   color: var(--color-tertiary-dark);
+  align-self: flex-end;
 }
-main .projects-services .list {
-  padding: 5px 128px;
+main .projects {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  padding: 32px 256px 64px;
 }
-main .projects-services .list .tile {
-  font-family: var(--font-family-normal);
+main .projects h2 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+main .projects .list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main .projects .list .tile {
   text-align: center;
   position: relative;
-  margin: 16px 12px;
   cursor: pointer;
-  height: 360px;
+  height: 300px;
   transition: transform 0.3s ease-in-out;
-  border-radius: 8px;
+  border-radius: 20px;
   overflow: hidden;
+  width: calc(33.3333333333% - 20px);
 }
-main .projects-services .list .tile img {
+main .projects .list .tile img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-main .projects-services .list .tile .name {
+main .projects .list .tile .name {
   position: absolute;
   bottom: 0;
   padding: 10px;
   width: 100%;
   color: rgba(0, 0, 0, 0.6666666667);
-  font-size: 24px;
-  background-color: rgba(211, 211, 211, 0.8);
-  font-family: var(--font-family-title);
+  font-size: 20px;
+  background-color: rgb(200, 200, 200);
 }
-main .projects-services .list .tile:hover {
+main .projects .list .tile:hover {
   transform: scale(1.03);
+}
+main .projects .readmore {
+  color: var(--color-tertiary-dark);
+  align-self: flex-end;
+  margin-top: 8px;
+  margin-right: 16px;
 }
 
 @media screen and (max-width: 1300px) {
-  main #hero {
-    padding: 64px;
+  main #intro .hero .slogan h2 {
+    font-size: 50px;
   }
-  main #hero h1 img {
-    height: 100px;
-    margin-left: -39px;
+  main #intro .hero-image-container {
+    height: 80%;
+  }
+  main .reviews {
+    padding: 0 64px;
+  }
+  main .services {
+    padding: 32px 64px;
+  }
+  main .projects {
+    padding: 32px 64px;
+  }
+  main .projects .list .tile {
+    height: 240px;
+  }
+  main .projects .list .tile .name {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 990px) {
-  main #hero {
-    padding: 32px;
-  }
-  main #hero h1 img {
-    height: 100px;
-    margin-left: -39px;
-  }
-}
-@media screen and (max-width: 800px) {
   main {
-    flex-direction: column;
-    height: 100vh;
+    height: auto;
   }
-  main #hero {
-    align-items: center;
-    width: 100%;
-    padding: 32px;
-    margin-top: -24px;
-    background-color: transparent;
-  }
-  main #hero h1 img {
-    height: 100px;
-    margin-left: 0;
-  }
-  main #hero .slogan {
+  main #intro {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    height: auto;
+    padding-bottom: 32px;
   }
-  main #hero .buttons {
-    justify-content: center;
-  }
-  main img.hero-image {
-    position: absolute;
-    z-index: -100;
-    opacity: 0.2;
+  main #intro .hero {
     width: 100%;
-    height: 100vh;
+    padding: 32px;
+  }
+  main #intro .hero .slogan h2 {
+    font-size: 32px;
+  }
+  main #intro .hero .slogan p {
+    font-size: 18px;
+  }
+  main #intro .hero-image-container {
+    display: none;
+  }
+  main #intro .mobile-hero-image-container {
+    display: block;
+    width: 100%;
+  }
+  main #intro .mobile-hero-image-container img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+  main .reviews {
+    padding: 0 32px;
+  }
+  main .reviews h2 {
+    font-size: 26px;
+  }
+  main .reviews .list {
+    flex-direction: column;
+  }
+  main .reviews .list .tile {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  main .services {
+    padding: 48px 32px;
+  }
+  main .services h2 {
+    font-size: 26px;
+  }
+  main .services .list {
+    flex-direction: column;
+  }
+  main .services .list .tile {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  main .projects {
+    padding: 48px 32px;
+  }
+  main .projects h2 {
+    font-size: 26px;
+  }
+  main .projects .list {
+    flex-direction: column;
+  }
+  main .projects .list .tile {
+    width: 100%;
+    height: 240px;
+    border-radius: 16px;
+  }
+  main .projects .list .tile:not(:last-child) {
+    margin-bottom: 24px;
   }
 }
 
