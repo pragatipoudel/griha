@@ -8,6 +8,7 @@ class Review(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     project = models.ForeignKey(Project, null=True, blank=True, default=None, on_delete=models.SET_NULL)
     rank = models.IntegerField(default=1)
+    verified = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

@@ -53,13 +53,13 @@
             </div>
             {% endif %}
 
-            {% if project.review_set.exists %}
+            {% if reviews.exists %}
             <div class="reviews">
                 <h3>
                     Client Testimonials
                 </h3>
                 <div class="review-list">
-                    {% for review in project.review_set.all %}
+                    {% for review in reviews.all %}
                         <div class="review-detail">
                             <div class="comment-wrapper">
                                 <span class="before quote">“</span>

@@ -10,7 +10,7 @@ from django.http import HttpResponse
 def home_page(request):
     projects = Project.objects.all()[:3]
     services = Service.objects.all()[:3]
-    reviews = Review.objects.all()[:3]
+    reviews = Review.objects.filter(verified=True)[:3]
 
     context = {
         'current_page': 'home',

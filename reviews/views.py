@@ -14,7 +14,7 @@ def reviews_list_page(request):
     else:
         form = ReviewForm()
 
-    reviews = Review.objects.all()
+    reviews = Review.objects.filter(verified=True)
     review_page_contents = ReviewPageContent.objects.first()
     context = {
         'reviews': reviews,

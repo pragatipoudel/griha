@@ -20,6 +20,7 @@ def project_detail_page(request, slug):
 
     context = {
         'project': project,
+        'reviews': project.review_set.filter(verified=True),
         **get_common_content(),
     }
 
