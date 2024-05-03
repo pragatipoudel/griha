@@ -13,7 +13,7 @@
   --color-secondary-darker: #33691E;
   --color-secondary-light: #AED581;
   --color-secondary-lighter: #C5E1A5;
-  --color-background: #FFF;
+  --color-background: #fff;
   --color-background-alt: rgb(240, 240, 240);
   --color-background-alt-2: #fff6eb;
   --color-background-dark: #264a3c;
@@ -94,7 +94,7 @@ nav {
   width: 100%;
   height: var(--height-nav-bar);
   padding: 8px 0;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--color-background);
   z-index: 10;
   padding: 0 16px;
 }

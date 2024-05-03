@@ -13,7 +13,7 @@
   --color-secondary-darker: #33691E;
   --color-secondary-light: #AED581;
   --color-secondary-lighter: #C5E1A5;
-  --color-background: #FFF;
+  --color-background: #fff;
   --color-background-alt: rgb(240, 240, 240);
   --color-background-alt-2: #fff6eb;
   --color-background-dark: #264a3c;
@@ -94,7 +94,7 @@ nav {
   width: 100%;
   height: var(--height-nav-bar);
   padding: 8px 0;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--color-background);
   z-index: 10;
   padding: 0 16px;
 }
@@ -257,7 +257,7 @@ footer .group.group-3 {
 nav .logo-container {
   position: absolute;
   height: 100vh;
-  background-color: #fff;
+  background-color: var(--color-background);
   width: 100%;
   top: 0;
   left: 0;
@@ -328,17 +328,55 @@ nav h1 .wip {
     animation: 3s ease-in-out 0.3s 1 forwards navLogoSlideMobile;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
 main {
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 main img, main video {
   width: 100%;
   height: calc(100vh - var(--height-nav-bar));
   object-fit: cover;
   object-position: center center;
+}
+main .title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--height-nav-bar));
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+main .title .slogan {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 32px;
+  margin: 32px 0;
+  border-radius: 32px;
+  align-items: center;
+}
+main .title .slogan h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+main .title .slogan p {
+  text-align: center;
+}
+main .title .slogan a {
+  margin-top: 10px;
+  font-size: 32px;
+  animation: bounce 2s infinite;
 }
 main .services {
   display: flex;
@@ -431,9 +469,6 @@ main .projects .readmore {
 }
 
 @media screen and (max-width: 1300px) {
-  main .reviews {
-    padding: 0 64px;
-  }
   main .services {
     padding: 32px 64px;
   }
@@ -450,6 +485,20 @@ main .projects .readmore {
 @media screen and (max-width: 990px) {
   main {
     height: auto;
+  }
+  main .title .slogan {
+    width: 95%;
+    padding: 24px;
+    border-radius: 16px;
+  }
+  main .title .slogan h2 {
+    font-size: 18px;
+  }
+  main .title .slogan p {
+    font-size: 14px;
+  }
+  main .title .slogan a {
+    font-size: 20px;
   }
   main .services {
     padding: 48px 32px;
@@ -480,6 +529,17 @@ main .projects .readmore {
   }
   main .projects .list .tile:not(:last-child) {
     margin-bottom: 24px;
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-5px);
   }
 }
 
