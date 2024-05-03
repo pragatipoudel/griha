@@ -2,10 +2,6 @@
 @import '../nav';
 @import '../footer';
 
-// nav {
-//     background-color: #fff;
-// }
-
 body {
     display: flex;
     flex-direction: column;
@@ -15,71 +11,144 @@ body {
 main {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer) - 16px);
+    background-color: var(--color-background-alt-2);
 
     h2 {
         text-align: center;
         display: inline;
         padding: 16px 48px;
         color: #0009;
-        font-family: var(--font-family-heading-2);
-        font-weight: 500;
-        text-transform: uppercase;
-        font-size: 48px;
+        font-size: 40px;
+        padding-bottom: 20px;
     }
 }
 
 .projects-list {
     padding: 10px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
 
     .project-tile {
-        font-family: var(--font-family-normal);
-        text-align: center;
-        margin: 16px 12px;
-        position: relative;
+        display: flex;
+        flex-direction: row;
         cursor: pointer;
-        height: 360px;
-        transition: transform 0.3s ease-in-out;
-        border-radius: 8px;
-        overflow: hidden;
+        margin: 32px 0;
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .img-container {
+            border-radius: 10px;
+            overflow: hidden;
+            width: 360px;
+            height: 200px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s ease-in-out;
+            }
         }
 
-        .name {
-            position: absolute;
-            bottom: 0;
-            padding: 10px;
-            width: 100%;
-            background-color: rgba(211,211,211, 0.8);
-            color: #000a;
-            font-size: 24px;
+        &:hover .img-container img {
+            transform: scale(1.1);
         }
 
-        &:hover {
-            transform: scale(1.03);
+        .info {
+            width: calc(100% - 360px);
+            margin-left: 32px;
+            color: #000d;
+
+            p {
+                margin-top: 10px;
+                text-align: justify;
+            }
+
+            &:hover {
+                color: #000b;
+            }
         }
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            .info {
+                width: calc(100% - 360px);
+                margin-left: 0;
+                margin-right: 32px;
+            }
+        }
+
     }
 }
 
 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1300px) {
     .projects-list {
-        grid-template-columns: repeat(2, 1fr);
+        width: 75%;
     }
 }
 
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 920px) {
     .projects-list {
-        grid-template-columns: repeat(1, 1fr);
+        .project-tile {
+            flex-direction: column;
+            align-items: center;
+
+            .img-container {
+                width: 100%;
+                height: 356px;
+            }
+
+            .info {
+                margin-left: 0;
+                margin-right: 0;
+                margin-top: 16px;
+                width: 100%;
+
+                h3 {
+                    text-align: center;
+                }
+
+                p {
+                    text-align: justify;
+                }
+            }
+
+
+            &:nth-child(even) {
+                flex-direction: column;
+
+                .info {
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-top: 16px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        h2 {
+            font-size: 26px;
+        }
+    }
+
+    .projects-list {
+        width: 100%;
+        padding: 0 20px;
+
+        .project-tile {
+            .img-container {
+                height: 256px;
+            }
+        }
     }
 }

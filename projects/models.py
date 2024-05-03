@@ -10,6 +10,7 @@ class Project(models.Model):
         )
     location = models.CharField(max_length=254)
     status = models.CharField(max_length=254)
+    summary = models.TextField()
     description = models.TextField()
     header_image = models.ImageField(upload_to="projects/header/")
     services = models.ManyToManyField(Service, blank=True)

@@ -2,232 +2,140 @@
 @import '../nav';
 @import '../footer';
 
-// nav {
-//     background-color: #fff;
-// }
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 main {
     display: flex;
     flex-direction: column;
-    position: relative;
     width: 100%;
-    height: calc(100vh - var(--height-nav-bar) - var(--height-footer) - 16px);
+    align-items: center;
+    background-color: var(--color-background-alt-2);
 
-    .services {
-        position: relative;
-        height: 100%;
-        width: 100%;
+    .title {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        background-color: rgb(240,240,240);
-
+        align-items: center;
+        
         h2 {
+            text-align: center;
             display: inline;
-            padding: 8px 24px;
+            padding: 16px 48px;
             color: #0009;
-            font-family: var(--font-family-heading-2);
-            font-weight: 500;
-            text-transform: uppercase;
             font-size: 40px;
-            margin-bottom: 32px;
-            margin-top: -32px;
+            padding-bottom: 20px;
         }
+    }
+
+    .service-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
 
         .service {
             display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 32px 0;
 
-            .name {
-                width: 25%;
-                text-align: left;
-                padding: 24px;
-                font-size: 18px;
-                transition: transform 0.2s ease-in-out;
-                transform-origin: 0% 50%;
-                
-            }
-
-            &:hover {
-                .name {
-                    color: black;
-                    transform: scale(1.1);
-                }
-            }
-
-            &.active {
-                .name {
-                    background-color: rgb(220,220,220);
-                }
-            }
-
-            .view {
-                position: absolute;
-                top: 0;
-                left: 25%;
-                width: 75%;
-                height: 100%;
-
+            .photo {
                 img {
-                    width: 100%;
-                    height: 100%;
+                    width: 300px;
+                    height: 256px;
                     object-fit: cover;
-                }
-
-                .service-info {
-                    position: absolute;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    line-height: 1.5;
-                    color: black;
-                    text-align: justify;
-                    overflow: auto;
-                    font-size: 15px;
-
-                    p {
-                        padding: 12px 16px;
-                        background-color: rgb(220,220,220);
-                    }
-
-                    .projects-button {
-                        padding: 8px 12px;
-                        text-align: center;
-                        font-size: 14px;
-                        font-weight: 800;
-                        color: white;
-                        background-color: var(--color-tertiary);
-                        border-radius: 8px;
-                        margin-bottom: 12px;
-                        margin-right: 12px;
-                        align-self: flex-end;
-
-                        &:hover {
-                            background-color: var(--color-tertiary-dark);
-                        }
+                    object-position: center center;
+                    clip-path: polygon(50% 0%, 78% 6%, 95% 23%, 97% 51%, 87% 91%, 60% 99%, 18% 94%, 4% 70%, 5% 33%, 16% 7%);
+                    transition: scale 0.4s ease-in-out;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        scale: 1.06;
                     }
                 }
             }
 
-            &:not(.active) {
-                .view {
-                    display: none;
+            // &:nth-child(5n + 1) .photo img {
+            //     clip-path: polygon(50.2% 0%, 88.7% 12%, 100% 60%, 81.4% 93.8%, 18.5% 96%, 0% 60%, 8.7% 6.5%);
+            // }
+
+            // &:nth-child(5n + 2) .photo img {
+            //     clip-path: polygon(10% 7%, 85% 4%, 98% 40%, 88% 94%, 11% 98%, 0 63%);
+            // }
+
+            // &:nth-child(5n + 3) .photo img {
+            //     clip-path: polygon(22% 3%, 90% 13%, 94% 72%, 83% 91%, 26% 92%, 4% 68%, 0 16%);
+            // }
+            
+            // &:nth-child(5n + 4) .photo img {
+            //     clip-path: polygon(51% 6%, 87% 12%, 97% 27%, 94% 70%, 68% 92%, 30% 92%, 5% 67%, 3% 27%, 14% 10%);
+            // }
+
+
+            .info {
+                margin-left: 64px;
+
+                p {
+                    margin-top: 16px;
+                    text-align: justify;
                 }
             }
         }
     }
 }
-
 
 
 @media screen and (max-width: 1300px) {
     main {
-        .services {
-            h2 {
-                font-size: 48px
-            }
+        .service-list {
+            width: 75%;
+        }
+    }
+}
 
+@media screen and (max-width: 920px) {
+    main {
+
+        .service-list {
             .service {
-                .name {
-                    font-size: 15px;
+                flex-direction: column;
+                align-items: center;
+
+                .photo {
+                    img {
+                        width: 400px;
+                        height: 356px;
+                    }
+                }
+
+                .info {
+                    margin-left: 0;
+                    margin-top: 16px;
+
+                    h3 {
+                        text-align: center;
+                    }
+
+                    p {
+                        text-align: justify;
+                    }
                 }
             }
         }
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 450px) {
     main {
-        height: auto;
-
-        .services {
-            height: auto;
-            background-color: transparent;
-
+        .title {
             h2 {
-                margin: 16px 0;
-                width: 100%;
-                text-align: center;
+                font-size: 26px;
             }
-
+        }
+        
+        .service-list {
             .service {
-                flex-direction: column;
-                width: 100%;
-                padding-bottom: 32px;
-
-                &:nth-child(even) {
-                    background-color: rgba(240, 240, 240);
-                }
-
-                .name {
-                    width: 100%;
-                    text-align: center;
-                    font-size: 24px;
-                    padding: 16px 10px;
-                }
-
-                &:hover {
-                    .name {
-                        transform: none; 
-                    }
-                }
-
-                .view {
-                    position: static;
-                    height: auto;
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-
+                .photo {
                     img {
-                        margin: 0 16px;
-                        height: 200px;
-                        border-radius: 8px;
-                        width: calc(100% - 32px)
-                    }
-
-                    .service-info {
-                        position: static;
-
-                        p {
-                            background-color: transparent;
-                        }
-
-                        .projects-button {
-                            background-color: transparent;
-                            color: var(--color-tertiary-dark);
-                            text-transform: uppercase;
-                            font-size: 12px;
-                            margin-bottom: 0;
-                            margin-top: 10px;
-                            margin-right: 16px;
-                            padding: 0;
-
-                            &:hover {
-                                background-color: transparent;
-                                color: var(--color-tertiary);
-                            }
-                        }
-                    }
-                }
-
-                &.active {
-                    .name {
-                        background-color: transparent;
-                    }
-                }
-
-                &:not(.active) {
-                    .view {
-                        display: flex;
+                        width: 300px;
+                        height: 256px;
                     }
                 }
             }

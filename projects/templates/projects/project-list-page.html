@@ -10,12 +10,17 @@
     {% include 'nav.html' %}
 
     <main>
-        <h2>Projects</h2>
+        <h2>What we have done</h2>
         <div class="projects-list">
             {% for project in projects %}
             <a class="project-tile" href="{% url 'project-detail-page' project.slug %}">
-                <img src="{{ project.header_image.url }}">
-                <div class="name">{{ project.name }}</div>
+                <div class="img-container">
+                    <img src="{{ project.header_image.url }}">
+                </div>
+                <div class="info">
+                    <h3>{{ project.name }}</h3>
+                    <p>{{ project.summary }}</p>
+                </div>
             </a>
             {% endfor%}
         </div>

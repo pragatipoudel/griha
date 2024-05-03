@@ -130,6 +130,7 @@ nav .nav-toggle {
 nav ul {
   display: flex;
   list-style: none;
+  z-index: 100;
 }
 nav ul li {
   margin-left: 18px;
@@ -384,6 +385,7 @@ main .projects {
   flex-direction: column;
   width: 100%;
   padding: 32px 256px 64px;
+  background-color: var(--color-background-alt-2);
 }
 main .projects h2 {
   font-size: 40px;

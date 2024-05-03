@@ -130,6 +130,7 @@ nav .nav-toggle {
 nav ul {
   display: flex;
   list-style: none;
+  z-index: 100;
 }
 nav ul li {
   margin-left: 18px;
@@ -262,63 +263,115 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   min-height: calc(100vh - var(--height-nav-bar) - var(--height-footer) - 16px);
+  background-color: var(--color-background-alt-2);
 }
 main h2 {
   text-align: center;
   display: inline;
   padding: 16px 48px;
   color: rgba(0, 0, 0, 0.6);
-  font-family: var(--font-family-heading-2);
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 48px;
+  font-size: 40px;
+  padding-bottom: 20px;
 }
 
 .projects-list {
   padding: 10px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
 }
 .projects-list .project-tile {
-  font-family: var(--font-family-normal);
-  text-align: center;
-  margin: 16px 12px;
-  position: relative;
+  display: flex;
+  flex-direction: row;
   cursor: pointer;
-  height: 360px;
-  transition: transform 0.3s ease-in-out;
-  border-radius: 8px;
-  overflow: hidden;
+  margin: 32px 0;
 }
-.projects-list .project-tile img {
+.projects-list .project-tile .img-container {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 360px;
+  height: 200px;
+}
+.projects-list .project-tile .img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.8s ease-in-out;
 }
-.projects-list .project-tile .name {
-  position: absolute;
-  bottom: 0;
-  padding: 10px;
-  width: 100%;
-  background-color: rgba(211, 211, 211, 0.8);
-  color: rgba(0, 0, 0, 0.6666666667);
-  font-size: 24px;
+.projects-list .project-tile:hover .img-container img {
+  transform: scale(1.1);
 }
-.projects-list .project-tile:hover {
-  transform: scale(1.03);
+.projects-list .project-tile .info {
+  width: calc(100% - 360px);
+  margin-left: 32px;
+  color: rgba(0, 0, 0, 0.8666666667);
+}
+.projects-list .project-tile .info p {
+  margin-top: 10px;
+  text-align: justify;
+}
+.projects-list .project-tile .info:hover {
+  color: rgba(0, 0, 0, 0.7333333333);
+}
+.projects-list .project-tile:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.projects-list .project-tile:nth-child(even) .info {
+  width: calc(100% - 360px);
+  margin-left: 0;
+  margin-right: 32px;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1300px) {
   .projects-list {
-    grid-template-columns: repeat(2, 1fr);
+    width: 75%;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 920px) {
+  .projects-list .project-tile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects-list .project-tile .img-container {
+    width: 100%;
+    height: 356px;
+  }
+  .projects-list .project-tile .info {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 16px;
+    width: 100%;
+  }
+  .projects-list .project-tile .info h3 {
+    text-align: center;
+  }
+  .projects-list .project-tile .info p {
+    text-align: justify;
+  }
+  .projects-list .project-tile:nth-child(even) {
+    flex-direction: column;
+  }
+  .projects-list .project-tile:nth-child(even) .info {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 16px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  main h2 {
+    font-size: 26px;
+  }
   .projects-list {
-    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    padding: 0 20px;
+  }
+  .projects-list .project-tile .img-container {
+    height: 256px;
   }
 }
 

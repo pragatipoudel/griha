@@ -13,7 +13,7 @@ main {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    background-color: #0000000f;
+    background-color: var(--color-background-alt-2);
     position: relative;
 
     .project-description {

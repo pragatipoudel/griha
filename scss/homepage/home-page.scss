@@ -17,170 +17,6 @@ main {
         object-position: center center;
     }
 
-// nav {
-//     background-color: var(--color-background-dark);
-//     color: var(--color-foreground-dark);
-
-//     h1 a img {
-//         filter: invert(100%) sepia(26%) saturate(277%) hue-rotate(201deg) brightness(114%) contrast(88%);
-//     }
-
-//     a {
-//         color: var(--color-foreground-dark);
-//     }
-
-//     ul {
-//         background-color: var(--color-background-dark);
-//     }
-
-//     .nav-toggle {
-//         span,
-//         span:before,
-//         span:after {
-//             background-color: var(--color-foreground-dark);
-//         }
-//     }
-// }
-
-// main {
-//     width: 100%;
-//     background-color: var(--color-background-alt);
-
-//     #intro {
-//         display: flex;
-//         align-items: center;
-//         height: 100%;
-//         height: calc(100vh - var(--height-nav-bar));
-//         background-color: var(--color-background-dark);
-//         color: var(--color-foreground-dark);
-
-//         .hero {
-//             width: calc(50% - 92px / 2);
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: center;
-//             padding: 92px;
-
-//             .slogan {
-//                 font-size: 16px;
-//                 // color: var(--color-trial-dark);
-
-//                 h2 {
-//                     margin-bottom: 32px;
-//                     font-weight: 400;
-//                     font-size: 64px;
-//                     line-height: 1.1;
-//                     opacity: 0.92;
-
-//                 }
-
-//                 p {
-//                     text-align: justify;
-//                     font-size: 18px;
-//                     opacity: 0.8;
-//                 }
-//             }
-
-//             .buttons {
-//                 margin-top: 32px;
-//                 display: flex;
-//                 flex-wrap: wrap;
-
-//                 a {
-//                     background-color: #505050;
-//                     color: white;
-//                     font-size: 14px;
-//                     font-weight: 800;
-//                     padding: 10px 16px;
-//                     border-radius: 4px;
-//                     margin-right: 8px;
-//                     margin-top: 10px;
-
-//                     &:hover {
-//                         background-color: #808080;
-//                     }
-//                 }
-//             }
-//         }
-
-//         .hero-image-container {
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             width: calc(50% - 92px / 2);
-//             height: 90%;
-//             margin-top: -32px;
-//             clip-path: polygon(50% 0%,70% 15%,70% 2%,90% 2%,90% 30%,100% 40%,100% 100%,0% 100%,0% 40%);
-
-//             img {
-//                 width: calc(100% - 2px);
-//                 height: calc(100% - 2px);
-//                 object-fit: cover;
-//                 clip-path: polygon(50% 0%,70% 15%,70% 2%,90% 2%,90% 30%,100% 40%,100% 100%,0% 100%,0% 40%);
-//             }
-//         }
-
-//         .mobile-hero-image-container {
-//             display: none;
-//         }
-//     }
-
-//     .reviews {
-//         display: flex;
-//         flex-direction: column;
-//         width: 100%;
-//         padding: 0 256px 32px;
-//         position: relative;
-//         background-color: var(--color-background-alt-2);
-
-//         .half-bg {
-//             position: absolute;
-//             top: 0;
-//             left: 0;
-//             width: 100%;
-//             height: 50%;
-//             background-color: var(--color-background-dark);
-//         }
-
-//         h2 {
-//             z-index: 50;
-//             color: var(--color-foreground-dark);
-//             font-size: 40px;
-//             padding-bottom: 20px;
-//         }
-
-//         .list {
-//             display: flex;
-//             justify-content: space-between;
-//             z-index: 50;
-
-//             .tile {
-//                 width: calc(100% / 3 - 32px);
-//                 background-color: var(--color-background);
-//                 border-radius: 16px;
-//                 padding: 18px 24px;
-//                 text-align: justify;
-
-//                 .comment {
-//                     font-weight: 300;
-//                     font-size: 14px;
-//                     line-height: 1.5;
-//                 }
-
-//                 .name {
-//                     margin-top: 10px;
-//                 }
-//             }
-//         }
-
-//         .readmore {
-//             margin-top: 8px;
-//             color: var(--color-tertiary-dark);
-//             align-self: flex-end;
-//         }
-
-//     }
-
     .services {
         display: flex;
         flex-direction: column;
@@ -234,6 +70,7 @@ main {
         flex-direction: column;
         width: 100%;
         padding: 32px 256px 64px;
+        background-color: var(--color-background-alt-2);
 
         h2 {
             font-size: 40px;
@@ -289,18 +126,6 @@ main {
 
 @media screen and (max-width: 1300px) {
     main {
-        // #intro {
-        //     .hero {
-        //         .slogan {
-        //             h2 {
-        //                 font-size: 50px;
-        //             }
-        //         }
-        //     }
-        //     .hero-image-container {
-        //         height: 80%;
-        //     }
-        // }
 
         .reviews {
             padding: 0 64px;
@@ -329,59 +154,6 @@ main {
 @media screen and (max-width: 990px) {
     main {
         height: auto;
-
-        // #intro {
-        //     display: flex;
-        //     flex-direction: column;
-        //     height: auto;
-        //     padding-bottom: 32px;
-
-        //     .hero {
-        //         width: 100%;
-        //         padding: 32px;
-
-        //         .slogan {
-        //             h2 {
-        //                 font-size: 32px;
-        //             }
-        //             p {
-        //                 font-size: 18px;
-        //             }
-        //         }
-        //     }
-
-        //     .hero-image-container {
-        //         display: none;
-        //     }
-
-        //     .mobile-hero-image-container {
-        //         display: block;
-        //         width: 100%;
-
-        //         img {
-        //             width: 100%;
-        //             height: 350px;
-        //             object-fit: cover;
-        //         }
-        //     }
-        // }
-
-        // .reviews {
-        //     padding: 0 32px;
-
-        //     h2 {
-        //         font-size: 26px;
-        //     }
-
-        //     .list {
-        //         flex-direction: column;
-
-        //         .tile {
-        //             width: 100%;
-        //             margin-bottom: 16px;
-        //         }
-        //     }
-        // }
 
         .services {
             padding: 48px 32px;

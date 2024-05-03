@@ -130,6 +130,7 @@ nav .nav-toggle {
 nav ul {
   display: flex;
   list-style: none;
+  z-index: 100;
 }
 nav ul li {
   margin-left: 18px;
@@ -263,7 +264,7 @@ main {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.0588235294);
+  background-color: var(--color-background-alt-2);
   position: relative;
 }
 main .project-description {

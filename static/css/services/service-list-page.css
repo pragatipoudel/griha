@@ -130,6 +130,7 @@ nav .nav-toggle {
 nav ul {
   display: flex;
   list-style: none;
+  z-index: 100;
 }
 nav ul li {
   margin-left: 18px;
@@ -253,182 +254,90 @@ footer .group.group-3 {
     align-items: flex-start;
   }
 }
-body {
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background-color: var(--color-background-alt-2);
+}
+main .title {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-main {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: calc(100vh - var(--height-nav-bar) - var(--height-footer) - 16px);
-}
-main .services {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgb(240, 240, 240);
-}
-main .services h2 {
-  display: inline;
-  padding: 8px 24px;
-  color: rgba(0, 0, 0, 0.6);
-  font-family: var(--font-family-heading-2);
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 40px;
-  margin-bottom: 32px;
-  margin-top: -32px;
-}
-main .services .service {
-  display: flex;
-}
-main .services .service .name {
-  width: 25%;
-  text-align: left;
-  padding: 24px;
-  font-size: 18px;
-  transition: transform 0.2s ease-in-out;
-  transform-origin: 0% 50%;
-}
-main .services .service:hover .name {
-  color: black;
-  transform: scale(1.1);
-}
-main .services .service.active .name {
-  background-color: rgb(220, 220, 220);
-}
-main .services .service .view {
-  position: absolute;
-  top: 0;
-  left: 25%;
-  width: 75%;
-  height: 100%;
-}
-main .services .service .view img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-main .services .service .view .service-info {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  line-height: 1.5;
-  color: black;
-  text-align: justify;
-  overflow: auto;
-  font-size: 15px;
-}
-main .services .service .view .service-info p {
-  padding: 12px 16px;
-  background-color: rgb(220, 220, 220);
-}
-main .services .service .view .service-info .projects-button {
-  padding: 8px 12px;
+main .title h2 {
   text-align: center;
-  font-size: 14px;
-  font-weight: 800;
-  color: white;
-  background-color: var(--color-tertiary);
-  border-radius: 8px;
-  margin-bottom: 12px;
-  margin-right: 12px;
-  align-self: flex-end;
+  display: inline;
+  padding: 16px 48px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 40px;
+  padding-bottom: 20px;
 }
-main .services .service .view .service-info .projects-button:hover {
-  background-color: var(--color-tertiary-dark);
+main .service-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
 }
-main .services .service:not(.active) .view {
-  display: none;
+main .service-list .service {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 32px 0;
+}
+main .service-list .service .photo img {
+  width: 300px;
+  height: 256px;
+  object-fit: cover;
+  object-position: center center;
+  clip-path: polygon(50% 0%, 78% 6%, 95% 23%, 97% 51%, 87% 91%, 60% 99%, 18% 94%, 4% 70%, 5% 33%, 16% 7%);
+  transition: scale 0.4s ease-in-out;
+  cursor: pointer;
+}
+main .service-list .service .photo img:hover {
+  scale: 1.06;
+}
+main .service-list .service .info {
+  margin-left: 64px;
+}
+main .service-list .service .info p {
+  margin-top: 16px;
+  text-align: justify;
 }
 
 @media screen and (max-width: 1300px) {
-  main .services h2 {
-    font-size: 48px;
-  }
-  main .services .service .name {
-    font-size: 15px;
+  main .service-list {
+    width: 75%;
   }
 }
-@media screen and (max-width: 800px) {
-  main {
-    height: auto;
+@media screen and (max-width: 920px) {
+  main .service-list .service {
+    flex-direction: column;
+    align-items: center;
   }
-  main .services {
-    height: auto;
-    background-color: transparent;
+  main .service-list .service .photo img {
+    width: 400px;
+    height: 356px;
   }
-  main .services h2 {
-    margin: 16px 0;
-    width: 100%;
+  main .service-list .service .info {
+    margin-left: 0;
+    margin-top: 16px;
+  }
+  main .service-list .service .info h3 {
     text-align: center;
   }
-  main .services .service {
-    flex-direction: column;
-    width: 100%;
-    padding-bottom: 32px;
+  main .service-list .service .info p {
+    text-align: justify;
   }
-  main .services .service:nth-child(even) {
-    background-color: rgb(240, 240, 240);
+}
+@media screen and (max-width: 450px) {
+  main .title h2 {
+    font-size: 26px;
   }
-  main .services .service .name {
-    width: 100%;
-    text-align: center;
-    font-size: 24px;
-    padding: 16px 10px;
-  }
-  main .services .service:hover .name {
-    transform: none;
-  }
-  main .services .service .view {
-    position: static;
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  main .services .service .view img {
-    margin: 0 16px;
-    height: 200px;
-    border-radius: 8px;
-    width: calc(100% - 32px);
-  }
-  main .services .service .view .service-info {
-    position: static;
-  }
-  main .services .service .view .service-info p {
-    background-color: transparent;
-  }
-  main .services .service .view .service-info .projects-button {
-    background-color: transparent;
-    color: var(--color-tertiary-dark);
-    text-transform: uppercase;
-    font-size: 12px;
-    margin-bottom: 0;
-    margin-top: 10px;
-    margin-right: 16px;
-    padding: 0;
-  }
-  main .services .service .view .service-info .projects-button:hover {
-    background-color: transparent;
-    color: var(--color-tertiary);
-  }
-  main .services .service.active .name {
-    background-color: transparent;
-  }
-  main .services .service:not(.active) .view {
-    display: flex;
+  main .service-list .service .photo img {
+    width: 300px;
+    height: 256px;
   }
 }
 
