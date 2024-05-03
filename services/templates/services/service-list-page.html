@@ -33,10 +33,12 @@
                 <p>{{ service.summary }}</p>
                 {% if service.project_set.exists %}
                 <div class="project-list">
-                    <span class="label">Projects:</span>
-                    {% for project in service.project_set.all %}
-                    <a href="{% url 'project-detail-page' project.slug %}" class="project">{{ project.name }}</a>
-                    {% endfor %}
+                    <div class="label">Projects:</div>
+                    <div class="items">
+                        {% for project in service.project_set.all %}
+                        <a href="{% url 'project-detail-page' project.slug %}" class="project">{{ project.name }}</a>
+                        {% endfor %}
+                    </div>
                 </div>
                 {% endif %}
             </div>

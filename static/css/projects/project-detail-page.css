@@ -306,6 +306,7 @@ main .project-description .details .description {
 main .project-description .details .services {
   padding-bottom: 24px;
   margin-top: 16px;
+  display: flex;
 }
 main .project-description .details .services .service {
   background-color: var(--color-background-alt);
@@ -317,6 +318,11 @@ main .project-description .details .services .service {
 }
 main .project-description .details .services .service:hover {
   color: #000;
+}
+main .project-description .details .services .items {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 6px;
 }
 main .additional-info {
   display: flex;

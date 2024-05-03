@@ -58,6 +58,7 @@ main {
             .services {
                 padding-bottom: 24px;
                 margin-top: 16px;
+                display: flex;
 
                 .service {
                     background-color: var(--color-background-alt);
@@ -71,6 +72,11 @@ main {
                         color: #000;
                     }
 
+                }
+                .items {
+                    display: flex;
+                    flex-wrap: wrap;
+                    row-gap: 6px;
                 }
             }
         }
