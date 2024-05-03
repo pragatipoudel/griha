@@ -26,12 +26,16 @@
     {% endblock %}
 
     <div id="contact-bar">
+        {% if contact_info.whatsapp_number %}
         <a target="_blank" href="https://wa.me/{{ contact_info.whatsapp_number }}">
             <i class="fab fa-whatsapp"></i>
         </a>
+        {% endif %}
+        {% if contact_info.email %}
         <a href="mailto:{{ contact_info.email }}">
             <i class="far fa-envelope"></i>
         </a>
+        {% endif %}
     </div>
 </body>
 </html>
