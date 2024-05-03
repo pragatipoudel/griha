@@ -16,7 +16,7 @@
 
     <main>
         {% if home_page_contents.header_video %}
-        <video autoplay loop muted>
+        <video autoplay loop playsinline muted>
             <source src="{{ home_page_contents.header_video.url }}" type="video/mp4">
             <img src="{{ home_page_contents.header_image.url }}">
         </video>
