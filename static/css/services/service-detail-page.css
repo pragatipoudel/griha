@@ -96,8 +96,7 @@ nav {
   padding: 8px 0;
   background-color: rgb(255, 255, 255);
   z-index: 10;
-  padding-left: 82px;
-  padding-right: 92px;
+  padding: 0 16px;
 }
 nav h1 {
   height: calc(var(--height-nav-bar) - 16px);
@@ -119,7 +118,7 @@ nav h1 a img {
 }
 nav h1 .wip {
   height: 60%;
-  margin-left: 16px;
+  margin-left: 0;
 }
 nav h1 .wip img {
   height: 100%;

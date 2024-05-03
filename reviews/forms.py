@@ -15,7 +15,3 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = '__all__'
         exclude = ['project', 'rank']
-        # widgets = {
-        #     'project': forms.ModelChoiceField(queryset=Project.objects.all())
-        # }
-        

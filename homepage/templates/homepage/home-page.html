@@ -7,11 +7,19 @@
 {% endblock %}
 
 {% block content %}
-{% include 'nav.html' %}
+    {% include 'nav.html' %}
 
     <main>
+        {% if home_page_contents.header_video %}
+        <video autoplay loop muted>
+            <source src="{{ home_page_contents.header_video.url }}" type="video/mp4">
+            <img src="{{ home_page_contents.header_image.url }}">
+        </video>
+        {% else %}
+        <img src="{{ home_page_contents.header_image.url }}">
+        {% endif %}
 
-        <section id="intro">
+        <!-- <section id="intro">
             <div class="mobile-hero-image-container">
                 <img class="hero-image" src="{{ home_page_contents.header_image.url }}">
             </div>
@@ -23,19 +31,14 @@
                     <p>
                         {{ home_page_contents.welcome_message }}
                     </p>
-                </div>             
-                <!-- <div class="buttons">
-                    <a href="{% url 'project-list-page' %}">Projects</a>
-                    <a href="{% url 'service-list-page' %}">Services</a>
-                    <a href="{% url 'reviews' %}">Client Testimonials</a>
-                </div> -->
+                </div>
             </div>
             <div class="hero-image-container">
                 <img class="hero-image" src="{{ home_page_contents.header_image.url }}">
             </div>
-        </section>
+        </section> -->
 
-        <section class="reviews">
+        <!-- <section class="reviews">
             <div class="half-bg"></div>
             <h2>What our clients say..</h2>
             <div class="list">
@@ -48,7 +51,7 @@
             </div>
 
             <a class="readmore" href="{% url 'review'}">Read more client testimonials</a>
-        </section>
+        </section> -->
 
         <section class="services">
             <h2>What we offer..</h2>
@@ -76,20 +79,6 @@
             <a class="readmore" href="{% url 'project-list-page' %}">Explore all Projects</a>
         </section>
 
-        <!-- <section class="services">
-            <div class="title">
-                <h2>Our Major Services</h2>
-                <a href="{% url 'service-list-page' %}">Explore all services</a>
-            </div>
-            <div class="list">
-                {% for service in services %}
-                <a class="tile" href="{% url 'service-detail-page' service.slug %}">
-                    <img src="{{ service.header_image.url }}">
-                    <div class="name">{{ service.name }}</div>
-                </a>
-            {% endfor %}
-            </div>
-        </section> -->
     </main>
 
     {% include 'footer.html' %}

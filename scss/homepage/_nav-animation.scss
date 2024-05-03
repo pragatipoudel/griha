@@ -1,7 +1,7 @@
 
 
 nav {
-    h1 {
+    .logo-container {
         position: absolute;
         height: 100vh;
         background-color: #fff;
@@ -9,15 +9,24 @@ nav {
         top: 0;
         left: 0;
         animation: 3s ease-in-out 0.3s 1 forwards navTitleSlide;
+        animation-fill-mode: forwards;
 
         img {
             position: absolute;
-            top: 50%;
+            top: calc(50% - 6px);
             left: 50%;
             height: 256px;
             opacity: 0;
             transform: translate(-50%, -128px);
             animation: 3s ease-in-out 0.3s 1 forwards navLogoSlide;
+            animation-fill-mode: forwards;
+        }
+    }
+
+
+    h1 {
+        .wip {
+            margin-left: calc(16px + 162px);
         }
     }
 }
@@ -81,7 +90,7 @@ nav {
 
 @media screen and (max-width: 650px) {
     nav {
-        h1 {
+        .logo-container {
             img {
                 height: 96px;
                 animation: 3s ease-in-out 0.3s 1 forwards navLogoSlideMobile;

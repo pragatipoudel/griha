@@ -3,9 +3,9 @@
 <nav>
     {% if not nologo %}
     <h1>
-        <a href="{% url 'home-page' %}">
-            <img class="intial-img" src="{{ home_page_contents.nav_bar_logo.url }}" alt="Griha Designs">
-            Griha Designs
+        <a class="logo-container" href="{% url 'home-page' %}">
+            <img class="intial-img" src="{{ home_page_contents.logo.url }}" alt="Griha Designs">
+            <!-- Griha Designs -->
         </a>
 
         <div class="wip">
@@ -20,7 +20,9 @@
         <!-- <li><a {% if current_page == 'home' %}class="active"{% endif %} href="{% url 'home-page' %}">home</a></li> -->
         <li><a {% if current_page == 'services' %}class="active"{% endif %} href="{% url 'service-list-page' %}">services</a></li>
         <li><a {% if current_page == 'projects' %}class="active"{% endif %} href="{% url 'project-list-page' %}">projects</a></li>
+        {% comment %}
         <li><a {% if current_page == 'reviews' %}class="active"{% endif %} href="{% url 'reviews' %}">client testimonials</a></li>
+        {% endcomment %}
     </ul>
 </nav>
 
