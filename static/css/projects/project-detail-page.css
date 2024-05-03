@@ -305,21 +305,18 @@ main .project-description .details .description {
 }
 main .project-description .details .services {
   padding-bottom: 24px;
-  display: flex;
-  flex-direction: column;
   margin-top: 16px;
 }
-main .project-description .details .services .services-list {
-  padding-top: 12px;
-  display: flex;
-  flex-direction: row;
-}
-main .project-description .details .services .services-list .service {
-  position: relative;
-  display: inline-block;
-  margin-right: 12px;
+main .project-description .details .services .service {
+  background-color: var(--color-background-alt);
   padding: 6px 8px;
-  border: 1px solid #000;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: 8px;
+  color: rgba(0, 0, 0, 0.7);
+}
+main .project-description .details .services .service:hover {
+  color: #000;
 }
 main .additional-info {
   display: flex;

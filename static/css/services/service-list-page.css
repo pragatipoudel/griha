@@ -305,6 +305,20 @@ main .service-list .service .info p {
   margin-top: 16px;
   text-align: justify;
 }
+main .service-list .service .info .project-list {
+  margin-top: 16px;
+}
+main .service-list .service .info .project-list .project {
+  background-color: var(--color-background-alt);
+  padding: 6px 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: 8px;
+  color: rgba(0, 0, 0, 0.7);
+}
+main .service-list .service .info .project-list .project:hover {
+  color: #000;
+}
 
 @media screen and (max-width: 1300px) {
   main .service-list {

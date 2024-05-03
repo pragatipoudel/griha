@@ -24,13 +24,21 @@
 
     <section class="service-list">
         {% for service in services %}
-        <div class="service">
+        <div class="service" id="{{ service.slug }}">
             <div class="photo">
                 <img src="{{ service.header_image.url }}">
             </div>
             <div class="info">
                 <h3>{{ service.name }}</h3>
                 <p>{{ service.summary }}</p>
+                {% if service.project_set.exists %}
+                <div class="project-list">
+                    <span class="label">Projects:</span>
+                    {% for project in service.project_set.all %}
+                    <a href="{% url 'project-detail-page' project.slug %}" class="project">{{ project.name }}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}

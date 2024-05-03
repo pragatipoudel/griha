@@ -76,6 +76,23 @@ main {
                     margin-top: 16px;
                     text-align: justify;
                 }
+
+                .project-list {
+                    margin-top: 16px;
+
+                    .project {
+                        background-color: var(--color-background-alt);
+                        padding: 6px 8px;
+                        cursor: pointer;
+                        border-radius: 8px;
+                        margin-left: 8px;
+                        color: rgba(0, 0, 0, 0.7);
+
+                        &:hover {
+                            color: #000;
+                        }
+                    }
+                }
             }
         }
     }
@@ -129,7 +146,7 @@ main {
                 font-size: 26px;
             }
         }
-        
+
         .service-list {
             .service {
                 .photo {

@@ -22,14 +22,12 @@
                 </p>
                 {% if project.services.exists %}
                 <div class="services">
-                    <h3>
-                        Project services:
-                    </h3>
-                    <div class="services-list">
-                        {% for service in project.services.all %}
-                            <a class="service" href="{% url 'service-detail-page' service.slug %}">{{ service.name }} </a>
-                        {% endfor %}
-                    </div>
+                    <span class="label">
+                        Services:
+                    </span>
+                    {% for service in project.services.all %}
+                        <a class="service" href="{% url 'service-list-page' %}#{{ service.slug }}">{{ service.name }} </a>
+                    {% endfor %}
                 </div>
                 {% endif %}
       

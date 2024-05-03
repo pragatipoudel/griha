@@ -19,45 +19,12 @@
         <img src="{{ home_page_contents.header_image.url }}">
         {% endif %}
 
-        <!-- <section id="intro">
-            <div class="mobile-hero-image-container">
-                <img class="hero-image" src="{{ home_page_contents.header_image.url }}">
-            </div>
-            <div class="hero">
-                <div class="slogan">
-                    <h2>
-                        {{ home_page_contents.tag_line }}
-                    </h2>
-                    <p>
-                        {{ home_page_contents.welcome_message }}
-                    </p>
-                </div>
-            </div>
-            <div class="hero-image-container">
-                <img class="hero-image" src="{{ home_page_contents.header_image.url }}">
-            </div>
-        </section> -->
-
-        <!-- <section class="reviews">
-            <div class="half-bg"></div>
-            <h2>What our clients say..</h2>
-            <div class="list">
-                {% for review in reviews %}
-                    <div class="tile">
-                        <div class="comment">{{ review.comment|linebreaks }}</div>
-                        <div class="name">{{ review.name }}</div>
-                    </div>
-                {% endfor %}
-            </div>
-
-            <a class="readmore" href="{% url 'review'}">Read more client testimonials</a>
-        </section> -->
 
         <section class="services">
             <h2>What we offer..</h2>
             <div class="list">
                 {% for service in services %}
-                <a class="tile" href="{% url 'service-detail-page' service.slug %}">
+                <a class="tile" href="{% url 'service-list-page' %}#{{ service.slug }}">
                     <div class="name">{{ service.name }}</div>
                     <div class="summary">{{ service.summary }}</div>
                 </a>

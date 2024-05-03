@@ -57,21 +57,18 @@ main {
 
             .services {
                 padding-bottom: 24px;
-                display: flex;
-                flex-direction: column;
                 margin-top: 16px;
 
-                .services-list {
-                    padding-top: 12px;
-                    display: flex;
-                    flex-direction: row;
+                .service {
+                    background-color: var(--color-background-alt);
+                    padding: 6px 8px;
+                    cursor: pointer;
+                    border-radius: 8px;
+                    margin-left: 8px;
+                    color: rgba(0, 0, 0, 0.7);
 
-                    .service {
-                        position: relative;
-                        display: inline-block;
-                        margin-right: 12px;
-                        padding: 6px 8px;
-                        border: 1px solid #000;
+                    &:hover {
+                        color: #000;
                     }
 
                 }
