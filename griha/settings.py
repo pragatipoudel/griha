@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_recaptcha',
+    'django_cleanup.apps.CleanupConfig',
+    'django_unused_media',
 ]
 
 MIDDLEWARE = [

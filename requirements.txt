@@ -3,3 +3,5 @@ django-recaptcha==4.0.0
 psycopg2-binary==2.9.6
 gunicorn==21.2.0
 Pillow==10.1.0
+django-cleanup==8.1.0
+django-unused-media==0.2.2
