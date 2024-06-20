@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import Http404
 from .models import Project, AdditionalImage
 from griha.common import get_common_content
 
@@ -17,6 +18,8 @@ def projects_list_page(request):
 
 def project_detail_page(request, slug):
     project = get_object_or_404(Project, slug=slug)
+    if project.disabled:
+        raise Http404
 
     context = {
         'project': project,

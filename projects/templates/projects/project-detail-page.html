@@ -32,6 +32,12 @@
                     </div>
                 </div>
                 {% endif %}
+
+                {% if project.walkthrough_link %}
+                <div class="walkthrough">
+                    <a target="_blank" href="{{ project.walkthrough_link }}">Click here for a walkthrough <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                {% endif %}
       
             </div>
         </div>

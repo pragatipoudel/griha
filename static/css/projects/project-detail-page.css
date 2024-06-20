@@ -324,6 +324,15 @@ main .project-description .details .services .items {
   flex-wrap: wrap;
   row-gap: 6px;
 }
+main .project-description .details .walkthrough {
+  padding-bottom: 24px;
+}
+main .project-description .details .walkthrough a {
+  color: var(--color-tertiary);
+}
+main .project-description .details .walkthrough a i {
+  margin-left: 6px;
+}
 main .additional-info {
   display: flex;
   width: 100%;

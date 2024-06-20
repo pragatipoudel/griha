@@ -16,6 +16,8 @@ class Project(models.Model):
     services = models.ManyToManyField(Service, blank=True)
     slug = models.SlugField(default = "", null = False)
     rank = models.IntegerField(default=1)
+    disabled = models.BooleanField(default=False)
+    walkthrough_link = models.URLField(blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
