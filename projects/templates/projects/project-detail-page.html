@@ -17,9 +17,9 @@
             </div>
             <div class="details">
                 <h2>{{ project.name }}</h2>
-                <p class="description">
-                    {{ project.description }}
-                </p>
+                <div class="description">
+                    {{ project.description|linebreaks }}
+                </div>
                 {% if project.services.exists %}
                 <div class="services">
                     <div class="label">

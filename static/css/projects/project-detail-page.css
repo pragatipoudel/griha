@@ -302,6 +302,11 @@ main .project-description .details .description {
   font-family: var(--font-family-normal);
   font-size: 15px;
   line-height: 1.6;
+  max-height: calc(100% - 240px);
+  overflow-y: auto;
+}
+main .project-description .details .description p {
+  margin: 8px 0;
 }
 main .project-description .details .services {
   padding-bottom: 24px;
