@@ -1,0 +1,60 @@
+<footer>
+    <div class="top">
+        <div class="nav">
+            <div class="brand">
+                <img src="{{ home_page_contents.small_logo.url }}">
+                <h3>Griha Designs & Engineering</h3>
+            </div>
+
+            <ul class="links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Our Process</a></li>
+                <li><a href="#gallery">Photo Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h3>Head Office</h3>
+            <span>{{ contact_info.address }}</span>
+            <span><a href="tel:{{ contact_info.phone_number }}">{{ contact_info.phone_number }}</a></span>
+            <span><a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></span>
+
+            <h3>Office hours</h3>
+            <span>Monday - Friday</span>
+            <span>7AM - 5PM</span>
+
+            <h3>Socials</h3>
+            {% if contact_info.instagram_link %}
+                <span class="social-link"><a href="{{ contact_info.instagram_link }}" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></span>
+            {% endif %}
+            {% if contact_info.youtube_link %}
+                <span class="social-link"><a href="{{ contact_info.youtube_link }}" target="_blank"><i class="fab fa-youtube"></i>Youtube</a></span>
+            {% endif %}
+            {% if contact_info.facebook_link %}
+                <span class="social-link"><a href="{{ contact_info.facebook_link }}" target="_blank"><i class="fab fa-facebook"></i>Facebook</a></span>
+            {% endif %}
+            {% if contact_info.linkedin_link %}
+                <span class="social-link"><a href="{{ contact_info.linkedin_link }}" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a></span>
+            {% endif %}
+        </div>
+
+        <div class="contact" id="contact">
+            <h3>Contact us</h3>
+
+            <a href="mailto:{{ contact_info.email }}">Get a free consultation</a>
+        </div>
+    </div>
+    <div class="bottom">
+        <div>
+            Privacy Policy
+        </div>
+        <div>
+            <a href="#">Back to Top</a>
+        </div>
+        <div>
+            Copyright © Griha Designs 2024. All Rights Reserved.
+        </div>
+    </div>
+</footer>

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'projects.apps.ProjectsConfig',
     'services.apps.ServicesConfig',
     'process.apps.ProcessConfig',
+    'gallery.apps.GalleryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

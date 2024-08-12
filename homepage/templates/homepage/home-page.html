@@ -2,26 +2,22 @@
 {% load static %}
 
 {% block head %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{% static 'css/homepage/home-page.css' %}">
-
-    <script>
-        function goDown() {
-            document.querySelector('.services').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    <script defer src="{% static 'external/fslightbox.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-    {% include 'homepage-nav.html' %}
+    {% include 'homepage/nav.html' %}
 
     <main>
         {% if home_page_contents.header_video %}
-        <video autoplay loop playsinline muted>
+        <video autoplay loop playsinline muted oncontextmenu="return false">
             <source src="{{ home_page_contents.header_video.url }}" type="video/mp4">
             <img src="{{ home_page_contents.header_image.url }}">
         </video>
         {% else %}
-        <img src="{{ home_page_contents.header_image.url }}">
+        <img src="{{ home_page_contents.header_image.url }}" oncontextmenu="return false">
         {% endif %}
 
         <section class="title">
@@ -48,7 +44,7 @@
                 <div class="tile">
                     <div class="name">{{ service.name }}</div>
                     <div class="preview">
-                        <img src="{{ service.header_image.url }}">
+                        <img src="{{ service.header_image.url }}" oncontextmenu="return false">
                         <!-- <a href="#services">Learn More</a> -->
                     </div>
                     <div class="summary">{{ service.summary }}</div>
@@ -71,6 +67,24 @@
             </div>
         </section>
 
+        <section id="gallery">
+            <h2>Photo Gallery</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    {% for image in gallery.images.all %}
+                    <div class="swiper-slide">
+                        <a data-fslightbox href="{{ image.image.url }}">
+                            <img src="{{ image.image.url }}">
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            
+                <div class="swiper-button-prev btn"></div>
+                <div class="swiper-button-next btn"></div>
+            </div>
+        </section>
+
         {% comment %}
         <section class="projects">
             <h2>What we have done..</h2>
@@ -89,7 +103,27 @@
 
     </main>
 
-    {% include 'footer.html' %}
+    {% include 'homepage/footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        function goDown() {
+            document.querySelector('.services').scrollIntoView({ behavior: 'smooth' });
+        }
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 3000,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 
 {% endblock %}
 

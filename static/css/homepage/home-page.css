@@ -89,49 +89,89 @@ a:hover {
   }
 }
 footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 70px;
   width: 100%;
-  border-top: 1px solid #f0f0f0;
-}
-footer .group {
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  --height-bottom-bar: 128px;
 }
-footer .group ul {
+footer .top {
+  height: calc(100% - var(--height-bottom-bar));
+  display: flex;
+  border-top: 1px solid var(--color-background-alt-2);
+  border-bottom: 1px solid var(--color-background-alt-2);
+}
+footer .top .nav {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  padding: 64px 48px;
+  justify-content: space-between;
+  border-right: 1px solid var(--color-background-alt-2);
+}
+footer .top .nav img {
+  width: 256px;
+  filter: brightness(0) invert(1);
+  margin-left: -36px;
+}
+footer .top .nav h3 {
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: -24px;
+}
+footer .top .nav .links {
   list-style: none;
   padding: 0;
 }
-footer .group ul li {
-  margin: 4px 0;
-  font-size: 14px;
+footer .top .nav .links li {
+  margin: 16px 0;
 }
-footer .group ul li.icons {
-  font-size: 20px;
+footer .top .info {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  padding: 32px 96px;
+  border-right: 1px solid var(--color-background-alt-2);
 }
-footer .group ul li.icons a {
+footer .top .info h3 {
+  font-size: 24px;
+  margin-top: 64px;
+  margin-bottom: 10px;
+}
+footer .top .info span {
+  margin-top: 10px;
+}
+footer .top .info span i {
   margin-right: 8px;
 }
-footer .group.group-3 {
+footer .top .info span.social-link {
+  text-decoration: underline;
+}
+footer .top .contact {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  padding: 72px 96px;
+}
+footer .top .contact a {
+  border: 1px solid white;
+  width: 200px;
+  height: 36px;
+  border-radius: 36px;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  margin-top: 64px;
+}
+footer .bottom {
+  height: var(--height-bottom-bar);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: underline;
+  font-size: 14px;
 }
 
-@media screen and (max-width: 750px) {
-  footer {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 32px 48px;
-  }
-  footer .group {
-    margin-top: 16px;
-  }
-  footer .group.group-3 {
-    align-items: flex-start;
-  }
-}
 nav {
   display: flex;
   justify-content: space-between;
@@ -186,6 +226,7 @@ nav ul li a.active {
 }
 nav ul li:last-child {
   border-left: 1px solid rgba(255, 255, 255, 0.7);
+  text-transform: none;
 }
 
 @media screen and (max-width: 1000px) {
@@ -319,6 +360,7 @@ main #services {
   flex-direction: column;
   padding: 64px 72px;
   width: 100%;
+  text-transform: uppercase;
 }
 main #services h2 {
   margin-bottom: 24px;
@@ -395,7 +437,7 @@ main #services .readmore {
 main #process {
   display: flex;
   flex-direction: column;
-  padding: 128px 72px;
+  padding: 64px 72px;
   width: 100%;
 }
 main #process h2 {
@@ -404,6 +446,7 @@ main #process h2 {
   width: 100%;
   border-bottom: 1px solid white;
   line-height: 1;
+  text-transform: uppercase;
 }
 main #process .list {
   display: grid;
@@ -426,6 +469,42 @@ main #process .list .tile .description {
   font-size: 14px;
   line-height: 2;
   text-align: justify;
+}
+main #gallery {
+  display: flex;
+  flex-direction: column;
+  padding: 64px 72px;
+  width: 100%;
+}
+main #gallery h2 {
+  margin-bottom: 24px;
+  font-size: 40px;
+  width: 100%;
+  border-bottom: 1px solid white;
+  line-height: 1;
+  text-transform: uppercase;
+}
+main #gallery .swiper {
+  width: 100%;
+  height: 520px;
+}
+main #gallery .swiper .swiper-slide {
+  width: 520px;
+}
+main #gallery .swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+main #gallery .swiper .swiper-slide img:hover {
+  filter: brightness(80%);
+  transform: scale(1.06);
+}
+main #gallery .swiper .btn {
+  color: white;
 }
 main .projects {
   display: flex;
