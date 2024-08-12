@@ -1,0 +1,104 @@
+:root {
+    --color-primary: #1E88E5;
+    --color-primary-dark: #1565C0;
+    --color-primary-darker: #0D47A1;
+    --color-primary-light: #64B5F6;
+    --color-primary-lighter: #90CAF9;
+
+    --color-tertiary: #F4511E;
+    --color-tertiary-dark: #BF360C;
+    --color-tertiary-light: #FF8A65;
+    --color-tertiary-lighter: #FFAB91;
+
+    --color-secondary: #7CB342;
+    --color-secondary-dark: #689F38;
+    --color-secondary-darker: #33691E;
+    --color-secondary-light: #AED581;
+    --color-secondary-lighter: #C5E1A5;
+
+    --color-background: #232421;
+    --color-background-alt: rgb(245, 245, 240);
+    --color-background-alt-2: rgb(245, 245, 240, 0.4);
+    
+    --color-foreground: #fff;
+    --color-foreground-lighter: #c0c0c0;
+
+    --font-family-title: "Trend Sans W00 Four", sans-serif;
+    // --font-family-heading: "Poppins", sans-serif;
+    --font-family-heading: "Avenir Heavy", sans-serif;
+    --font-family-heading-2: "Poppins", sans-serif;
+    // --font-family-normal: "Lato", sans-serif;
+    --font-family-normal: "Avenir Light", sans-serif;
+    --font-family-reviews: "Forum", serif;
+    --font-family-cursive: "Mali", cursive;
+    --font-family-light: "Avenir Light", sans-serif;
+
+    --font-family-icon: 'Font Awesome 5 Free';
+
+    --height-nav-bar: 56px;
+    --height-footer: 120px;
+
+    --width-page: 1100px;
+    --width-content: 60%;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-normal);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+}
+
+h1 {
+    font-family: var(--font-family-heading);
+}
+
+h2 {
+    font-family: var(--font-family-heading);
+}
+
+a {
+    color: var(--color-foreground);
+    text-decoration: none;
+    cursor: pointer;
+    
+    &:hover {
+        color: var(--color-foreground-lighter);
+    }
+}
+
+#contact-bar {
+    position: fixed;
+    left: 0;
+    bottom: calc(var(--height-footer));
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+    
+    a {
+        padding: 8px 10px;
+        font-size: 18px;
+        background-color: var(--color-tertiary-dark);
+        color: #fff;
+
+        &:hover {
+            background-color: var(--color-tertiary);
+        }
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    #contact-bar {
+        bottom: 8px;
+    }
+}

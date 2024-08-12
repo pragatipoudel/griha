@@ -12,15 +12,8 @@
 {% endblock %}
 
 {% block content %}
-    {% include 'nav.html' %}
+    {% include 'homepage-nav.html' %}
 
-    <section id="temp-main">
-        <p>
-            Website Under Upgrade
-        </p>
-    </section>
-
-    {% comment %}
     <main>
         {% if home_page_contents.header_video %}
         <video autoplay loop playsinline muted>
@@ -32,31 +25,53 @@
         {% endif %}
 
         <section class="title">
-            <div class="slogan">
-                <h2>
-                    {{ home_page_contents.tag_line }}
-                </h2>
-                <p>
-                    {{ home_page_contents.welcome_message }}
-                </p>
-                <a href="#" onclick="goDown()"><i class="fas fa-chevron-down"></i></a>
-            </div>     
+            <p class="tagline">
+                {{ home_page_contents.tag_line|linebreaksbr }}
+            </p>
+            <p class="message">
+                {{ home_page_contents.welcome_message }}
+            </p>
+                <!-- <a href="#" onclick="goDown()"><i class="fas fa-chevron-down"></i></a> -->
         </section>
 
+        <section id="about" style="--background-image: url('{{ home_page_contents.aboutcontent.background_image.url }}')">
+            <h2>About us.</h2>
+            <p>
+                {{ home_page_contents.aboutcontent.summary }}
+            </p>
+        </section>
 
-        <section class="services">
-            <h2>What we offer..</h2>
+        <section id="services">
+            <h2>Our services</h2>
             <div class="list">
                 {% for service in services %}
-                <a class="tile" href="{% url 'service-list-page' %}#{{ service.slug }}">
+                <div class="tile">
                     <div class="name">{{ service.name }}</div>
+                    <div class="preview">
+                        <img src="{{ service.header_image.url }}">
+                        <!-- <a href="#services">Learn More</a> -->
+                    </div>
                     <div class="summary">{{ service.summary }}</div>
-                </a>
+                </div>
                 {% endfor %}
             </div>
-            <a class="readmore" href="{% url 'service-list-page' %}">Explore all services</a>
         </section>
 
+
+
+        <section id="process">
+            <h2>Our process</h2>
+            <div class="list">
+                {% for step in process.steps.all %}
+                <div class="tile">
+                    <div class="name">{{ step.step_number }} {{ step.name }}</div>
+                    <div class="description">{{ step.description }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        {% comment %}
         <section class="projects">
             <h2>What we have done..</h2>
             <div class="list">
@@ -70,8 +85,9 @@
             <a class="readmore" href="{% url 'project-list-page' %}">Explore all Projects</a>
         </section>
 
+        {% endcomment %}
+
     </main>
-    {% endcomment %}
 
     {% include 'footer.html' %}
 

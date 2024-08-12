@@ -1,0 +1,24 @@
+{% load static %}
+
+<nav>
+    {% if not nologo %}
+    <h1>
+        <a class="logo-container" href="{% url 'home-page' %}">
+            <img class="intial-img" src="{{ home_page_contents.logo.url }}" alt="Griha Designs">
+        </a>
+    </h1>
+    {% endif %}
+
+    <a class="nav-toggle" href="#"><span></span></a>
+
+    <ul class="links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#gallery">Photo Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#consult">Get a free consultation</a></li>
+    </ul>
+</nav>
+
+

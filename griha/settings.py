@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
     'projects.apps.ProjectsConfig',
     'services.apps.ServicesConfig',
+    'process.apps.ProcessConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
