@@ -75,23 +75,33 @@ a {
 }
 
 #contact-bar {
-    position: fixed;
-    left: 0;
+    position: absolute;
+    right: 0;
     bottom: calc(var(--height-footer));
     display: flex;
     flex-direction: column;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    // border-top-right-radius: 8px;
+    // border-bottom-right-radius: 8px;
     overflow: hidden;
+    z-index: 100;
     
     a {
         padding: 8px 10px;
         font-size: 18px;
-        background-color: var(--color-tertiary-dark);
-        color: #fff;
+        background-color: #fff;
+        color: #666;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 32px;
+        margin: 6px 16px;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-            background-color: var(--color-tertiary);
+            background-color: #666;
+            color: #fff;
         }
     }
 }

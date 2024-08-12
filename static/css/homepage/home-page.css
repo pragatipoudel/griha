@@ -64,23 +64,31 @@ a:hover {
 }
 
 #contact-bar {
-  position: fixed;
-  left: 0;
+  position: absolute;
+  right: 0;
   bottom: calc(var(--height-footer));
   display: flex;
   flex-direction: column;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
   overflow: hidden;
+  z-index: 100;
 }
 #contact-bar a {
   padding: 8px 10px;
   font-size: 18px;
-  background-color: var(--color-tertiary-dark);
-  color: #fff;
+  background-color: #fff;
+  color: #666;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+  margin: 6px 16px;
+  transition: all 0.3s ease-in-out;
 }
 #contact-bar a:hover {
-  background-color: var(--color-tertiary);
+  background-color: #666;
+  color: #fff;
 }
 
 @media screen and (max-width: 1100px) {
@@ -348,7 +356,7 @@ main #about {
 }
 main #about h2 {
   margin-bottom: 24px;
-  font-size: 40px;
+  font-size: 25px;
 }
 main #about p {
   font-size: 18px;
@@ -363,8 +371,8 @@ main #services {
   text-transform: uppercase;
 }
 main #services h2 {
-  margin-bottom: 24px;
-  font-size: 40px;
+  margin-bottom: 48px;
+  font-size: 25px;
   width: 100%;
   border-bottom: 1px solid white;
   line-height: 1;
@@ -442,7 +450,7 @@ main #process {
 }
 main #process h2 {
   margin-bottom: 24px;
-  font-size: 40px;
+  font-size: 25px;
   width: 100%;
   border-bottom: 1px solid white;
   line-height: 1;
@@ -478,7 +486,7 @@ main #gallery {
 }
 main #gallery h2 {
   margin-bottom: 24px;
-  font-size: 40px;
+  font-size: 25px;
   width: 100%;
   border-bottom: 1px solid white;
   line-height: 1;
