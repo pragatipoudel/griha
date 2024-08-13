@@ -1,6 +1,7 @@
 @import './base';
 @import './footer';
 @import './nav';
+@import '../image-comparison';
 // @import './nav-animation';
 
 html {
@@ -244,6 +245,56 @@ main {
             }
         }
     }
+
+    #virtual-walkthrough {
+        display: flex;
+        flex-direction: column;
+        padding: 64px 72px;
+        width: 100%;
+        align-items: center;
+
+        h2 {
+            margin-bottom: 24px;
+            font-size: 25px;
+            width: 100%;
+            border-bottom: 1px solid white;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        p {
+            max-width: 500px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        iframe {
+            height: calc(100vh - 200px);
+            width: 100%;
+        }
+    }
+
+    #photorealistic-rendering {
+        display: flex;
+        flex-direction: column;
+        padding: 64px 72px;
+        width: 100%;
+        align-items: center;
+
+        h2 {
+            margin-bottom: 24px;
+            font-size: 25px;
+            width: 100%;
+            border-bottom: 1px solid white;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .image-comparison-wrapper {
+            height: calc(100vh - 200px);
+            max-width: 100%;
+        }
+    }
 }
 
 @media screen and (max-width: 1300px) {
@@ -294,6 +345,14 @@ main {
             .list {
                 grid-template-columns: repeat(auto-fill, 100%);
             }
+        }
+
+        #virtual-walkthrough {
+            padding: 64px 16px;
+        }
+
+        #photorealistic-rendering {
+            padding: 64px 16px;
         }
     }
 }

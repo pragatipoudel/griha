@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{% static 'css/homepage/home-page.css' %}">
     <script defer src="{% static 'external/fslightbox.js' %}"></script>
+    <script defer src="{% static 'js/image-comparison.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -83,6 +84,37 @@
                 <div class="swiper-button-prev btn"></div>
                 <div class="swiper-button-next btn"></div>
             </div>
+        </section>
+
+        <section id="photorealistic-rendering">
+            <h2>Photorealistic Rendering</h2>
+            
+            <div class="image-comparison-wrapper">
+                <div class="images">
+                  <div class="img-1">
+                    <img src="{% static 'img/construction.jpg' %}">
+                    <span>Real Image After Construction</span>
+                  </div>
+                  <div class="img-2">
+                    <img src="{% static 'img/rendering.jpg' %}">
+                    <span>Photorealistic Rendering</span>
+                  </div>
+                </div>
+                <div class="slider">
+                  <div class="drag-line">
+                    <span></span>
+                  </div>
+                  <input type="range" min="0" max="100" value="50">
+                </div>
+              </div>
+        </section>
+
+        <section id="virtual-walkthrough">
+            <h2>Virtual Walkthrough</h2>
+            <p>
+                Experience your project like never before with our virtual walkthroughs, created during the conceptual design phase for  space visualization. These immersive, 3D tours allow you to explore and interact with every detail of the design, ensuring our vision aligns with your expectations.
+            </p>
+            <iframe src="https://app.lapentor.com/sphere/manzanita" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
         </section>
     </main>
 
