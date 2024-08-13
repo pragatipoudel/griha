@@ -298,6 +298,8 @@ main {
                 span {
                     background-color: rgba(0, 0, 0, 0.55);
                     padding: 8px 10px;
+                    white-space: nowrap;
+                    overflow: hidden;
                 }
             }
         }
@@ -368,8 +370,6 @@ main {
                     span {
                         font-size: 12px;
                         padding: 4px 6px;
-                        white-space: nowrap;
-                        overflow: hidden;
                     }
                 }
             }

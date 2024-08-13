@@ -731,6 +731,8 @@ main #photorealistic-rendering .image-comparison-wrapper {
 main #photorealistic-rendering .image-comparison-wrapper .images span {
   background-color: rgba(0, 0, 0, 0.55);
   padding: 8px 10px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1300px) {
@@ -781,8 +783,6 @@ main #photorealistic-rendering .image-comparison-wrapper .images span {
   main #photorealistic-rendering .image-comparison-wrapper .images span {
     font-size: 12px;
     padding: 4px 6px;
-    white-space: nowrap;
-    overflow: hidden;
   }
 }
 @keyframes bounce {
