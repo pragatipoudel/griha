@@ -28,3 +28,24 @@ def home_page(request):
         **get_common_content(),
     }
     return render(request, 'homepage/home-page.html', context)
+
+
+def old_home_page(request):
+    projects = Project.objects.all()[:3]
+    services = Service.objects.all()
+    reviews = Review.objects.filter(verified=True)[:3]
+    process = Process.objects.first()
+    gallery = MainGallery.objects.first()
+    contact_info = ContactInfo.objects.first()
+
+    context = {
+        'current_page': 'home',
+        'projects': projects,
+        'process': process,
+        'services': services,
+        'gallery': gallery,
+        'reviews': reviews,
+        'contact_info': contact_info,
+        **get_common_content(),
+    }
+    return render(request, 'homepage/old-home-page.html', context)

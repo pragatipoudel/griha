@@ -17,12 +17,14 @@
     <a class="nav-toggle" href="#"><span></span></a>
 
     <ul class="links">
+        {% if not hide_links %}
         <li><a {% if current_page == 'home' %}class="active"{% endif %} href="{% url 'home-page' %}">home</a></li>
         <li><a {% if current_page == 'services' %}class="active"{% endif %} href="{% url 'service-list-page' %}">services</a></li>
         <li><a {% if current_page == 'projects' %}class="active"{% endif %} href="{% url 'project-list-page' %}">projects</a></li>
         {% comment %}
         <li><a {% if current_page == 'reviews' %}class="active"{% endif %} href="{% url 'reviews' %}">client testimonials</a></li>
         {% endcomment %}
+        {% endif %}
     </ul>
 </nav>
 
