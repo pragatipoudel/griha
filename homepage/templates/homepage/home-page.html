@@ -84,23 +84,6 @@
                 <div class="swiper-button-next btn"></div>
             </div>
         </section>
-
-        {% comment %}
-        <section class="projects">
-            <h2>What we have done..</h2>
-            <div class="list">
-                {% for project in projects %}
-                <a class="tile" href="{% url 'project-detail-page' project.slug %}">
-                    <img src="{{ project.header_image.url }}">
-                    <div class="name">{{ project.name }}</div>
-                </a>
-                {% endfor %}
-            </div>
-            <a class="readmore" href="{% url 'project-list-page' %}">Explore all Projects</a>
-        </section>
-
-        {% endcomment %}
-
     </main>
 
     {% include 'homepage/footer.html' %}

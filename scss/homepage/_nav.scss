@@ -15,20 +15,19 @@ nav {
         z-index: 100;
         display: flex;
         align-items: center;
-        background-color: var(--color-background-alt);
-        padding: 0 10px;
 
         a {
-            height: calc(100% - 16px);
+            height: 100%;
             display: flex;
             align-items: center;
             font-weight: 500;
             font-size: 20px;
+            background-color: var(--color-background-alt);
 
             img {
-                height: 100%;
+                height: calc(100% - 16px);
+                padding: 0 16px;
                 width: auto;
-                margin-right: 10px;
             }
         }
     }
@@ -64,18 +63,11 @@ nav {
     }
 }
 
-@media screen and (max-width: 1000px) {
-    nav {
-        padding: 8px 16px;
-    }
-}
-
 
 @media screen and (max-width: 750px) {
     nav {
         h1 {
             display: flex;
-            width: calc(100% - 40px - 50px);
             
             a {
                 width: 100%;
@@ -84,10 +76,12 @@ nav {
 
         .nav-toggle {
             position: absolute;
-            display: inline-block;
+            display: block;
             align-self: center;
-            right: 50px;
-            top: 35px;
+            height: 24px;
+            width: 25px;
+            right: 25px;
+            top: 16px;
 
             span,
             span:before,
@@ -100,6 +94,7 @@ nav {
                 position: absolute;
                 transition: all 0.3s ease-in-out;
                 background-color: var(--color-foreground);
+                bottom: 7px;
             }
 
             span:before {
@@ -121,10 +116,14 @@ nav {
             max-height: 0;
             overflow: hidden;
             width: 100%;
-            background-color: rgba(255, 255, 255);
+            background-color: var(--color-background);
 
             li {
                 padding: 8px;
+
+                &:last-child {
+                    border: 0;
+                }
             }
         }
 

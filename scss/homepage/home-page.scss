@@ -26,14 +26,13 @@ main {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
         height: calc(100vh - var(--height-nav-bar));
         z-index: 5;
         display: flex;
         flex-direction: column;
         justify-content: center;
         color: #fff;
-        margin-left: 48px;
+        margin: 0 48px;
 
         .tagline {
             margin-bottom: 24px;
@@ -145,6 +144,7 @@ main {
                     text-align: justify;
                     line-height: 2;
                     margin-top: 12px;
+                    text-transform: none;
                 }
 
                 &:hover {
@@ -244,148 +244,55 @@ main {
             }
         }
     }
-
-    .projects {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding: 32px 256px 64px;
-        background-color: var(--color-background-alt-2);
-
-        h2 {
-            font-size: 40px;
-            margin-bottom: 16px;
-        }
-
-        .list {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-
-            .tile {
-                text-align: center;
-                position: relative;
-                cursor: pointer;
-                height: 300px;
-                transition: transform 0.3s ease-in-out;
-                border-radius: 20px;
-                overflow: hidden;
-                width: calc(100% / 3 - 20px);
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-
-                .name {
-                    position: absolute;
-                    bottom: 0;
-                    padding: 10px;
-                    width: 100%;
-                    color: #000a;
-                    font-size: 20px;
-                    background-color: rgba(200,200,200);
-                }
-
-                &:hover {
-                    transform: scale(1.03);
-                }
-            }
-        }
-
-        .readmore {
-            color: var(--color-tertiary-dark);
-            align-self: flex-end;
-            margin-top: 8px;
-            margin-right: 16px;
-        }
-    }
 }
 
 @media screen and (max-width: 1300px) {
     main {
-        .services {
-            padding: 32px 64px;
-        }
-
-        .projects {
-            padding: 32px 64px;
-
-            .list {
-                .tile {
-                    height: 240px;
-
-                    .name {
-                        font-size: 16px;
-                    }
-                }
-            }
+        #about {
+            padding: 180px 72px;
         }
     }
 }
 
 @media screen and (max-width: 990px) {
     main {
-        height: auto;
-
         .title {
-            .slogan {
-                width: 95%;
-                padding: 24px;
-                border-radius: 16px;
+            margin: 0 24px;
 
-                h2 {
-                    font-size: 18px;
-                }
+            .tagline {
+                font-size: 32px;
+            }
+        }
 
-                p {
-                    font-size: 14px;
-                }
+        #about {
+            padding: 180px 32px;
+        }
 
-                a {
-                    font-size: 20px;
+        #services {
+            padding: 64px 32px;
+
+            .list {
+                grid-template-columns: repeat(auto-fill, 100%);
+            }
+        }
+
+        #process {
+            padding: 64px 32px;
+
+            .list {
+                grid-template-columns: repeat(auto-fill, 100%);
+
+                .tile {
+                    margin: 0;
                 }
             }
         }
 
-        .services {
-            padding: 48px 32px;
-
-            h2 {
-                font-size: 26px;
-            }
+        #gallery {
+            padding: 64px 16px;
 
             .list {
-                flex-direction: column;
-
-                .tile {
-                    width: 100%;
-                    margin-bottom: 16px;
-                }
-            }
-        }
-
-        .projects {
-            padding: 48px 32px;
-
-            h2 {
-                font-size: 26px;
-            }
-
-
-            .list {
-                flex-direction: column;
-
-                .tile {
-                    width: 100%;
-                    height: 240px;
-                    border-radius: 16px;
-
-                    &:not(:last-child) {
-                        margin-bottom: 24px;
-                    }
-                }
+                grid-template-columns: repeat(auto-fill, 100%);
             }
         }
     }

@@ -117,12 +117,12 @@ footer .top .nav {
   justify-content: space-between;
   border-right: 1px solid var(--color-background-alt-2);
 }
-footer .top .nav img {
-  width: 256px;
+footer .top .nav .brand img {
+  width: 120%;
   filter: brightness(0) invert(1);
   margin-left: -36px;
 }
-footer .top .nav h3 {
+footer .top .nav .brand h3 {
   font-weight: 400;
   font-size: 16px;
   margin-top: -24px;
@@ -180,6 +180,60 @@ footer .bottom {
   font-size: 14px;
 }
 
+@media screen and (max-width: 1000px) {
+  footer {
+    height: auto;
+  }
+  footer .top {
+    flex-direction: column;
+    padding: 48px 0 24px;
+    height: auto;
+  }
+  footer .top .nav {
+    width: 100%;
+    padding: 0 32px;
+    border: none;
+  }
+  footer .top .nav .brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  footer .top .nav .brand img {
+    width: auto;
+    height: 72px;
+    margin-left: -16px;
+    margin-top: -25px;
+  }
+  footer .top .nav .links {
+    display: none;
+  }
+  footer .top .info {
+    width: 100%;
+    padding: 0 32px;
+    border: none;
+  }
+  footer .top .info h3 {
+    margin-top: 16px;
+    font-size: 18px;
+  }
+  footer .top .info span {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  footer .top .contact {
+    width: 100%;
+    padding: 32px;
+  }
+  footer .top .contact a {
+    margin-top: 10px;
+  }
+  footer .bottom {
+    height: auto;
+    padding: 16px 0;
+    flex-direction: column;
+  }
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -196,20 +250,19 @@ nav h1 {
   z-index: 100;
   display: flex;
   align-items: center;
-  background-color: var(--color-background-alt);
-  padding: 0 10px;
 }
 nav h1 a {
-  height: calc(100% - 16px);
+  height: 100%;
   display: flex;
   align-items: center;
   font-weight: 500;
   font-size: 20px;
+  background-color: var(--color-background-alt);
 }
 nav h1 a img {
-  height: 100%;
+  height: calc(100% - 16px);
+  padding: 0 16px;
   width: auto;
-  margin-right: 10px;
 }
 nav .nav-toggle {
   display: none;
@@ -237,25 +290,21 @@ nav ul li:last-child {
   text-transform: none;
 }
 
-@media screen and (max-width: 1000px) {
-  nav {
-    padding: 8px 16px;
-  }
-}
 @media screen and (max-width: 750px) {
   nav h1 {
     display: flex;
-    width: calc(100% - 40px - 50px);
   }
   nav h1 a {
     width: 100%;
   }
   nav .nav-toggle {
     position: absolute;
-    display: inline-block;
+    display: block;
     align-self: center;
-    right: 50px;
-    top: 35px;
+    height: 24px;
+    width: 25px;
+    right: 25px;
+    top: 16px;
   }
   nav .nav-toggle span,
   nav .nav-toggle span:before,
@@ -268,6 +317,7 @@ nav ul li:last-child {
     position: absolute;
     transition: all 0.3s ease-in-out;
     background-color: var(--color-foreground);
+    bottom: 7px;
   }
   nav .nav-toggle span:before {
     bottom: 7px;
@@ -285,10 +335,13 @@ nav ul li:last-child {
     max-height: 0;
     overflow: hidden;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--color-background);
   }
   nav ul li {
     padding: 8px;
+  }
+  nav ul li:last-child {
+    border: 0;
   }
   nav.open .nav-toggle span {
     background-color: transparent;
@@ -327,14 +380,13 @@ main .title {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: calc(100vh - var(--height-nav-bar));
   z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: #fff;
-  margin-left: 48px;
+  margin: 0 48px;
 }
 main .title .tagline {
   margin-bottom: 24px;
@@ -433,6 +485,7 @@ main #services .list .tile .summary {
   text-align: justify;
   line-height: 2;
   margin-top: 12px;
+  text-transform: none;
 }
 main #services .list .tile:hover {
   color: var(--color-foreground);
@@ -514,117 +567,42 @@ main #gallery .swiper .swiper-slide img:hover {
 main #gallery .swiper .btn {
   color: white;
 }
-main .projects {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 32px 256px 64px;
-  background-color: var(--color-background-alt-2);
-}
-main .projects h2 {
-  font-size: 40px;
-  margin-bottom: 16px;
-}
-main .projects .list {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-main .projects .list .tile {
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-  height: 300px;
-  transition: transform 0.3s ease-in-out;
-  border-radius: 20px;
-  overflow: hidden;
-  width: calc(33.3333333333% - 20px);
-}
-main .projects .list .tile img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-main .projects .list .tile .name {
-  position: absolute;
-  bottom: 0;
-  padding: 10px;
-  width: 100%;
-  color: rgba(0, 0, 0, 0.6666666667);
-  font-size: 20px;
-  background-color: rgb(200, 200, 200);
-}
-main .projects .list .tile:hover {
-  transform: scale(1.03);
-}
-main .projects .readmore {
-  color: var(--color-tertiary-dark);
-  align-self: flex-end;
-  margin-top: 8px;
-  margin-right: 16px;
-}
 
 @media screen and (max-width: 1300px) {
-  main .services {
-    padding: 32px 64px;
-  }
-  main .projects {
-    padding: 32px 64px;
-  }
-  main .projects .list .tile {
-    height: 240px;
-  }
-  main .projects .list .tile .name {
-    font-size: 16px;
+  main #about {
+    padding: 180px 72px;
   }
 }
 @media screen and (max-width: 990px) {
-  main {
-    height: auto;
+  main .title {
+    margin: 0 24px;
   }
-  main .title .slogan {
-    width: 95%;
-    padding: 24px;
-    border-radius: 16px;
+  main .title .tagline {
+    font-size: 32px;
   }
-  main .title .slogan h2 {
-    font-size: 18px;
+  main #about {
+    padding: 180px 32px;
   }
-  main .title .slogan p {
-    font-size: 14px;
+  main #services {
+    padding: 64px 32px;
   }
-  main .title .slogan a {
-    font-size: 20px;
+  main #services .list {
+    grid-template-columns: repeat(auto-fill, 100%);
   }
-  main .services {
-    padding: 48px 32px;
+  main #process {
+    padding: 64px 32px;
   }
-  main .services h2 {
-    font-size: 26px;
+  main #process .list {
+    grid-template-columns: repeat(auto-fill, 100%);
   }
-  main .services .list {
-    flex-direction: column;
+  main #process .list .tile {
+    margin: 0;
   }
-  main .services .list .tile {
-    width: 100%;
-    margin-bottom: 16px;
+  main #gallery {
+    padding: 64px 16px;
   }
-  main .projects {
-    padding: 48px 32px;
-  }
-  main .projects h2 {
-    font-size: 26px;
-  }
-  main .projects .list {
-    flex-direction: column;
-  }
-  main .projects .list .tile {
-    width: 100%;
-    height: 240px;
-    border-radius: 16px;
-  }
-  main .projects .list .tile:not(:last-child) {
-    margin-bottom: 24px;
+  main #gallery .list {
+    grid-template-columns: repeat(auto-fill, 100%);
   }
 }
 @keyframes bounce {
