@@ -385,8 +385,6 @@ nav ul li:last-child {
   position: absolute;
   top: 50%;
   right: 16px;
-  background-color: var(--color-background-alt-2);
-  padding: 8px 10px;
 }
 .image-comparison-wrapper .images .img-2 {
   position: absolute;
@@ -403,9 +401,6 @@ nav ul li:last-child {
   position: absolute;
   top: 50%;
   left: 16px;
-  width: 200px;
-  background-color: var(--color-background-alt-2);
-  padding: 8px 10px;
 }
 .image-comparison-wrapper .slider {
   position: absolute;
@@ -711,7 +706,7 @@ main #virtual-walkthrough p {
   margin-bottom: 20px;
 }
 main #virtual-walkthrough iframe {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 300px);
   width: 100%;
 }
 main #photorealistic-rendering {
@@ -732,6 +727,10 @@ main #photorealistic-rendering h2 {
 main #photorealistic-rendering .image-comparison-wrapper {
   height: calc(100vh - 200px);
   max-width: 100%;
+}
+main #photorealistic-rendering .image-comparison-wrapper .images span {
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 8px 10px;
 }
 
 @media screen and (max-width: 1300px) {
@@ -775,6 +774,15 @@ main #photorealistic-rendering .image-comparison-wrapper {
   }
   main #photorealistic-rendering {
     padding: 64px 16px;
+  }
+  main #photorealistic-rendering .image-comparison-wrapper {
+    height: 360px;
+  }
+  main #photorealistic-rendering .image-comparison-wrapper .images span {
+    font-size: 12px;
+    padding: 4px 6px;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
 @keyframes bounce {

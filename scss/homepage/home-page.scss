@@ -269,7 +269,7 @@ main {
         }
 
         iframe {
-            height: calc(100vh - 200px);
+            height: calc(100vh - 300px);
             width: 100%;
         }
     }
@@ -293,6 +293,13 @@ main {
         .image-comparison-wrapper {
             height: calc(100vh - 200px);
             max-width: 100%;
+
+            .images {
+                span {
+                    background-color: rgba(0, 0, 0, 0.55);
+                    padding: 8px 10px;
+                }
+            }
         }
     }
 }
@@ -353,6 +360,19 @@ main {
 
         #photorealistic-rendering {
             padding: 64px 16px;
+
+            .image-comparison-wrapper {
+                height: 360px;
+
+                .images {
+                    span {
+                        font-size: 12px;
+                        padding: 4px 6px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+            }
         }
     }
 }
