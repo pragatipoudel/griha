@@ -17,6 +17,7 @@ class HomePageContent(models.Model):
 class AboutContent(models.Model):
     background_image = models.ImageField(upload_to="homepage/about/", blank=True)
     summary = models.TextField()
+    tagline = models.TextField(blank=True)
     home_page = models.OneToOneField(HomePageContent, on_delete=models.CASCADE)
 
     def __str__(self):

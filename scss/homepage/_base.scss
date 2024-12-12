@@ -23,19 +23,17 @@
     --color-foreground: #fff;
     --color-foreground-lighter: #c0c0c0;
 
-    --font-family-title: "Trend Sans W00 Four", sans-serif;
-    // --font-family-heading: "Poppins", sans-serif;
-    --font-family-heading: "Avenir Heavy", sans-serif;
-    --font-family-heading-2: "Poppins", sans-serif;
-    // --font-family-normal: "Lato", sans-serif;
-    --font-family-normal: "Avenir Light", sans-serif;
-    --font-family-reviews: "Forum", serif;
-    --font-family-cursive: "Mali", cursive;
-    --font-family-light: "Avenir Light", sans-serif;
+    --font-family-title: "Figtree", sans-serif;
+    --font-family-heading: "Figtree", sans-serif;
+    --font-family-heading-2: "Open Sans", sans-serif;
+    --font-family-normal: "Figtree", sans-serif;
+    --font-family-reviews: "Figtree", serif;
+    --font-family-cursive: "Figtree", cursive;
+    --font-family-light: "Open Sans", sans-serif;
 
     --font-family-icon: 'Font Awesome 5 Free';
 
-    --height-nav-bar: 56px;
+    --height-nav-bar: 84px;
     --height-footer: 120px;
 
     --width-page: 1100px;
@@ -61,7 +59,7 @@ h1 {
 }
 
 h2 {
-    font-family: var(--font-family-heading);
+    font-family: var(--font-family-heading-2);
 }
 
 a {

@@ -5,10 +5,11 @@ nav {
     align-items: center;
     width: 100%;
     height: var(--height-nav-bar);
-    background-color: var(--color-background);
+    // background-color: var(--color-background);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0.1) 100%);
     color: var(--color-foreground);
+    padding: 0 120px;
     z-index: 10;
-    border-bottom: 1px solid var(--color-background-alt-2);
 
     h1 {
         height: 100%;
@@ -22,11 +23,9 @@ nav {
             align-items: center;
             font-weight: 500;
             font-size: 20px;
-            background-color: var(--color-background-alt);
 
             img {
-                height: calc(100% - 16px);
-                padding: 0 16px;
+                height: 48px;
                 width: auto;
             }
         }
@@ -39,25 +38,28 @@ nav {
 
     ul {
         display: flex;
+        align-items: center;
         list-style: none;
         z-index: 100;
         height: 100%;
 
         li {
-            padding: 0 16px;
-            font-size: 14px;
-            text-transform: uppercase;
+            padding: 0 23px;
+            font-size: 16px;
             display: flex;
             align-items: center;
-            height: 100%;
 
             a.active {
                 color: var(--color-tertiary);
             }
 
             &:last-child {
-                border-left: 1px solid rgba(255, 255, 255, 0.7);
-                text-transform: none;
+                height: 44px;
+                border-radius: 22px;
+                background-color: #fff;
+                a {
+                    color: #000;
+                }
             }
         }
     }

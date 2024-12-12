@@ -25,7 +25,7 @@
   --font-family-reviews: "Forum", serif;
   --font-family-cursive: "Mali", cursive;
   --font-family-icon: "Font Awesome 5 Free";
-  --height-nav-bar: 72px;
+  --height-nav-bar: 84px;
   --height-footer: 120px;
   --width-page: 1100px;
   --width-content: 60%;
@@ -94,7 +94,7 @@ nav {
   width: 100%;
   height: var(--height-nav-bar);
   padding: 8px 0;
-  background-color: var(--color-background);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0.1) 100%);
   z-index: 10;
   padding: 0 16px;
 }

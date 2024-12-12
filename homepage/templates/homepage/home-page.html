@@ -22,19 +22,22 @@
         {% endif %}
 
         <section class="title">
-            <p class="tagline">
-                {{ home_page_contents.tag_line|linebreaksbr }}
-            </p>
             <p class="message">
                 {{ home_page_contents.welcome_message }}
+            </p>
+            <p class="tagline">
+                {{ home_page_contents.tag_line|linebreaksbr }}
             </p>
                 <!-- <a href="#" onclick="goDown()"><i class="fas fa-chevron-down"></i></a> -->
         </section>
 
-        <section id="about" style="--background-image: url('{{ home_page_contents.aboutcontent.background_image.url }}')">
+        <section id="about">
             <h2>About us.</h2>
+            {% if home_page_contents.aboutcontent.tagline %}
+            <p class="tagline">{{ home_page_contents.aboutcontent.tagline }}</p>
+            {% endif %}
             <p>
-                {{ home_page_contents.aboutcontent.summary }}
+                {{ home_page_contents.aboutcontent.summary|linebreaksbr }}
             </p>
         </section>
 
@@ -43,12 +46,12 @@
             <div class="list">
                 {% for service in services %}
                 <div class="tile">
-                    <div class="name">{{ service.name }}</div>
                     <div class="preview">
                         <img src="{{ service.header_image.url }}" oncontextmenu="return false">
                         <!-- <a href="#services">Learn More</a> -->
                     </div>
-                    <div class="summary">{{ service.summary }}</div>
+                    <div class="name">{{ service.name }}</div>
+                    <!-- <div class="summary">{{ service.summary }}</div> -->
                 </div>
                 {% endfor %}
             </div>
@@ -70,7 +73,17 @@
 
         <section id="gallery">
             <h2>Photo Gallery</h2>
-            <div class="swiper">
+            <p class="tagline">Moments captured in Griha</p>
+            <div class="grid">
+                {% for image in gallery.images.all %}
+                <div class="tile">
+                    <a data-fslightbox href="{{ image.image.url }}">
+                        <img src="{{ image.image.url }}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- <div class="swiper">
                 <div class="swiper-wrapper">
                     {% for image in gallery.images.all %}
                     <div class="swiper-slide">
@@ -83,7 +96,7 @@
             
                 <div class="swiper-button-prev btn"></div>
                 <div class="swiper-button-next btn"></div>
-            </div>
+            </div> -->
         </section>
 
         <section id="photorealistic-rendering">
@@ -111,8 +124,8 @@
 
         <section id="virtual-walkthrough">
             <h2>Virtual Walkthrough</h2>
-            <p>
-                Experience your project like never before with our virtual walkthroughs, created during the conceptual design phase for  space visualization. These immersive, 3D tours allow you to explore and interact with every detail of the design, ensuring our vision aligns with your expectations.
+            <p class="tagline">
+                Immersive 3D Design Tours
             </p>
             <iframe src="https://app.lapentor.com/sphere/manzanita" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
         </section>
