@@ -98,140 +98,105 @@ a:hover {
 }
 footer {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  --height-bottom-bar: 128px;
+  padding-bottom: 64px;
 }
-footer .top {
-  height: calc(100% - var(--height-bottom-bar));
-  display: flex;
-  border-top: 1px solid var(--color-background-alt-2);
-  border-bottom: 1px solid var(--color-background-alt-2);
-}
-footer .top .nav {
+footer .tagline {
+  padding: 90px 64px;
   display: flex;
   flex-direction: column;
-  width: 20%;
-  padding: 64px 48px;
-  justify-content: space-between;
-  border-right: 1px solid var(--color-background-alt-2);
-}
-footer .top .nav .brand img {
-  width: 120%;
-  filter: brightness(0) invert(1);
-  margin-left: -36px;
-}
-footer .top .nav .brand h3 {
-  font-weight: 400;
-  font-size: 16px;
-  margin-top: -24px;
-}
-footer .top .nav .links {
-  list-style: none;
-  padding: 0;
-}
-footer .top .nav .links li {
-  margin: 16px 0;
-}
-footer .top .info {
-  display: flex;
-  flex-direction: column;
-  width: 35%;
-  padding: 32px 96px;
-  border-right: 1px solid var(--color-background-alt-2);
-}
-footer .top .info h3 {
-  font-size: 24px;
-  margin-top: 64px;
-  margin-bottom: 10px;
-}
-footer .top .info span {
-  margin-top: 10px;
-}
-footer .top .info span i {
-  margin-right: 8px;
-}
-footer .top .info span.social-link {
-  text-decoration: underline;
-}
-footer .top .contact {
-  display: flex;
-  flex-direction: column;
-  width: 45%;
-  padding: 72px 96px;
-}
-footer .top .contact a {
-  border: 1px solid white;
-  width: 200px;
-  height: 36px;
-  border-radius: 36px;
-  display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 64px;
+  text-align: center;
 }
-footer .bottom {
-  height: var(--height-bottom-bar);
+footer .tagline p {
+  font-size: 48px;
+  font-weight: 400;
+}
+footer .tagline a {
+  font-size: 28px;
+  color: #996830;
+}
+footer .main {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 64px;
+}
+footer .main .brand {
+  width: 55%;
+}
+footer .main .brand img {
+  height: 50px;
+  margin-bottom: 18px;
+}
+footer .main .links {
+  list-style: none;
+  padding: 0;
+  width: 30%;
+}
+footer .main .links li {
+  margin: 16px 0;
+}
+footer .main .socials {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+}
+footer .main .socials span {
+  margin-top: 10px;
+}
+footer .main .socials span i {
+  margin-right: 8px;
+}
+footer .main .socials span.social-link {
   text-decoration: underline;
-  font-size: 14px;
 }
 
 @media screen and (max-width: 1000px) {
-  footer {
-    height: auto;
+  footer .tagline {
+    text-align: start;
+    align-items: flex-start;
+    padding: 60px 64px;
   }
-  footer .top {
-    flex-direction: column;
-    padding: 48px 0 24px;
-    height: auto;
+  footer .tagline p {
+    font-size: 32px;
   }
-  footer .top .nav {
-    width: 100%;
-    padding: 0 32px;
-    border: none;
-  }
-  footer .top .nav .brand {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  footer .top .nav .brand img {
-    width: auto;
-    height: 72px;
-    margin-left: -16px;
-    margin-top: -25px;
-  }
-  footer .top .nav .links {
-    display: none;
-  }
-  footer .top .info {
-    width: 100%;
-    padding: 0 32px;
-    border: none;
-  }
-  footer .top .info h3 {
-    margin-top: 16px;
+  footer .tagline a {
     font-size: 18px;
   }
-  footer .top .info span {
-    font-size: 14px;
-    margin-top: 4px;
-  }
-  footer .top .contact {
+  footer .main .brand {
     width: 100%;
-    padding: 32px;
+    margin-bottom: 48px;
   }
-  footer .top .contact a {
-    margin-top: 10px;
+  footer .main .socials {
+    width: 70%;
   }
-  footer .bottom {
-    height: auto;
-    padding: 16px 0;
-    flex-direction: column;
+}
+@media screen and (max-width: 640px) {
+  footer .tagline {
+    text-align: start;
+    align-items: flex-start;
+    padding: 48px 32px;
+  }
+  footer .tagline p {
+    font-size: 32px;
+  }
+  footer .tagline a {
+    font-size: 18px;
+  }
+  footer .main {
+    padding: 0 32px;
+  }
+  footer .main .brand {
+    width: 100%;
+    margin-bottom: 48px;
+  }
+  footer .main .links {
+    width: 100%;
+  }
+  footer .main .socials {
+    width: 100%;
   }
 }
 nav {
@@ -756,7 +721,7 @@ main #photorealistic-rendering h2 {
   text-align: center;
 }
 main #photorealistic-rendering .image-comparison-wrapper {
-  height: calc(100vh - 200px);
+  height: 545px;
   max-width: 100%;
 }
 main #photorealistic-rendering .image-comparison-wrapper .images span {

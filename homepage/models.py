@@ -29,6 +29,7 @@ class TagLine(models.Model):
     services = models.TextField(blank=True)
     gallery = models.TextField(blank=True)
     walkthrough = models.TextField(blank=True)
+    footer = models.TextField(blank=True)
 
     def __str__(self):
         return 'Tag lines for homepage'

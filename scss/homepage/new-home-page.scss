@@ -276,33 +276,6 @@ main {
                 }
             }
         }
-
-        // .swiper {
-        //     width: 100%;
-        //     height: 520px;
-
-        //     .swiper-slide {
-        //         width: 520px;
-
-        //         img {
-        //             width: 100%;
-        //             height: 100%;
-        //             object-fit: cover;
-        //             object-position: center center;
-        //             cursor: pointer;
-        //             transition: all 0.5s ease-in-out;
-
-        //             &:hover {
-        //                 filter: brightness(80%);
-        //                 transform: scale(1.06);
-        //             }
-        //         }
-        //     }
-
-        //     .btn {
-        //         color: white;
-        //     }
-        // }
     }
 
     #virtual-walkthrough {
@@ -348,7 +321,7 @@ main {
         }
 
         .image-comparison-wrapper {
-            height: calc(100vh - 200px);
+            height: 545px;
             max-width: 100%;
 
             .images {
