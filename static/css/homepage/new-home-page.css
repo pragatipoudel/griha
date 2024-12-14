@@ -501,6 +501,8 @@ main .title .message {
   line-height: 32px;
 }
 main #about {
+  display: flex;
+  align-items: center;
   background: #fff;
   color: #2D2D2D;
   width: 100%;
@@ -508,6 +510,13 @@ main #about {
   background-position: center center;
   background-size: cover;
   padding: 120px 64px;
+}
+main #about img {
+  width: 580px;
+  height: 592px;
+  object-fit: cover;
+  object-position: center center;
+  margin-right: 70px;
 }
 main #about p:not(.tagline) {
   font-size: 18px;
@@ -731,6 +740,12 @@ main #photorealistic-rendering .image-comparison-wrapper .images span {
   overflow: hidden;
 }
 
+@media screen and (max-width: 1300px) {
+  main #about img {
+    width: 400px;
+    height: 400px;
+  }
+}
 @media screen and (max-width: 990px) {
   main .title {
     margin: 0 24px;
@@ -739,7 +754,17 @@ main #photorealistic-rendering .image-comparison-wrapper .images span {
     font-size: 40px;
   }
   main #about {
+    flex-direction: column;
     padding: 64px 32px;
+  }
+  main #about img {
+    order: 1;
+    width: 100%;
+    margin-top: 16px;
+    margin-right: 0;
+  }
+  main #about div {
+    width: 100%;
   }
   main #about h2 {
     font-size: 18px;

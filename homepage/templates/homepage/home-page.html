@@ -32,13 +32,18 @@
         </section>
 
         <section id="about">
-            <h2>About us.</h2>
-            {% if home_page_contents.tagline.about %}
-            <p class="tagline">{{ home_page_contents.tagline.about }}</p>
+            {% if home_page_contents.aboutcontent.background_image %}
+            <img src="{{ home_page_contents.aboutcontent.background_image.url }}">
             {% endif %}
-            <p>
-                {{ home_page_contents.aboutcontent.summary|linebreaksbr }}
-            </p>
+            <div>
+                <h2>About us.</h2>
+                {% if home_page_contents.tagline.about %}
+                <p class="tagline">{{ home_page_contents.tagline.about }}</p>
+                {% endif %}
+                <p>
+                    {{ home_page_contents.aboutcontent.summary|linebreaksbr }}
+                </p>
+            </div>
         </section>
 
         <section id="services">

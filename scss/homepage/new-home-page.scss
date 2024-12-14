@@ -67,6 +67,8 @@ main {
     }
 
     #about {
+        display: flex;
+        align-items: center;
         background: #fff;
         color: #2D2D2D;
         width: 100%;
@@ -74,6 +76,14 @@ main {
         background-position: center center;
         background-size: cover;
         padding: 120px 64px;
+
+        img {
+            width: 580px;
+            height: 592px;
+            object-fit: cover;
+            object-position: center center;
+            margin-right: 70px;
+        }
 
         p:not(.tagline) {
             font-size: 18px;
@@ -336,6 +346,17 @@ main {
     }
 }
 
+@media screen and (max-width: 1300px) {
+    main {
+        #about {
+            img {
+                width: 400px;
+                height: 400px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 990px) {
     main {
         .title {
@@ -347,7 +368,19 @@ main {
         }
 
         #about {
+            flex-direction: column;
             padding: 64px 32px;
+
+            img {
+                order: 1;
+                width: 100%;
+                margin-top: 16px;
+                margin-right: 0;
+            }
+
+            div {
+                width: 100%;
+            }
 
             h2 {
                 font-size: 18px;
