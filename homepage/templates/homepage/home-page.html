@@ -33,8 +33,8 @@
 
         <section id="about">
             <h2>About us.</h2>
-            {% if home_page_contents.aboutcontent.tagline %}
-            <p class="tagline">{{ home_page_contents.aboutcontent.tagline }}</p>
+            {% if home_page_contents.tagline.about %}
+            <p class="tagline">{{ home_page_contents.tagline.about }}</p>
             {% endif %}
             <p>
                 {{ home_page_contents.aboutcontent.summary|linebreaksbr }}
@@ -43,6 +43,9 @@
 
         <section id="services">
             <h2>Our services</h2>
+            {% if home_page_contents.tagline.services %}
+            <p class="tagline">{{ home_page_contents.tagline.services }}</p>
+            {% endif %}
             <div class="list">
                 {% for service in services %}
                 <div class="tile">
@@ -73,7 +76,9 @@
 
         <section id="gallery">
             <h2>Photo Gallery</h2>
-            <p class="tagline">Moments captured in Griha</p>
+            {% if home_page_contents.tagline.gallery %}
+            <p class="tagline">{{ home_page_contents.tagline.gallery }}</p>
+            {% endif %}
             <div class="grid">
                 {% for image in gallery.images.all %}
                 <div class="tile">
@@ -124,9 +129,9 @@
 
         <section id="virtual-walkthrough">
             <h2>Virtual Walkthrough</h2>
-            <p class="tagline">
-                Immersive 3D Design Tours
-            </p>
+            {% if home_page_contents.tagline.walkthrough %}
+            <p class="tagline">{{ home_page_contents.tagline.walkthrough }}</p>
+            {% endif %}
             <iframe src="https://app.lapentor.com/sphere/manzanita" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
         </section>
     </main>

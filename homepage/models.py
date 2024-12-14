@@ -17,8 +17,18 @@ class HomePageContent(models.Model):
 class AboutContent(models.Model):
     background_image = models.ImageField(upload_to="homepage/about/", blank=True)
     summary = models.TextField()
-    tagline = models.TextField(blank=True)
     home_page = models.OneToOneField(HomePageContent, on_delete=models.CASCADE)
 
     def __str__(self):
         return "Content for about us"
+
+
+class TagLine(models.Model):
+    home_page = models.OneToOneField(HomePageContent, on_delete=models.CASCADE)
+    about = models.TextField(blank=True)
+    services = models.TextField(blank=True)
+    gallery = models.TextField(blank=True)
+    walkthrough = models.TextField(blank=True)
+
+    def __str__(self):
+        return 'Tag lines for homepage'

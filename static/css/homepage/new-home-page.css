@@ -241,6 +241,7 @@ nav {
   width: 100%;
   height: var(--height-nav-bar);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0.1) 100%);
+  backdrop-filter: blur(57.2999992371px);
   color: var(--color-foreground);
   padding: 0 120px;
   z-index: 10;
@@ -291,7 +292,7 @@ nav ul li:last-child a {
   color: #000;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 900px) {
   nav h1 {
     display: flex;
   }
@@ -526,7 +527,6 @@ main .title .tagline {
   font-size: 62px;
   font-family: var(--font-family-title);
   font-weight: 700;
-  letter-spacing: -2%;
 }
 main .title .message {
   font-size: 19px;
@@ -539,10 +539,10 @@ main #about {
   background: #fff;
   color: #2D2D2D;
   width: 100%;
-  max-width: 1190px;
+  max-width: 1254px;
   background-position: center center;
   background-size: cover;
-  padding: 120px 0;
+  padding: 120px 64px;
 }
 main #about p:not(.tagline) {
   font-size: 18px;
@@ -555,7 +555,6 @@ main #about p.tagline {
   font-weight: 700;
   font-size: 62px;
   line-height: 68.1px;
-  letter-spacing: -2%;
   max-width: 500px;
   margin-bottom: 25px;
 }
@@ -565,9 +564,16 @@ main #services {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1190px;
-  text-transform: uppercase;
+  max-width: 1254px;
+  padding: 0 64px;
   padding-bottom: 120px;
+}
+main #services p.tagline {
+  font-weight: 700;
+  font-size: 62px;
+  line-height: 68.1px;
+  max-width: 500px;
+  margin-bottom: 25px;
 }
 main #services .list {
   display: grid;
@@ -678,7 +684,8 @@ main #gallery {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1190px;
+  max-width: 1254px;
+  padding: 0 64px;
   padding-bottom: 120px;
 }
 main #gallery h2 {
@@ -689,7 +696,6 @@ main #gallery .tagline {
   font-weight: 700;
   font-size: 62px;
   line-height: 68px;
-  letter-spacing: -2%;
   text-align: center;
   margin-bottom: 32px;
 }
@@ -731,7 +737,6 @@ main #virtual-walkthrough .tagline {
   margin-bottom: 20px;
   font-size: 62px;
   line-height: 68px;
-  letter-spacing: -2%;
   font-weight: 700;
 }
 main #virtual-walkthrough iframe {
@@ -761,29 +766,48 @@ main #photorealistic-rendering .image-comparison-wrapper .images span {
   overflow: hidden;
 }
 
-@media screen and (max-width: 1300px) {
-  main #about {
-    padding: 180px 72px;
-  }
-}
 @media screen and (max-width: 990px) {
   main .title {
     margin: 0 24px;
   }
   main .title .tagline {
-    font-size: 32px;
+    font-size: 40px;
   }
   main #about {
-    padding: 180px 32px;
+    padding: 64px 32px;
+  }
+  main #about h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  main #about p.tagline {
+    font-size: 40px;
+    line-height: 45px;
   }
   main #services {
-    padding: 64px 32px;
+    padding: 32px 32px;
+  }
+  main #services h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  main #services p.tagline {
+    font-size: 40px;
+    line-height: 45px;
   }
   main #services .list {
     grid-template-columns: repeat(auto-fill, 100%);
   }
   main #process {
-    padding: 64px 32px;
+    padding: 32px 32px;
+  }
+  main #process h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  main #process p.tagline {
+    font-size: 40px;
+    line-height: 45px;
   }
   main #process .list {
     grid-template-columns: repeat(auto-fill, 100%);
@@ -792,16 +816,40 @@ main #photorealistic-rendering .image-comparison-wrapper .images span {
     margin: 0;
   }
   main #gallery {
-    padding: 64px 16px;
+    padding: 32px 16px;
   }
-  main #gallery .list {
+  main #gallery h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  main #gallery p.tagline {
+    font-size: 40px;
+    line-height: 45px;
+  }
+  main #gallery .grid {
     grid-template-columns: repeat(auto-fill, 100%);
   }
   main #virtual-walkthrough {
-    padding: 64px 16px;
+    padding: 32px 16px;
+  }
+  main #virtual-walkthrough h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  main #virtual-walkthrough p.tagline {
+    font-size: 40px;
+    line-height: 45px;
   }
   main #photorealistic-rendering {
-    padding: 64px 16px;
+    padding: 32px 16px;
+  }
+  main #photorealistic-rendering h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  main #photorealistic-rendering p.tagline {
+    font-size: 40px;
+    line-height: 45px;
   }
   main #photorealistic-rendering .image-comparison-wrapper {
     height: 360px;
