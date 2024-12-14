@@ -7,7 +7,6 @@ nav {
     height: var(--height-nav-bar);
     // background-color: var(--color-background);
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0.1) 100%);
-    backdrop-filter: blur(57.29999923706055px);
     color: var(--color-foreground);
     padding: 0 120px;
     z-index: 10;
@@ -148,7 +147,8 @@ nav {
             }
 
             ul {
-                max-height: 256px;
+                // max-height: 256px;
+                max-height: 200px;
                 padding-bottom: 10px;
             }
         }
