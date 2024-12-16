@@ -34,6 +34,7 @@ main {
 
         object-fit: cover;
         object-position: center center;
+        filter: brightness(0.7);
     }
 
     .title {
@@ -75,7 +76,7 @@ main {
         max-width: calc(1190px + 64px);
         background-position: center center;
         background-size: cover;
-        padding: 120px 64px;
+        padding: 120px 64px 60px;
 
         img {
             width: 580px;
@@ -103,14 +104,24 @@ main {
     }
 
     #services {
-        background: #fff;
-        color: #2D2D2D;
+        background-color: #131111;
+        color: #fff;
+        padding: 60px 64px;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        max-width: calc(1190px + 64px);
-        padding: 0 64px;
-        padding-bottom: 120px;
+        align-items: center;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: calc(1190px);
+        }
+
+        h2 {
+            color: #D4A373;
+        }
 
         p.tagline {
             font-weight: 700;
@@ -145,7 +156,6 @@ main {
                     position: relative;
                     height: 350px;
                     width: 100%;
-                    border: 3px solid white;
                     transition: transform 0.3s ease-in-out;
 
                     img {
@@ -153,6 +163,7 @@ main {
                         width: 100%;
                         object-fit: cover;
                         object-position: center center;
+                        filter: brightness(0.8);
                     }
 
                     a {
@@ -248,8 +259,7 @@ main {
         align-items: center;
         width: 100%;
         max-width: calc(1190px + 64px);
-        padding: 0 64px;
-        padding-bottom: 120px;
+        padding: 60px 64px;
 
         h2 {
             text-align: center;
@@ -293,7 +303,7 @@ main {
         color: #2D2D2D;
         display: flex;
         flex-direction: column;
-        padding: 120px 0;
+        padding: 60px 0;
         width: 100%;
         max-width: 1190px;
         align-items: center;

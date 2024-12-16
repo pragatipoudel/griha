@@ -10,47 +10,57 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        text-align: center;
+        text-align: left;
 
         p {
-            font-size: 48px;
+            font-size: 36px;
             font-weight: 400;
         }
 
         a {
-            font-size: 28px;
+            font-size: 24px;
             color: #996830;
         }
     }
 
     .main {
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
         padding: 0 64px;
 
         .brand {
-            width: 55%;
+            width: calc(100% / 3);
 
             img {
-                height: 50px;
+                height: 120px;
                 margin-bottom: 18px;
             }
         }
 
         .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             list-style: none;
             padding: 0;
-            width: 30%;
+            width: calc(100% / 3);
 
             li {
-                margin: 16px 0;
+                margin: 9px 0;
             }
         }
 
         .socials {
             display: flex;
             flex-direction: column;
-            width: calc(100% - 55% - 30%);
+            width: calc(100% / 3);
+            align-items: flex-end;
+
+            .list {
+                display: flex;
+                flex-direction: column;
+            }
 
             span {
                 margin-top: 10px;
@@ -87,10 +97,19 @@ footer {
         .main {
             .brand {
                 width: 100%;
-                margin-bottom: 48px;
+                margin-bottom: 24px;
+
+                img {
+                    height: 96px;
+                }
+            }
+            .links {
+                align-items: flex-start;
+                margin-bottom: 24px;
             }
             .socials {
                 width: calc(100% - 30%);
+                align-items: flex-start;
             }
         }
     }
@@ -118,6 +137,10 @@ footer {
             .brand {
                 width: 100%;
                 margin-bottom: 48px;
+
+                img {
+                    height: 80px;
+                }
             }
 
             .links {

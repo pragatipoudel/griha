@@ -47,21 +47,23 @@
         </section>
 
         <section id="services">
-            <h2>Our services</h2>
-            {% if home_page_contents.tagline.services %}
-            <p class="tagline">{{ home_page_contents.tagline.services }}</p>
-            {% endif %}
-            <div class="list">
-                {% for service in services %}
-                <div class="tile">
-                    <div class="preview">
-                        <img src="{{ service.header_image.url }}" oncontextmenu="return false">
-                        <!-- <a href="#services">Learn More</a> -->
+            <div class="container">
+                <h2>Our services</h2>
+                {% if home_page_contents.tagline.services %}
+                <p class="tagline">{{ home_page_contents.tagline.services }}</p>
+                {% endif %}
+                <div class="list">
+                    {% for service in services %}
+                    <div class="tile">
+                        <div class="preview">
+                            <img src="{{ service.header_image.url }}" oncontextmenu="return false">
+                            <!-- <a href="#services">Learn More</a> -->
+                        </div>
+                        <div class="name">{{ service.name }}</div>
+                        <!-- <div class="summary">{{ service.summary }}</div> -->
                     </div>
-                    <div class="name">{{ service.name }}</div>
-                    <!-- <div class="summary">{{ service.summary }}</div> -->
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </section>
 

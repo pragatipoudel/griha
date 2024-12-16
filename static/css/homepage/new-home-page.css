@@ -108,40 +108,49 @@ footer .tagline {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 footer .tagline p {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 400;
 }
 footer .tagline a {
-  font-size: 28px;
+  font-size: 24px;
   color: #996830;
 }
 footer .main {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding: 0 64px;
 }
 footer .main .brand {
-  width: 55%;
+  width: 33.3333333333%;
 }
 footer .main .brand img {
-  height: 50px;
+  height: 120px;
   margin-bottom: 18px;
 }
 footer .main .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   list-style: none;
   padding: 0;
-  width: 30%;
+  width: 33.3333333333%;
 }
 footer .main .links li {
-  margin: 16px 0;
+  margin: 9px 0;
 }
 footer .main .socials {
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 33.3333333333%;
+  align-items: flex-end;
+}
+footer .main .socials .list {
+  display: flex;
+  flex-direction: column;
 }
 footer .main .socials span {
   margin-top: 10px;
@@ -167,10 +176,18 @@ footer .main .socials span.social-link {
   }
   footer .main .brand {
     width: 100%;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+  }
+  footer .main .brand img {
+    height: 96px;
+  }
+  footer .main .links {
+    align-items: flex-start;
+    margin-bottom: 24px;
   }
   footer .main .socials {
     width: 70%;
+    align-items: flex-start;
   }
 }
 @media screen and (max-width: 640px) {
@@ -192,6 +209,9 @@ footer .main .socials span.social-link {
     width: 100%;
     margin-bottom: 48px;
   }
+  footer .main .brand img {
+    height: 80px;
+  }
   footer .main .links {
     width: 100%;
   }
@@ -207,7 +227,7 @@ nav {
   height: var(--height-nav-bar);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0.1) 100%);
   color: var(--color-foreground);
-  padding: 0 120px;
+  padding: 0 48px;
   z-index: 10;
 }
 nav h1 {
@@ -224,7 +244,8 @@ nav h1 a {
   font-size: 20px;
 }
 nav h1 a img {
-  height: 48px;
+  margin-top: 8px;
+  height: 64px;
   width: auto;
 }
 nav .nav-toggle {
@@ -472,6 +493,7 @@ main img, main video {
   height: 826px;
   object-fit: cover;
   object-position: center center;
+  filter: brightness(0.7);
 }
 main .title {
   position: absolute;
@@ -508,7 +530,7 @@ main #about {
   max-width: 1254px;
   background-position: center center;
   background-size: cover;
-  padding: 120px 64px;
+  padding: 120px 64px 60px;
 }
 main #about img {
   width: 580px;
@@ -532,14 +554,22 @@ main #about p.tagline {
   margin-bottom: 25px;
 }
 main #services {
-  background: #fff;
-  color: #2D2D2D;
+  background-color: #131111;
+  color: #fff;
+  padding: 60px 64px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #services .container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1254px;
-  padding: 0 64px;
-  padding-bottom: 120px;
+  max-width: 1190px;
+}
+main #services h2 {
+  color: #D4A373;
 }
 main #services p.tagline {
   font-weight: 700;
@@ -571,7 +601,6 @@ main #services .list .tile .preview {
   position: relative;
   height: 350px;
   width: 100%;
-  border: 3px solid white;
   transition: transform 0.3s ease-in-out;
 }
 main #services .list .tile .preview img {
@@ -579,6 +608,7 @@ main #services .list .tile .preview img {
   width: 100%;
   object-fit: cover;
   object-position: center center;
+  filter: brightness(0.8);
 }
 main #services .list .tile .preview a {
   display: flex;
@@ -658,8 +688,7 @@ main #gallery {
   align-items: center;
   width: 100%;
   max-width: 1254px;
-  padding: 0 64px;
-  padding-bottom: 120px;
+  padding: 60px 64px;
 }
 main #gallery h2 {
   text-align: center;
@@ -696,7 +725,7 @@ main #virtual-walkthrough {
   color: #2D2D2D;
   display: flex;
   flex-direction: column;
-  padding: 120px 0;
+  padding: 60px 0;
   width: 100%;
   max-width: 1190px;
   align-items: center;
