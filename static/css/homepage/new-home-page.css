@@ -477,6 +477,10 @@ h2 {
   margin-bottom: 25px;
 }
 
+p.tagline {
+  font-size: 42px;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -509,7 +513,6 @@ main .title {
 main .title .tagline {
   margin-bottom: 24px;
   color: #f5f5f0;
-  font-size: 62px;
   font-family: var(--font-family-title);
   font-weight: 700;
 }
@@ -547,8 +550,6 @@ main #about p:not(.tagline) {
 }
 main #about p.tagline {
   font-weight: 700;
-  font-size: 62px;
-  line-height: 68.1px;
   max-width: 500px;
   margin-bottom: 25px;
 }
@@ -572,8 +573,6 @@ main #services h2 {
 }
 main #services p.tagline {
   font-weight: 700;
-  font-size: 62px;
-  line-height: 68.1px;
   max-width: 500px;
   margin-bottom: 25px;
 }
@@ -695,8 +694,6 @@ main #gallery h2 {
 main #gallery .tagline {
   max-width: 530px;
   font-weight: 700;
-  font-size: 62px;
-  line-height: 68px;
   text-align: center;
   margin-bottom: 32px;
 }
@@ -736,8 +733,6 @@ main #virtual-walkthrough .tagline {
   max-width: 500px;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 62px;
-  line-height: 68px;
   font-weight: 700;
 }
 main #virtual-walkthrough iframe {
