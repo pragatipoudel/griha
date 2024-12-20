@@ -23,6 +23,14 @@ class AboutContent(models.Model):
         return "Content for about us"
 
 
+class VirtualWalkthrough(models.Model):
+    walkthrough_link = models.URLField()
+    home_page = models.OneToOneField(HomePageContent, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return 'Virtual walkthrough content'
+
+
 class TagLine(models.Model):
     home_page = models.OneToOneField(HomePageContent, on_delete=models.CASCADE)
     about = models.TextField(blank=True)

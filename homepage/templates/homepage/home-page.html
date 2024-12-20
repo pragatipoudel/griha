@@ -67,9 +67,17 @@
             </div>
         </section>
 
+        <section id="virtual-walkthrough">
+            <h2>Virtual Walkthrough</h2>
+            {% if home_page_contents.tagline.walkthrough %}
+            <p class="tagline">{{ home_page_contents.tagline.walkthrough }}</p>
+            {% endif %}
+            <iframe src="{{ home_page_contents.virtualwalkthrough.walkthrough_link }}" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+        </section>
 
 
-        <section id="process">
+
+        <!-- <section id="process">
             <h2>Our process</h2>
             <div class="list">
                 {% for step in process.steps.all %}
@@ -79,23 +87,7 @@
                 </div>
                 {% endfor %}
             </div>
-        </section>
-
-        <section id="gallery">
-            <h2>Photo Gallery</h2>
-            {% if home_page_contents.tagline.gallery %}
-            <p class="tagline">{{ home_page_contents.tagline.gallery }}</p>
-            {% endif %}
-            <div class="grid">
-                {% for image in gallery.images.all %}
-                <div class="tile">
-                    <a data-fslightbox href="{{ image.image.url }}">
-                        <img src="{{ image.image.url }}">
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
+        </section> -->
 
         <section id="photorealistic-rendering">
             <h2>Photorealistic Rendering</h2>
@@ -120,12 +112,20 @@
               </div>
         </section>
 
-        <section id="virtual-walkthrough">
-            <h2>Virtual Walkthrough</h2>
-            {% if home_page_contents.tagline.walkthrough %}
-            <p class="tagline">{{ home_page_contents.tagline.walkthrough }}</p>
+        <section id="gallery">
+            <h2>Photo Gallery</h2>
+            {% if home_page_contents.tagline.gallery %}
+            <p class="tagline">{{ home_page_contents.tagline.gallery }}</p>
             {% endif %}
-            <iframe src="https://app.lapentor.com/sphere/manzanita" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+            <div class="grid">
+                {% for image in gallery.images.all %}
+                <div class="tile">
+                    <a data-fslightbox href="{{ image.image.url }}">
+                        <img src="{{ image.image.url }}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
         </section>
     </main>
 
