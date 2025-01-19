@@ -2,29 +2,135 @@
 {% load static %}
 
 {% block head %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{% static 'css/services/service-detail-page.css' %}">
+    <script defer src="{% static 'external/fslightbox.js' %}"></script>
+    <script defer src="{% static 'js/image-comparison.js' %}"></script>
 {% endblock %}
 
 {% block content %}
     {% include 'nav.html' %}
 
-    <main>
-        <h2>{{ service.name }}</h2>
-
-        <p>
-            {% firstof service.description service.summary %}
-        </p>
-
-        <div class="projects-list">
-            {% for project in service.project_set.all %}
-            <a class="project-tile" href="{% url 'project-detail-page' project.slug %}">
-                <img src="{{ project.header_image.url }}">
-                <div class="name">{{ project.name }}</div>
-            </a>
-            {% endfor%}
+    <header>
+        <img src="{{ service.serviceheader.header_image.url }}" oncontextmenu="return false">
+        <div class="category">
+            Our Services
         </div>
+        <h1>{{ service.serviceheader.title }}</h1>
+        <p>{{ service.serviceheader.tagline }}</p>
+    </header>
 
+    <main>
+        <section id="about">
+            <div class="container">
+                <div>
+                    <h2>Your All-In-One <span class="highlight">Solution for ADU</span></h2>
+                    <p>
+                        {{ service.aboutservice.text|linebreaksbr }}
+                    </p>
+                </div>
+                <img src="{{ service.aboutservice.image.url }}">
+            </div>
+        </section>
+
+        <section id="process">
+            <div class="container">
+                <h2>
+                    <span class="highlight">Griha Designs & Engineering</span> offers end-end services,
+                    covering every aspect of your <span class="highlight">{{ service.short_name }} project</span>
+                </h2>
+
+                <div class="content">
+                    <img src="{{ service.serviceprocess.image.url }}">
+                    <ul>
+                        {% for step in service.serviceprocess.steps.all %}
+                        <li>
+                            <span class="rank">{{ step.rank|stringformat:"02d" }}</span>
+                            <h4>{{ step.step_name }}</h4>
+                            <p>{{ step.step_description|linebreaksbr }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        {% if service.servicewalkthrough.walkthrough_link %}
+        <section id="walkthrough" class="dark">
+            <div class="container">
+                <h2>Immersive Virtual <span class="highlight">3D Walkthrough</span></h2>
+                <p>{{ service.servicewalkthrough.summary|linebreaksbr }} </p>
+
+                <iframe src="{{ service.servicewalkthrough.walkthrough_link }}" frameborder="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
+            </div>
+        </section>
+        {% endif %}
+
+        {% if service.serviceimagecomparisons %}
+        <section id="image-comparison">
+            <div class="container">
+                <h2>You'll Feel Like You're Looking At The Finished Project—<br><span class="highlight">Our 3D Renderings Are That Realistic</span></h2>
+
+                <div class="image-comparison-wrapper">
+                    <div class="images">
+                      <div class="img-1">
+                        <img src="{{ service.serviceimagecomparisons.image_right.url }}">
+                        <span>{{ service.serviceimagecomparisons.label_right }}</span>
+                      </div>
+                      <div class="img-2">
+                        <img src="{{ service.serviceimagecomparisons.image_left.url }}">
+                        <span>{{ service.serviceimagecomparisons.label_left }}</span>
+                      </div>
+                    </div>
+                    <div class="slider">
+                      <div class="drag-line">
+                        <span></span>
+                      </div>
+                      <input type="range" min="0" max="100" value="50">
+                    </div>
+                  </div>
+            </div>
+        </section>
+        {% endif %}
+
+        {% if service.values.count %}
+        <section id="values" class="dark">
+            <div class="container">
+                <h2>The Value We Bring</h2>
+
+                <ul>
+                {% for value in service.values.all %}
+                    <li class="item">
+                        <h4>{{ value.value_title }}</h4>
+                        <p>{{ value.description }}</p>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
     </main>
 
     {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        function goDown() {
+            document.querySelector('.services').scrollIntoView({ behavior: 'smooth' });
+        }
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 3000,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
 {% endblock %}

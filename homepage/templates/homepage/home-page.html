@@ -54,14 +54,20 @@
                 {% endif %}
                 <div class="list">
                     {% for service in services %}
+                    {% if service.aboutservice %}
+                    <a href="{% url 'service-detail-page' service.slug %}" class="tile">
+                    {% else %}
                     <div class="tile">
+                    {% endif %}
                         <div class="preview">
-                            <img src="{{ service.header_image.url }}" oncontextmenu="return false">
-                            <!-- <a href="#services">Learn More</a> -->
+                            <img src="{{ service.thumbnail.url }}" oncontextmenu="return false">
                         </div>
                         <div class="name">{{ service.name }}</div>
-                        <!-- <div class="summary">{{ service.summary }}</div> -->
+                    {% if service.aboutservice %}
+                    </a>
+                    {% else %}
                     </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>

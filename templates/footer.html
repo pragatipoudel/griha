@@ -1,34 +1,47 @@
-{% load static %}
-
-<footer>
-    <div class="group group-1">
-        <h3>Griha Designs</h3>
-        <p>{{ contact_info.address }}</p>
+<footer id="contact">
+    {% if home_page_contents.tagline.footer %}
+    <div class="tagline">
+        <p>
+            {{ home_page_contents.tagline.footer }}
+        </p>
+        
+        <a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a>
     </div>
-
-    <div class="group group-3">
-        <p>Find us on social media</p>
-        <ul>
-            <li class="icons">
+    {% endif %}
+    <div class="main">
+        <div class="brand">
+            {% if home_page_contents.logo_white %}
+            <img src="{{ home_page_contents.logo_white.url }}">
+            {% else %}
+            <img src="{{ home_page_contents.logo.url }}">
+            {% endif %}
+        </div>
+        <ul class="links">
+            <li><a href="{% url 'home-page' %}#about">About</a></li>
+            <li><a href="{% url 'home-page' %}#services">Services</a></li>
+            <!-- <li><a href="{% url 'home-page' %}#process">Our Process</a></li> -->
+            <li><a href="{% url 'home-page' %}#gallery">Photo Gallery</a></li>
+            <li><a href="{% url 'home-page' %}#contact">Contact</a></li>
+        </ul>
+        <div class="socials">
+            <div class="list">            
                 {% if contact_info.instagram_link %}
-                    <a href="{{ contact_info.instagram_link }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <span class="social-link"><a href="{{ contact_info.instagram_link }}" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></span>
                 {% endif %}
                 {% if contact_info.youtube_link %}
-                    <a href="{{ contact_info.youtube_link }}"><i class="fab fa-youtube" target="_blank"></i></a>
+                    <span class="social-link"><a href="{{ contact_info.youtube_link }}" target="_blank"><i class="fab fa-youtube"></i>Youtube</a></span>
                 {% endif %}
                 {% if contact_info.facebook_link %}
-                    <a href="{{ contact_info.facebook_link }}" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <span class="social-link"><a href="{{ contact_info.facebook_link }}" target="_blank"><i class="fab fa-facebook"></i>Facebook</a></span>
                 {% endif %}
-            </li>
-        </ul>
-    </div>
+                {% if contact_info.linkedin_link %}
+                    <span class="social-link"><a href="{{ contact_info.linkedin_link }}" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a></span>
+                {% endif %}
+            </div>
 
-    <div class="group group-2">
-        <ul>
-            <li><a href="tel:{{ contact_info.phone_number }}">{{ contact_info.phone_number }}</a></li>
-            <li><a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></li>
-            <li><a href="#">faqs</a></li>
-            <li><a href="#">employee login</a></li>
-        </ul>
+        </div>
     </div>
+    <!-- <div class="strip">
+        Copyright © Griha Designs 2024. All Rights Reserved.
+    </div> -->
 </footer>

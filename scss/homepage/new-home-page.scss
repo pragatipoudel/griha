@@ -1,8 +1,8 @@
-@import './base';
-@import './footer';
-@import './nav';
+@import '../base';
+@import '../footer';
+@import '../nav';
 @import '../image-comparison';
-// @import './nav-animation';
+
 
 html {
     scroll-behavior: smooth;

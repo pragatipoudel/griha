@@ -16,23 +16,24 @@
     --color-secondary-light: #AED581;
     --color-secondary-lighter: #C5E1A5;
 
-    --color-background: #fff;
-    --color-background-alt: rgb(240, 240, 240);
-    --color-background-alt-2: #fff6eb;
-    --color-background-dark: #264a3c;
+    --color-background: #232421;
+    --color-background-alt: rgb(245, 245, 240);
+    --color-background-alt-2: rgb(245, 245, 240, 0.4);
     
-    --color-foreground: #424242;
-    --color-foreground-dark: #F0F0F0;
+    --color-foreground: #fff;
+    --color-foreground-lighter: #c0c0c0;
 
-    --font-family-heading: "Poppins", sans-serif;
-    --font-family-heading-2: "Poppins", sans-serif;
-    --font-family-normal: "Lato", sans-serif;
-    --font-family-reviews: "Forum", serif;
-    --font-family-cursive: "Mali", cursive;
+    --font-family-title: "Figtree", sans-serif;
+    --font-family-heading: "Figtree", sans-serif;
+    --font-family-heading-2: "Open Sans", sans-serif;
+    --font-family-normal: "Figtree", sans-serif;
+    --font-family-reviews: "Figtree", serif;
+    --font-family-cursive: "Figtree", cursive;
+    --font-family-light: "Open Sans", sans-serif;
 
     --font-family-icon: 'Font Awesome 5 Free';
 
-    --height-nav-bar: 84px;
+    --height-nav-bar: 81px;
     --height-footer: 120px;
 
     --width-page: 1100px;
@@ -62,33 +63,43 @@ h2 {
 }
 
 a {
-    color: #000;
+    color: var(--color-foreground);
     text-decoration: none;
     cursor: pointer;
     
     &:hover {
-        color: var(--color-tertiary);
+        color: var(--color-foreground-lighter);
     }
 }
 
 #contact-bar {
-    position: fixed;
-    left: 0;
+    position: absolute;
+    right: 0;
     bottom: calc(var(--height-footer));
     display: flex;
     flex-direction: column;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    // border-top-right-radius: 8px;
+    // border-bottom-right-radius: 8px;
     overflow: hidden;
+    z-index: 100;
     
     a {
         padding: 8px 10px;
         font-size: 18px;
-        background-color: var(--color-tertiary-dark);
-        color: #fff;
+        background-color: #fff;
+        color: #666;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 32px;
+        margin: 6px 16px;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-            background-color: var(--color-tertiary);
+            background-color: #666;
+            color: #fff;
         }
     }
 }
