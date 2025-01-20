@@ -1,88 +1,79 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block head %}
-    <script defer src="{% static 'external/fslightbox.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{% static 'css/projects/project-detail-page.css' %}">
-    <script defer src="{% static 'js/projects/project-detail-page.js' %}"></script>
+    <script defer src="{% static 'external/fslightbox.js' %}"></script>
+    <script defer src="{% static 'js/image-comparison.js' %}"></script>
 {% endblock %}
+
 
 {% block content %}
     {% include 'nav.html' %}
 
-    <main>
-        <div class="project-description">
-            <div class="photos">
-                <img src="{{ project.header_image.url }}">
-            </div>
-            <div class="details">
-                <h2>{{ project.name }}</h2>
-                <div class="description">
-                    {{ project.description|linebreaks }}
-                </div>
-                {% if project.services.exists %}
-                <div class="services">
-                    <div class="label">
-                        Services:
-                    </div>
-                    <div class="items">
-                    {% for service in project.services.all %}
-                        <a class="service" href="{% url 'service-list-page' %}#{{ service.slug }}">{{ service.name }} </a>
-                    {% endfor %}
-                    </div>
-                </div>
-                {% endif %}
-
-                {% if project.walkthrough_link %}
-                <div class="walkthrough">
-                    <a target="_blank" href="{{ project.walkthrough_link }}">Click here for a walkthrough <i class="fas fa-external-link-alt"></i></a>
-                </div>
-                {% endif %}
-      
-            </div>
+    <header>
+        <img src="{{ project.thumbnail.url }}" oncontextmenu="return false">
+        <div class="category">
+            {{ project.service.name }}
         </div>
+        <h1>{{ project.name }}</h1>
+        <!-- <p></p> -->
+    </header>
 
-        <div class="additional-info">
-            {% if project.additionalimage_set.exists %}
-            <div class="photos">
-                <h3>
-                    Photo Gallery
-                </h3>
-                <div class="gallery">
-                    {% for image in project.additionalimage_set.all %}
+    <main>
+        <section id="about">
+            <div class="container">
+                <div>
+                    <!-- <h2></h2> -->
+                    <p>
+                        {{ project.description|linebreaksbr }}
+                    </p>
+                </div>
+                <img src="{{ project.thumbnail.url }}">
+            </div>
+        </section>
+
+        {% if project.images.count %}
+        <section id="gallery">
+            <div class="container">
+                <h2>View Project Gallery</h2>
+                
+                <div class="grid">
+                    {% for image in project.images.all %}
+                    <div class="tile">
                         <a data-fslightbox href="{{ image.image.url }}">
                             <img src="{{ image.image.url }}">
                         </a>
-                    {% endfor %}
-                </div>
-
-            </div>
-            {% endif %}
-
-            {% if reviews.exists %}
-            <div class="reviews">
-                <h3>
-                    Client Testimonials
-                </h3>
-                <div class="review-list">
-                    {% for review in reviews.all %}
-                        <div class="review-detail">
-                            <div class="comment-wrapper">
-                                <span class="before quote">“</span>
-                                <div class="comment">
-                                    {{ review.comment|linebreaks }}
-                                </div>
-                                <span class="after quote">”</span>
-                            </div>
-                            <div class="name">
-                                {{ review.name }}
-                            </div>
-                        </div>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
-            {% endif %}
-        </div> 
+        </section>
+        {% endif %}
     </main>
+
     {% include 'footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        function goDown() {
+            document.querySelector('.services').scrollIntoView({ behavior: 'smooth' });
+        }
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 30,
+            autoplay: {
+                delay: 3000,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
 {% endblock %}

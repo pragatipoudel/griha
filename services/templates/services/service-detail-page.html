@@ -109,6 +109,26 @@
             </div>
         </section>
         {% endif %}
+
+        {% if service.projects.count %}
+        <section id="projects">
+            <div class="container">
+                <h2>Our Recent <span class="highlight">{{ service.short_name }} Projects</span></h2>
+
+                <div class="grid">
+                    {% for project in service.projects.all %}
+                    <a class="item" href="{% url 'project-detail-page' project.slug %}">
+                        <img src="{{ project.thumbnail.url }}">
+                        <div class="caption">
+                            <span class="name">{{ project.name }}</span>
+                            <span class="description">{{ project.thumbnail_description }}</span>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endif %}
     </main>
 
     {% include 'footer.html' %}

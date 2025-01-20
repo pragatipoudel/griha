@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from projects.models import Project
 from .models import (
     Service, ServiceHeader, AboutService,
     ServiceProcess, ServiceProcessStep,
@@ -38,6 +39,11 @@ class ServiceValueInline(admin.StackedInline):
     model = ServiceValue
 
 
+class ProjectInline(admin.StackedInline):
+    prepopulated_fields = {"slug": ["name"]}
+    model = Project
+
+
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ["name"]}
@@ -48,6 +54,7 @@ class ServiceAdmin(admin.ModelAdmin):
         ServiceWalkthroughInline,
         ServiceImageComparisonsInline,
         ServiceValueInline,
+        ProjectInline,
     ]
 
 
