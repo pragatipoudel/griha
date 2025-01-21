@@ -68,6 +68,15 @@ footer {
                     display: flex;
                     flex-direction: column;
 
+                    &.required {
+                        label {
+                            &::after {
+                                content: '*';
+                                padding-left: 2px;
+                            }
+                        }
+                    }
+
                     label {
                         font-family: var(--font-family-light);
                         font-weight: 200;

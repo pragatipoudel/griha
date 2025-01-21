@@ -310,6 +310,10 @@ footer .main .contact-form form .input {
   display: flex;
   flex-direction: column;
 }
+footer .main .contact-form form .input.required label::after {
+  content: "*";
+  padding-left: 2px;
+}
 footer .main .contact-form form .input label {
   font-family: var(--font-family-light);
   font-weight: 200;
