@@ -13,7 +13,10 @@
     {% if submitted %}
     <footer>
         <div class="tagline">
-            Your message has been sent successfully! We will contact you soon!
+            <p>
+                Your message has been sent successfully! We will contact you soon!
+            </p>
+            <a href="{% url 'home-page' %}">Click here to go back to home page!</a>
         </div>
     </footer>
     {% else %}
