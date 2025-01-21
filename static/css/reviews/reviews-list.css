@@ -271,11 +271,88 @@ footer .tagline a {
 footer .main {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   padding: 0 64px;
+  gap: 48px 24px;
+}
+footer .main .contact-form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 595px;
+}
+footer .main .contact-form h4 {
+  font-family: var(--font-family-heading-2);
+  font-weight: 700;
+  font-size: 32px;
+  color: #fff;
+}
+footer .main .contact-form p {
+  font-family: var(--font-family-light);
+  color: #fff;
+  font-size: 18px;
+}
+footer .main .contact-form p .highlight {
+  color: #D4A373;
+}
+footer .main .contact-form form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+}
+footer .main .contact-form form .name, footer .main .contact-form form .message, footer .main .contact-form form .actions {
+  width: 100%;
+}
+footer .main .contact-form form .email, footer .main .contact-form form .phone {
+  width: calc(50% - 12px);
+}
+footer .main .contact-form form .input {
+  display: flex;
+  flex-direction: column;
+}
+footer .main .contact-form form .input label {
+  font-family: var(--font-family-light);
+  font-weight: 200;
+  font-size: 12px;
+  color: #fff;
+}
+footer .main .contact-form form .input input, footer .main .contact-form form .input textarea {
+  font-family: var(--font-family-light);
+  color: #D4A373;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  padding: 8px 4px;
+  background-color: transparent;
+}
+footer .main .contact-form form .input input:autofill, footer .main .contact-form form .input textarea:autofill {
+  background-color: transparent;
+}
+footer .main .contact-form form .actions button {
+  height: 44px;
+  padding: 12px 20px;
+  color: #000;
+  background-color: #D4A373;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+footer .main .contact-form form .actions button:hover {
+  background-color: rgb(245, 210, 175);
+}
+footer .main .info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 30%;
+  gap: 16px;
 }
 footer .main .brand {
-  width: 33.3333333333%;
+  width: 100%;
 }
 footer .main .brand img {
   height: 120px;
@@ -284,10 +361,10 @@ footer .main .brand img {
 footer .main .links {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   list-style: none;
   padding: 0;
-  width: 33.3333333333%;
+  width: calc(50% - 8px);
 }
 footer .main .links li {
   margin: 9px 0;
@@ -295,8 +372,8 @@ footer .main .links li {
 footer .main .socials {
   display: flex;
   flex-direction: column;
-  width: 33.3333333333%;
-  align-items: flex-end;
+  width: calc(50% - 8px);
+  align-items: flex-start;
 }
 footer .main .socials .list {
   display: flex;
@@ -324,6 +401,18 @@ footer .main .socials span.social-link {
   footer .tagline a {
     font-size: 18px;
   }
+  footer .main {
+    flex-direction: column;
+  }
+  footer .main .contact-form {
+    width: 100%;
+  }
+  footer .main .contact-form form .email, footer .main .contact-form form .phone {
+    width: 100%;
+  }
+  footer .main .info {
+    width: 100%;
+  }
   footer .main .brand {
     width: 100%;
     margin-bottom: 24px;
@@ -336,7 +425,6 @@ footer .main .socials span.social-link {
     margin-bottom: 24px;
   }
   footer .main .socials {
-    width: 70%;
     align-items: flex-start;
   }
 }
@@ -361,12 +449,6 @@ footer .main .socials span.social-link {
   }
   footer .main .brand img {
     height: 80px;
-  }
-  footer .main .links {
-    width: 100%;
-  }
-  footer .main .socials {
-    width: 100%;
   }
 }
 body {

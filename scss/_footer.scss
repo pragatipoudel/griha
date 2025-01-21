@@ -26,11 +26,102 @@ footer {
     .main {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
         padding: 0 64px;
+        gap: 48px 24px;
+
+        .contact-form {
+            width: calc(100% - 30%);
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            max-width: 595px;
+
+            h4 {
+                font-family: var(--font-family-heading-2);
+                font-weight: 700;
+                font-size: 32px;
+                color: #fff;
+            }
+            p {
+                font-family: var(--font-family-light);
+                color: #fff;
+                font-size: 18px;
+
+                .highlight {
+                    color: #D4A373;
+                }
+            }
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 16px 24px;
+
+                .name, .message, .actions {
+                    width: 100%;
+                }
+
+                .email, .phone {
+                    width: calc(50% - 12px);
+                }
+
+                .input {
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        font-family: var(--font-family-light);
+                        font-weight: 200;
+                        font-size: 12px;
+                        color: #fff;
+                    }
+
+                    input, textarea {
+                        font-family: var(--font-family-light);
+                        color: #D4A373;
+                        outline: none;
+                        border: 0;
+                        border-bottom: 1px solid #fff;
+                        padding: 8px 4px;
+                        background-color: transparent;
+
+                        &:autofill {
+                            background-color: transparent;
+                        }
+                    }
+                }
+
+                .actions {
+                    button {
+                        height: 44px;
+                        padding: 12px 20px;
+                        color: #000;
+                        background-color: #D4A373;
+                        border-radius: 22px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 0;
+                        outline: 0;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: rgb(245, 210, 175);
+                        }
+                    }
+                }
+            }
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 30%;
+            gap: 16px;
+        }
 
         .brand {
-            width: calc(100% / 3);
+            width: 100%;
 
             img {
                 height: 120px;
@@ -41,10 +132,10 @@ footer {
         .links {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             list-style: none;
             padding: 0;
-            width: calc(100% / 3);
+            width: calc(100% / 2 - 8px);
 
             li {
                 margin: 9px 0;
@@ -54,8 +145,8 @@ footer {
         .socials {
             display: flex;
             flex-direction: column;
-            width: calc(100% / 3);
-            align-items: flex-end;
+            width: calc(100% / 2 - 8px);
+            align-items: flex-start;
 
             .list {
                 display: flex;
@@ -95,6 +186,21 @@ footer {
             }
         }
         .main {
+            flex-direction: column;
+
+            .contact-form {
+                width: 100%;
+
+                form {
+                    .email, .phone {
+                        width: 100%;
+                    }
+                }
+            }
+            .info {
+                width: 100%;
+            }
+
             .brand {
                 width: 100%;
                 margin-bottom: 24px;
@@ -108,7 +214,6 @@ footer {
                 margin-bottom: 24px;
             }
             .socials {
-                width: calc(100% - 30%);
                 align-items: flex-start;
             }
         }
@@ -141,14 +246,6 @@ footer {
                 img {
                     height: 80px;
                 }
-            }
-
-            .links {
-                width: 100%;
-            }
-
-            .socials {
-                width: 100%;
             }
         }
     }

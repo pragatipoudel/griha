@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Inquiry from {{ name }}</h1>
+        <p>
+            Dear Admin,
+        </p>
+        <p>
+            You have received the following message from the website from "{{ name }}".
+        </p>
+
+        <p>
+            {{ message|linebreaksbr }}
+        </p>
+
+        <p>
+            Contact Info from the sender:
+
+            <ul>
+                <li>
+                    Name: {{ name }}
+                </li>
+                <li>
+                    Email: {{ email }}
+                </li>
+                <li>
+                    Phone: {{ phone }}
+                </li>
+            </ul>
+        </p>
+    </body>
+</html>

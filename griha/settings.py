@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django_recaptcha',
     'django_cleanup.apps.CleanupConfig',
     'django_unused_media',
+    'phonenumber_field'
 ]
 
 MIDDLEWARE = [
@@ -168,3 +169,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY')
 
 RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY')
+
+
+PHONENUMBER_DEFAULT_REGION = "US"
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = (os.getenv("EMAIL_USE_TLS") == 'TRUE')
+EMAIL_USE_SSL = (os.getenv("EMAIL_USE_TLS") != 'TRUE')

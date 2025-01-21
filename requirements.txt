@@ -5,3 +5,4 @@ gunicorn==21.2.0
 Pillow==10.1.0
 django-cleanup==8.1.0
 django-unused-media==0.2.2
+django-phonenumber-field[phonenumberslite]==8.0.0

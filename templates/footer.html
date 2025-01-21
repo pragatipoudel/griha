@@ -9,36 +9,77 @@
     </div>
     {% endif %}
     <div class="main">
-        <div class="brand">
-            {% if home_page_contents.logo_white %}
-            <img src="{{ home_page_contents.logo_white.url }}">
-            {% else %}
-            <img src="{{ home_page_contents.logo.url }}">
-            {% endif %}
+        <div class="contact-form">
+            <h4>Send your query</h4>
+            <p>
+                <span class="highlight">Your information is safe with us—</span>
+                <br>we won't spam your email or share your data with anyone
+            </p>
+            <form action="{% url 'submit-inquiry' %}" method="post">
+                {% csrf_token %}
+                {{ inquiry_form.non_field_errors }}
+                <div class="input name required">
+                    {{ inquiry_form.name.errors }}
+                    {{ inquiry_form.name.label_tag }}
+                    {{ inquiry_form.name }}
+                </div>
+                <div class="input email required">
+                    {{ inquiry_form.email.errors }}
+                    {{ inquiry_form.email.label_tag }}
+                    {{ inquiry_form.email }}
+                </div>
+                <div class="input phone">
+                    {{ inquiry_form.phone.errors }}
+                    {{ inquiry_form.phone.label_tag }}
+                    {{ inquiry_form.phone }}
+                </div>
+                <div class="input message required">
+                    {{ inquiry_form.message.errors }}
+                    {{ inquiry_form.message.label_tag }}
+                    {{ inquiry_form.message }}
+                </div>
+                <div class="input">
+                    {{ inquiry_form.captcha.errors }}
+                    {{ inquiry_form.captcha }}
+                </div>
+                <div class="actions">
+                    <button type="submit">Get a free consultation</button>
+                </div>
+            </form>
         </div>
-        <ul class="links">
-            <li><a href="{% url 'home-page' %}#about">About</a></li>
-            <li><a href="{% url 'home-page' %}#services">Services</a></li>
-            <!-- <li><a href="{% url 'home-page' %}#process">Our Process</a></li> -->
-            <li><a href="{% url 'home-page' %}#gallery">Photo Gallery</a></li>
-            <li><a href="{% url 'home-page' %}#contact">Contact</a></li>
-        </ul>
-        <div class="socials">
-            <div class="list">            
-                {% if contact_info.instagram_link %}
-                    <span class="social-link"><a href="{{ contact_info.instagram_link }}" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></span>
-                {% endif %}
-                {% if contact_info.youtube_link %}
-                    <span class="social-link"><a href="{{ contact_info.youtube_link }}" target="_blank"><i class="fab fa-youtube"></i>Youtube</a></span>
-                {% endif %}
-                {% if contact_info.facebook_link %}
-                    <span class="social-link"><a href="{{ contact_info.facebook_link }}" target="_blank"><i class="fab fa-facebook"></i>Facebook</a></span>
-                {% endif %}
-                {% if contact_info.linkedin_link %}
-                    <span class="social-link"><a href="{{ contact_info.linkedin_link }}" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a></span>
+
+        <div class="info">
+            <div class="brand">
+                {% if home_page_contents.logo_white %}
+                <img src="{{ home_page_contents.logo_white.url }}">
+                {% else %}
+                <img src="{{ home_page_contents.logo.url }}">
                 {% endif %}
             </div>
+            <ul class="links">
+                <li><a href="{% url 'home-page' %}#about">About</a></li>
+                <li><a href="{% url 'home-page' %}#services">Services</a></li>
+                <!-- <li><a href="{% url 'home-page' %}#process">Our Process</a></li> -->
+                <li><a href="{% url 'home-page' %}#gallery">Photo Gallery</a></li>
+                <li><a href="{% url 'home-page' %}#contact">Contact</a></li>
+            </ul>
+            <div class="socials">
+                <div class="list">            
+                    {% if contact_info.instagram_link %}
+                        <span class="social-link"><a href="{{ contact_info.instagram_link }}" target="_blank"><i class="fab fa-instagram"></i>Instagram</a></span>
+                    {% endif %}
+                    {% if contact_info.youtube_link %}
+                        <span class="social-link"><a href="{{ contact_info.youtube_link }}" target="_blank"><i class="fab fa-youtube"></i>Youtube</a></span>
+                    {% endif %}
+                    {% if contact_info.facebook_link %}
+                        <span class="social-link"><a href="{{ contact_info.facebook_link }}" target="_blank"><i class="fab fa-facebook"></i>Facebook</a></span>
+                    {% endif %}
+                    {% if contact_info.linkedin_link %}
+                        <span class="social-link"><a href="{{ contact_info.linkedin_link }}" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a></span>
+                    {% endif %}
+                </div>
 
+            </div>
         </div>
     </div>
     <!-- <div class="strip">

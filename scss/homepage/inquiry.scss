@@ -1,0 +1,27 @@
+@import '../base';
+@import '../footer';
+@import '../nav';
+@import '../image-comparison';
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+h2 {
+    font-family: var(--font-family-heading-2);
+    color: #8B3E2F;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    text-transform: none;
+    margin-bottom: 25px;
+}
+
+p.tagline {
+    font-size: 42px;
+}
+
+footer {
+    padding-top: 128px;
+}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{% static 'css/homepage/inquiry.css' %}">
+    <script defer src="{% static 'external/fslightbox.js' %}"></script>
+    <script defer src="{% static 'js/image-comparison.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    {% include 'nav.html' %}
+    {% if submitted %}
+    <footer>
+        <div class="tagline">
+            Your message has been sent successfully! We will contact you soon!
+        </div>
+    </footer>
+    {% else %}
+    {% include 'footer.html' %}
+    {% endif %}
+
+{% endblock %}
